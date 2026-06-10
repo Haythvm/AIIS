@@ -1269,7 +1269,7 @@ footer {
   </div>
 
   <h1 class="hero-title">
-    <span data-key="hero_title_1">Layer of Artificial Intelligence</span><br>
+    <span data-key="hero_title_1">A Layer of Artificial Intelligence</span><br>
     <span class="grad" data-key="hero_title_2">On your Business Workflow</span>
   </h1>
 
@@ -1277,7 +1277,7 @@ footer {
     <span data-key="hero_powered_by">Powered by</span>&nbsp;<span>Gemini Pro</span>&nbsp;<span data-key="hero_models">Models</span>
   </div>
 
-  <p class="hero-sub" data-key="hero_sub">Automate customer interactions, lead qualification, bookings, support, and repetitive workflows using intelligent AI-powered systems.</p>
+  <p class="hero-sub" data-key="hero_sub">Automate customer interactions, lead qualification, bookings, support, and repetitive workflows using intelligent AI-powered systems. Deploy in days, not months.</p>
 
   <div class="hero-actions">
     <button class="btn-primary" onclick="openPage('consultation')" data-key="cta_free">Book a Free Consultation</button>
@@ -2226,7 +2226,7 @@ const translations = {
     hero_title_2: 'On your Business Workflow',
     hero_powered_by: 'Powered by',
     hero_models: 'Models',
-    hero_sub: 'Automate customer interactions, lead qualification, bookings, support, and repetitive workflows using intelligent AI-powered systems.',
+    hero_sub: 'Automate customer interactions, lead qualification, bookings, support, and repetitive workflows using intelligent AI-powered systems. Deploy in days, not months.',
     cta_free: 'Book a Free Consultation',
     cta_demo: 'Schedule a Demo',
     integrate_label: 'What We Do',
@@ -3049,5 +3049,590 @@ document.querySelectorAll('[data-target]').forEach(el => countObserver.observe(e
 updateROI();
 </script>
 
+<!-- ═══════════════════════════════════════════════════
+     ARIA — AIIS LEAD AGENT CHATBOT WIDGET
+═══════════════════════════════════════════════════ -->
+<style>
+/* ── Chatbot Widget Styles ── */
+#aria-widget {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 1000;
+  font-family: var(--font);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+}
+
+/* Launcher button */
+#aria-launcher {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #3f5eff, #7c3aed);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 24px rgba(63, 94, 255, 0.5), 0 0 0 0 rgba(63, 94, 255, 0.3);
+  transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease);
+  animation: ariaPulse 3s ease-in-out infinite;
+  position: relative;
+  flex-shrink: 0;
+}
+#aria-launcher:hover {
+  transform: scale(1.08);
+  box-shadow: 0 8px 36px rgba(63, 94, 255, 0.65), 0 0 0 0 rgba(63, 94, 255, 0.3);
+  animation: none;
+}
+@keyframes ariaPulse {
+  0%, 100% { box-shadow: 0 4px 24px rgba(63,94,255,0.5), 0 0 0 0 rgba(63,94,255,0.3); }
+  50% { box-shadow: 0 4px 24px rgba(63,94,255,0.5), 0 0 0 10px rgba(63,94,255,0); }
+}
+
+/* Icon inside launcher */
+.aria-icon-open, .aria-icon-close {
+  position: absolute;
+  transition: opacity 0.2s, transform 0.25s var(--ease);
+}
+.aria-icon-close { opacity: 0; transform: rotate(-90deg) scale(0.7); }
+#aria-widget.open .aria-icon-open { opacity: 0; transform: rotate(90deg) scale(0.7); }
+#aria-widget.open .aria-icon-close { opacity: 1; transform: rotate(0deg) scale(1); }
+
+/* Notification dot */
+#aria-notif {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  width: 13px;
+  height: 13px;
+  background: #4ade80;
+  border-radius: 50%;
+  border: 2px solid #060608;
+  animation: blink 2s ease-in-out infinite;
+}
+#aria-widget.open #aria-notif { display: none; }
+
+/* Greeting bubble */
+#aria-greeting {
+  background: rgba(13, 13, 20, 0.97);
+  border: 1px solid rgba(79, 114, 255, 0.25);
+  border-radius: 12px 12px 4px 12px;
+  padding: 10px 14px;
+  font-size: 0.78rem;
+  color: var(--w70);
+  max-width: 210px;
+  line-height: 1.5;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+  backdrop-filter: blur(16px);
+  animation: ariaGreetIn 0.5s 1.8s var(--ease) both;
+  cursor: pointer;
+}
+#aria-greeting strong { color: var(--white); font-weight: 600; }
+@keyframes ariaGreetIn {
+  from { opacity: 0; transform: translateY(8px) scale(0.95); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+#aria-widget.open #aria-greeting { display: none; }
+
+/* Chat window */
+#aria-window {
+  width: 340px;
+  background: rgba(10, 10, 15, 0.98);
+  border: 1px solid rgba(79, 114, 255, 0.22);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 20px 70px rgba(0,0,0,0.7), 0 0 0 1px rgba(79,114,255,0.06);
+  backdrop-filter: blur(28px);
+  display: none;
+  flex-direction: column;
+  transform-origin: bottom right;
+  max-height: 520px;
+}
+#aria-widget.open #aria-window {
+  display: flex;
+  animation: ariaWindowIn 0.35s var(--ease) both;
+}
+@keyframes ariaWindowIn {
+  from { opacity: 0; transform: scale(0.88) translateY(16px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+/* Header */
+#aria-header {
+  background: linear-gradient(135deg, rgba(63,94,255,0.12), rgba(124,58,237,0.1));
+  border-bottom: 1px solid rgba(79,114,255,0.15);
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+.aria-av {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #3f5eff, #7c3aed);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  flex-shrink: 0;
+  position: relative;
+}
+.aria-av-dot {
+  position: absolute;
+  bottom: 1px;
+  right: 1px;
+  width: 9px;
+  height: 9px;
+  background: #4ade80;
+  border-radius: 50%;
+  border: 2px solid #0a0a0f;
+  animation: blink 2s ease-in-out infinite;
+}
+.aria-header-info { flex: 1; min-width: 0; }
+.aria-header-name { font-size: 0.84rem; font-weight: 700; letter-spacing: -0.02em; }
+.aria-header-status { font-size: 0.63rem; color: #4ade80; display: flex; align-items: center; gap: 4px; margin-top: 1px; }
+.aria-header-status-dot { width: 5px; height: 5px; border-radius: 50%; background: #4ade80; animation: blink 1.6s ease-in-out infinite; }
+#aria-clear-btn {
+  background: none;
+  border: none;
+  color: var(--w40);
+  font-size: 0.65rem;
+  cursor: pointer;
+  padding: 4px 6px;
+  border-radius: 4px;
+  transition: all 0.18s;
+  font-family: var(--font);
+}
+#aria-clear-btn:hover { color: var(--w70); background: rgba(255,255,255,0.04); }
+
+/* Messages area */
+#aria-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-height: 260px;
+  max-height: 330px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(79,114,255,0.2) transparent;
+}
+#aria-messages::-webkit-scrollbar { width: 4px; }
+#aria-messages::-webkit-scrollbar-thumb { background: rgba(79,114,255,0.2); border-radius: 2px; }
+
+/* Message bubbles */
+.aria-msg { display: flex; gap: 7px; align-items: flex-end; }
+.aria-msg.user { flex-direction: row-reverse; }
+.aria-msg-av {
+  width: 22px; height: 22px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.55rem; font-weight: 700; flex-shrink: 0;
+}
+.aria-msg.ai .aria-msg-av { background: linear-gradient(135deg, #3f5eff, #7c3aed); }
+.aria-msg.user .aria-msg-av { background: rgba(255,255,255,0.07); color: var(--w70); }
+.aria-bubble {
+  padding: 8px 11px;
+  border-radius: 12px;
+  font-size: 0.76rem;
+  max-width: 82%;
+  line-height: 1.55;
+  animation: bubbleIn 0.28s var(--ease) both;
+  word-break: break-word;
+}
+@keyframes bubbleIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.aria-msg.ai .aria-bubble {
+  background: rgba(79,114,255,0.08);
+  border: 1px solid rgba(79,114,255,0.15);
+  color: var(--w70);
+  border-bottom-left-radius: 4px;
+}
+.aria-msg.user .aria-bubble {
+  background: rgba(124,58,237,0.14);
+  border: 1px solid rgba(124,58,237,0.22);
+  color: var(--white);
+  border-bottom-right-radius: 4px;
+}
+
+/* Typing indicator */
+.aria-typing {
+  display: flex; gap: 4px;
+  padding: 9px 11px;
+  background: rgba(79,114,255,0.08);
+  border: 1px solid rgba(79,114,255,0.15);
+  border-radius: 12px 12px 12px 4px;
+  width: 46px;
+  animation: bubbleIn 0.28s var(--ease) both;
+}
+.aria-typing span {
+  width: 5px; height: 5px; border-radius: 50%;
+  background: var(--blue2);
+  animation: bounce 0.8s ease infinite;
+}
+.aria-typing span:nth-child(2) { animation-delay: 0.14s; }
+.aria-typing span:nth-child(3) { animation-delay: 0.28s; }
+
+/* Quick replies */
+#aria-quick-replies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  padding: 0 14px 8px;
+  flex-shrink: 0;
+}
+.aria-qr {
+  background: rgba(79,114,255,0.07);
+  border: 1px solid rgba(79,114,255,0.2);
+  color: var(--blue2);
+  font-size: 0.67rem;
+  padding: 4px 9px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.18s;
+  font-family: var(--font);
+  font-weight: 500;
+  white-space: nowrap;
+}
+.aria-qr:hover {
+  background: rgba(79,114,255,0.14);
+  border-color: rgba(79,114,255,0.4);
+  color: var(--white);
+}
+
+/* Input area */
+#aria-input-area {
+  padding: 10px 12px;
+  border-top: 1px solid rgba(79,114,255,0.1);
+  display: flex;
+  gap: 7px;
+  align-items: center;
+  flex-shrink: 0;
+  background: rgba(6,6,8,0.5);
+}
+#aria-input {
+  flex: 1;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(79,114,255,0.15);
+  border-radius: 8px;
+  padding: 8px 12px;
+  color: var(--white);
+  font-size: 0.77rem;
+  outline: none;
+  font-family: var(--font);
+  transition: border-color 0.18s;
+  resize: none;
+  height: 36px;
+  line-height: 1.4;
+}
+#aria-input:focus { border-color: rgba(79,114,255,0.38); background: rgba(79,114,255,0.04); }
+#aria-input::placeholder { color: var(--w20); }
+#aria-send {
+  width: 34px; height: 34px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #3f5eff, #7c3aed);
+  border: none; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: opacity 0.18s, transform 0.18s;
+  flex-shrink: 0;
+}
+#aria-send:hover { opacity: 0.85; transform: scale(1.05); }
+#aria-send:disabled { opacity: 0.4; cursor: not-allowed; transform: none; }
+#aria-send svg { width: 14px; height: 14px; fill: white; }
+
+/* Powered by footer */
+#aria-footer {
+  padding: 5px 14px 8px;
+  text-align: center;
+  font-size: 0.58rem;
+  color: var(--w20);
+  border-top: 1px solid rgba(79,114,255,0.06);
+  flex-shrink: 0;
+}
+#aria-footer span { color: var(--blue2); }
+
+/* Mobile adjustment */
+@media (max-width: 480px) {
+  #aria-widget { bottom: 18px; right: 16px; }
+  #aria-window { width: calc(100vw - 32px); }
+}
+</style>
+
+<!-- ── ARIA Widget HTML ── -->
+<div id="aria-widget">
+  <!-- Greeting bubble -->
+  <div id="aria-greeting" onclick="ariaOpen()">
+    <strong>👋 Hi! I'm ARIA</strong><br>
+    Your AI assistant from AIIS. Ask me anything about our solutions!
+  </div>
+
+  <!-- Chat window -->
+  <div id="aria-window">
+    <!-- Header -->
+    <div id="aria-header">
+      <div class="aria-av">
+        AR
+        <div class="aria-av-dot"></div>
+      </div>
+      <div class="aria-header-info">
+        <div class="aria-header-name">ARIA</div>
+        <div class="aria-header-status">
+          <div class="aria-header-status-dot"></div>
+          AI Lead Agent · AIIS
+        </div>
+      </div>
+      <button id="aria-clear-btn" onclick="ariaClear()" title="Clear chat">↺ Clear</button>
+    </div>
+
+    <!-- Messages -->
+    <div id="aria-messages"></div>
+
+    <!-- Quick replies -->
+    <div id="aria-quick-replies">
+      <button class="aria-qr" onclick="ariaQuickSend('What services do you offer?')">Our services</button>
+      <button class="aria-qr" onclick="ariaQuickSend('How much does it cost?')">Pricing</button>
+      <button class="aria-qr" onclick="ariaQuickSend('How fast can you deploy?')">Deployment time</button>
+      <button class="aria-qr" onclick="ariaQuickSend('What industries do you serve?')">Industries</button>
+    </div>
+
+    <!-- Input -->
+    <div id="aria-input-area">
+      <input id="aria-input" placeholder="Ask me anything…" onkeydown="if(event.key==='Enter' && !event.shiftKey){event.preventDefault();ariaSend();}">
+      <button id="aria-send" onclick="ariaSend()">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M22 2L11 13M22 2L15 22l-4-9-9-4 20-7z"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Footer -->
+    <div id="aria-footer">Powered by <span>AIIS</span> · Gemini AI · <span>aiis.ai</span></div>
+  </div>
+
+  <!-- Launcher button -->
+  <button id="aria-launcher" onclick="ariaToggle()" aria-label="Open AIIS chat assistant">
+    <div id="aria-notif"></div>
+    <!-- Open icon: chat bubble -->
+    <svg class="aria-icon-open" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10z" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="9" cy="10" r="1" fill="white"/>
+      <circle cx="12" cy="10" r="1" fill="white"/>
+      <circle cx="15" cy="10" r="1" fill="white"/>
+    </svg>
+    <!-- Close icon: X -->
+    <svg class="aria-icon-close" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M18 6L6 18M6 6l12 12" stroke="white" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+  </button>
+</div>
+
+<script>
+/* ════════════════════════════════════════
+   ARIA — AIIS LEAD AGENT
+   ↓ PASTE YOUR N8N WEBHOOK URL BELOW ↓
+════════════════════════════════════════ */
+const ARIA_WEBHOOK_URL = 'YOUR_N8N_WEBHOOK_URL_HERE';
+
+/* ─── State ─── */
+let ariaHistory = [];
+let ariaIsOpen = false;
+let ariaIsTyping = false;
+let ariaGreetingSent = false;
+
+/* ─── Toggle / Open / Close ─── */
+function ariaToggle() {
+  ariaIsOpen ? ariaClose() : ariaOpen();
+}
+function ariaOpen() {
+  ariaIsOpen = true;
+  document.getElementById('aria-widget').classList.add('open');
+  if (!ariaGreetingSent) {
+    ariaGreetingSent = true;
+    setTimeout(() => {
+      ariaAddMsg("Hi! I'm **ARIA**, the AI assistant for AIIS. I'm here to help you understand how our AI automation solutions can transform your business.\n\nWhat would you like to know?", 'ai');
+      ariaShowQuickReplies();
+    }, 250);
+  }
+  setTimeout(() => document.getElementById('aria-input').focus(), 350);
+}
+function ariaClose() {
+  ariaIsOpen = false;
+  document.getElementById('aria-widget').classList.remove('open');
+}
+function ariaClear() {
+  ariaHistory = [];
+  ariaGreetingSent = false;
+  document.getElementById('aria-messages').innerHTML = '';
+  ariaOpen();
+}
+
+/* ─── Add message bubble ─── */
+function ariaAddMsg(text, role) {
+  const msgs = document.getElementById('aria-messages');
+  const row = document.createElement('div');
+  row.className = 'aria-msg ' + role;
+
+  const av = document.createElement('div');
+  av.className = 'aria-msg-av';
+  av.textContent = role === 'ai' ? 'AR' : 'U';
+
+  const bub = document.createElement('div');
+  bub.className = 'aria-bubble';
+
+  // Simple markdown: **bold**
+  const formatted = text
+    .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+    .replace(/\n/g, '<br>');
+  bub.innerHTML = formatted;
+
+  if (role === 'ai') { row.appendChild(av); row.appendChild(bub); }
+  else { row.appendChild(bub); row.appendChild(av); }
+
+  msgs.appendChild(row);
+  msgs.scrollTop = msgs.scrollHeight;
+
+  if (role === 'ai') {
+    ariaHistory.push({ role: 'model', text });
+  } else {
+    ariaHistory.push({ role: 'user', text });
+  }
+}
+
+/* ─── Typing indicator ─── */
+function ariaShowTyping() {
+  const msgs = document.getElementById('aria-messages');
+  const row = document.createElement('div');
+  row.className = 'aria-msg ai'; row.id = 'aria-typing-row';
+  const av = document.createElement('div'); av.className = 'aria-msg-av';
+  av.style.background = 'linear-gradient(135deg,#3f5eff,#7c3aed)'; av.textContent = 'AR';
+  const ind = document.createElement('div'); ind.className = 'aria-typing';
+  ind.innerHTML = '<span></span><span></span><span></span>';
+  row.appendChild(av); row.appendChild(ind);
+  msgs.appendChild(row); msgs.scrollTop = msgs.scrollHeight;
+}
+function ariaRemoveTyping() {
+  const t = document.getElementById('aria-typing-row');
+  if (t) t.remove();
+}
+
+/* ─── Quick replies ─── */
+function ariaShowQuickReplies() {
+  document.getElementById('aria-quick-replies').style.display = 'flex';
+}
+function ariaHideQuickReplies() {
+  document.getElementById('aria-quick-replies').style.display = 'none';
+}
+function ariaQuickSend(text) {
+  ariaHideQuickReplies();
+  ariaProcessSend(text);
+}
+
+/* ─── Send message ─── */
+function ariaSend() {
+  const input = document.getElementById('aria-input');
+  const text = input.value.trim();
+  if (!text || ariaIsTyping) return;
+  input.value = '';
+  ariaHideQuickReplies();
+  ariaProcessSend(text);
+}
+
+function ariaProcessSend(text) {
+  ariaAddMsg(text, 'user');
+  ariaIsTyping = true;
+  document.getElementById('aria-send').disabled = true;
+  ariaShowTyping();
+
+  // Build history for context (last 10 messages)
+  const historyToSend = ariaHistory.slice(-10).slice(0, -1); // exclude the message we just added
+
+  // Call n8n webhook
+  fetch(ARIA_WEBHOOK_URL, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      message: text,
+      history: historyToSend,
+      lang: document.documentElement.lang || 'en',
+      source: 'aiis-website-chatbot'
+    })
+  })
+  .then(r => {
+    if (!r.ok) throw new Error('Network error ' + r.status);
+    return r.json();
+  })
+  .then(data => {
+    ariaRemoveTyping();
+    const reply = data.reply || data.text || data.message || "I'm having a moment — please try again or reach us on WhatsApp at +966 551 070 892.";
+    ariaAddMsg(reply, 'ai');
+    // Show follow-up quick replies after first real exchange
+    if (ariaHistory.length === 4) {
+      setTimeout(() => {
+        document.getElementById('aria-quick-replies').innerHTML = `
+          <button class="aria-qr" onclick="ariaQuickSend('Tell me about WhatsApp automation')">WhatsApp AI</button>
+          <button class="aria-qr" onclick="ariaQuickSend('How do I book a consultation?')">Book a call</button>
+          <button class="aria-qr" onclick="ariaQuickSend('What results can I expect?')">Results</button>
+        `;
+        ariaShowQuickReplies();
+      }, 300);
+    }
+  })
+  .catch(err => {
+    ariaRemoveTyping();
+    console.error('ARIA fetch error:', err);
+    // Graceful fallback — built-in answers when webhook isn't available
+    const fallback = ariaFallbackReply(text);
+    ariaAddMsg(fallback, 'ai');
+  })
+  .finally(() => {
+    ariaIsTyping = false;
+    document.getElementById('aria-send').disabled = false;
+    document.getElementById('aria-input').focus();
+  });
+}
+
+/* ─── Fallback replies (when n8n not connected yet) ─── */
+function ariaFallbackReply(text) {
+  const lo = text.toLowerCase();
+  if (lo.includes('price') || lo.includes('cost') || lo.includes('how much') || lo.includes('fiyat') || lo.includes('سعر'))
+    return "Pricing is tailored to each project based on agent type, channels, and monthly volume. The best next step is a **free consultation** — click 'Book a Free Consultation' at the top of the page!";
+  if (lo.includes('whatsapp'))
+    return "Our **WhatsApp AI Agent** connects to your existing business number via the official API. It handles bookings, answers queries, processes orders, and follows up — 24/7, without any staff involvement.";
+  if (lo.includes('deploy') || lo.includes('how long') || lo.includes('fast') || lo.includes('quick') || lo.includes('days'))
+    return "Most AI agents go **live within 3–5 business days**. We handle everything: development, training on your data, testing, and deployment. You just provide your business information.";
+  if (lo.includes('industry') || lo.includes('restaurant') || lo.includes('hotel') || lo.includes('clinic') || lo.includes('real estate'))
+    return "We serve **restaurants, hotels, clinics, real estate, e-commerce, gyms, automotive, and education** — among others. If your business has customers or repetitive workflows, we can automate them.";
+  if (lo.includes('language') || lo.includes('arabic') || lo.includes('turkish') || lo.includes('عربي') || lo.includes('türkçe'))
+    return "Our agents support **Turkish, English, Arabic, Russian**, and more. The language is auto-detected from what the customer types — no manual switching needed.";
+  if (lo.includes('book') || lo.includes('consult') || lo.includes('demo') || lo.includes('call'))
+    return "You can **book a free consultation** using the button at the top of this page, or **schedule a demo** to see your custom AI agent live. No commitment required!";
+  if (lo.includes('contact') || lo.includes('reach') || lo.includes('whatsapp number') || lo.includes('email'))
+    return "You can reach the AIIS team at **contact@aiis.ai** or on WhatsApp at **+966 551 070 892**. We typically respond within a few hours.";
+  if (lo.includes('gemini') || lo.includes('model') || lo.includes('technology') || lo.includes('powered'))
+    return "AIIS solutions are powered by **Google Gemini Pro models**, giving them state-of-the-art conversational ability, multilingual support, and deep reasoning for business tasks.";
+  if (lo.includes('integrat') || lo.includes('crm') || lo.includes('hubspot') || lo.includes('salesforce'))
+    return "We integrate with **Salesforce, HubSpot, Zoho CRM**, Google Calendar, Stripe, Mailchimp, Slack, and most systems with an API. No need to replace your existing stack.";
+  if (lo.includes('roi') || lo.includes('saving') || lo.includes('return') || lo.includes('benefit'))
+    return "Businesses typically see **70%+ reduction in support costs**, 35-40% more leads converted, and under 3-second response times. Use the ROI calculator on this page for your specific numbers!";
+  return "Great question! For the most accurate answer, I'd recommend speaking with our team directly. You can **book a free strategy session** at the top of this page — it's 100% free and tailored to your business.";
+}
+
+/* ─── Auto-open greeting after delay on desktop ─── */
+if (window.innerWidth > 768) {
+  setTimeout(() => {
+    const greet = document.getElementById('aria-greeting');
+    if (greet && !ariaIsOpen) greet.style.display = 'block';
+  }, 4000);
+}
+</script>
 </body>
 </html>
