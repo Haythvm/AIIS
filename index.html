@@ -3440,13 +3440,14 @@ updateROI();
    ARIA — AIIS LEAD AGENT
    ↓ PASTE YOUR N8N WEBHOOK URL BELOW ↓
 ════════════════════════════════════════ */
-const ARIA_WEBHOOK_URL = 'http://localhost:5678/webhook/website-chat';
+const ARIA_WEBHOOK_URL = 'http://localhost:5678/webhook/YOUR-WEBHOOK-ID';
 
 /* ─── State ─── */
 let ariaHistory = [];
 let ariaIsOpen = false;
 let ariaIsTyping = false;
 let ariaGreetingSent = false;
+   const ariaSessionId = 'aria_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
 
 /* ─── Toggle / Open / Close ─── */
 function ariaToggle() {
@@ -3561,6 +3562,7 @@ function ariaProcessSend(text) {
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
       message: text,
+       sessionId: ariaSessionId,
       history: historyToSend,
       lang: document.documentElement.lang || 'en',
       source: 'aiis-website-chatbot'
