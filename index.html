@@ -3438,16 +3438,15 @@ updateROI();
 <script>
 /* ════════════════════════════════════════
    ARIA — AIIS LEAD AGENT
-   ↓ PASTE YOUR N8N WEBHOOK URL BELOW ↓
 ════════════════════════════════════════ */
-const ARIA_WEBHOOK_URL = 'http://localhost:5678/webhook/YOUR-WEBHOOK-ID';
+const ARIA_WEBHOOK_URL = 'http://localhost:5678/webhook/website-chat';
 
 /* ─── State ─── */
 let ariaHistory = [];
 let ariaIsOpen = false;
 let ariaIsTyping = false;
 let ariaGreetingSent = false;
-   const ariaSessionId = 'aria_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+const ariaSessionId = 'aria_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
 
 /* ─── Toggle / Open / Close ─── */
 function ariaToggle() {
@@ -3489,7 +3488,6 @@ function ariaAddMsg(text, role) {
   const bub = document.createElement('div');
   bub.className = 'aria-bubble';
 
-  // Simple markdown: **bold**
   const formatted = text
     .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
     .replace(/\n/g, '<br>');
@@ -3553,30 +3551,47 @@ function ariaProcessSend(text) {
   document.getElementById('aria-send').disabled = true;
   ariaShowTyping();
 
-  // Build history for context (last 10 messages)
-  const historyToSend = ariaHistory.slice(-10).slice(0, -1); // exclude the message we just added
+  const historyToSend = ariaHistory.slice(-10).slice(0, -1);
 
-  // Call n8n webhook
+  /* ── Timeout controller: bail after 25 seconds ── */
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), 25000);
+
   fetch(ARIA_WEBHOOK_URL, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
+    signal: controller.signal,
     body: JSON.stringify({
       message: text,
-       sessionId: ariaSessionId,
+      sessionId: ariaSessionId,
       history: historyToSend,
       lang: document.documentElement.lang || 'en',
       source: 'aiis-website-chatbot'
     })
   })
   .then(r => {
-    if (!r.ok) throw new Error('Network error ' + r.status);
+    clearTimeout(timeoutId);
+    if (!r.ok) throw new Error('HTTP ' + r.status);
     return r.json();
   })
   .then(data => {
     ariaRemoveTyping();
-    const reply = data.reply || data.text || data.message || "I'm having a moment — please try again or reach us on WhatsApp at +966 551 070 892.";
-    ariaAddMsg(reply, 'ai');
-    // Show follow-up quick replies after first real exchange
+    /* ── Accept any of these keys from n8n ── */
+    const reply =
+      data.reply ||
+      data.text  ||
+      data.output ||
+      data.message ||
+      (data.content && Array.isArray(data.content) && data.content[0] && data.content[0].text) ||
+      null;
+
+    if (reply) {
+      ariaAddMsg(reply, 'ai');
+    } else {
+      console.warn('ARIA: unexpected response shape', data);
+      ariaAddMsg(ariaFallbackReply(text), 'ai');
+    }
+
     if (ariaHistory.length === 4) {
       setTimeout(() => {
         document.getElementById('aria-quick-replies').innerHTML = `
@@ -3589,11 +3604,10 @@ function ariaProcessSend(text) {
     }
   })
   .catch(err => {
+    clearTimeout(timeoutId);
     ariaRemoveTyping();
     console.error('ARIA fetch error:', err);
-    // Graceful fallback — built-in answers when webhook isn't available
-    const fallback = ariaFallbackReply(text);
-    ariaAddMsg(fallback, 'ai');
+    ariaAddMsg(ariaFallbackReply(text), 'ai');
   })
   .finally(() => {
     ariaIsTyping = false;
@@ -3602,7 +3616,7 @@ function ariaProcessSend(text) {
   });
 }
 
-/* ─── Fallback replies (when n8n not connected yet) ─── */
+/* ─── Fallback replies (offline / error) ─── */
 function ariaFallbackReply(text) {
   const lo = text.toLowerCase();
   if (lo.includes('price') || lo.includes('cost') || lo.includes('how much') || lo.includes('fiyat') || lo.includes('سعر'))
