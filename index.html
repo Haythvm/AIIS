@@ -1,11 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+﻿<!DOCTYPE html>
+<html lang="en"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AIIS — AI Integration Solutions </title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 <style>
 /* ═══════════════════════════════════════════
@@ -316,8 +315,8 @@ section { padding:6rem 0; position:relative; }
   margin-bottom:.85rem; font-family:var(--font);
 }
 .section-title {
-  font-size:clamp(1.75rem, 3.5vw, 2.75rem);
-  font-weight:700; line-height:1.08; letter-spacing:-.04em;
+  font-size:2.75rem;
+  font-weight:700; line-height:1.08; letter-spacing:0;
   margin-bottom:.85rem; font-family:var(--font);
 }
 .section-sub {
@@ -344,7 +343,7 @@ hr.glow-line {
   background:linear-gradient(135deg,#3f5eff,#7c3aed);
   color:#fff; padding:.72rem 1.6rem; border-radius:7px;
   font-size:.84rem; font-weight:500; font-family:var(--font);
-  letter-spacing:-.01em; border:none;
+  letter-spacing:0; border:none;
   transition:transform .2s var(--ease), box-shadow .2s var(--ease), opacity .16s;
   cursor:pointer; position:relative; overflow:hidden;
 }
@@ -361,7 +360,7 @@ hr.glow-line {
   display:inline-flex; align-items:center; gap:7px;
   background:transparent; color:var(--w70); padding:.72rem 1.5rem;
   border-radius:7px; font-size:.84rem; font-weight:400;
-  font-family:var(--font); letter-spacing:-.01em;
+  font-family:var(--font); letter-spacing:0;
   border:1px solid var(--border2); transition:all var(--tr); cursor:pointer;
 }
 .btn-secondary:hover { border-color:var(--border3); color:var(--white); background:rgba(79,114,255,.06); }
@@ -402,7 +401,7 @@ nav.scrolled { border-color:var(--border2); background:rgba(6,6,8,.90); }
 .nav-logo:hover { opacity:.8; }
 .nav-wordmark {
   font-size:1.2rem; font-weight:800;
-  letter-spacing:-.07em; line-height:1;
+  letter-spacing:0; line-height:1;
   background:linear-gradient(135deg,#7ba8ff,#b07aff);
   -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
 }
@@ -414,7 +413,7 @@ nav.scrolled { border-color:var(--border2); background:rgba(6,6,8,.90); }
 .nav-links { display:flex; align-items:center; gap:1.8rem; }
 .nav-links > a {
   font-size:.8rem; font-weight:400; color:var(--w70);
-  letter-spacing:-.01em; transition:color .18s; position:relative;
+  letter-spacing:0; transition:color .18s; position:relative;
 }
 .nav-links > a::after {
   content:''; position:absolute; bottom:-2px; left:0; right:0;
@@ -496,9 +495,9 @@ nav.scrolled { border-color:var(--border2); background:rgba(6,6,8,.90); }
    HERO
 ═══════════════════════════════════════════ */
 .hero {
-  min-height:100vh; display:flex; flex-direction:column;
+  min-height: min(860px, 100svh); display:flex; flex-direction:column;
   align-items:center; justify-content:center; text-align:center;
-  padding:100px 2rem 5rem; position:relative; overflow:hidden;
+  padding:128px 2rem 6.5rem; position:relative; overflow:hidden;
 }
 .hero-grid-overlay {
   position:absolute; inset:0; pointer-events:none;
@@ -509,50 +508,13 @@ nav.scrolled { border-color:var(--border2); background:rgba(6,6,8,.90); }
   mask-image:radial-gradient(ellipse 70% 50% at 50% 50%, black 20%, transparent 75%);
   opacity:.3;
 }
-.hero-badge {
-  display:inline-flex; align-items:center; gap:7px;
-  background:rgba(79,114,255,.07); border:1px solid rgba(79,114,255,.22);
-  padding:5px 13px; border-radius:999px;
-  font-size:.65rem; font-weight:600;
-  color:var(--blue2); letter-spacing:.12em; text-transform:uppercase;
-  margin-bottom:1.6rem;
-  animation:heroIn .6s var(--ease) both;
-}
-.badge-dot {
-  width:5px; height:5px; border-radius:50%;
-  background:var(--blue2); animation:blink 1.8s ease-in-out infinite;
-}
 @keyframes blink { 0%,100%{opacity:1;} 50%{opacity:.15;} }
 @keyframes heroIn { from{opacity:0;transform:translateY(14px);} to{opacity:1;transform:translateY(0);} }
-
-.hero-title {
-  font-size:clamp(2.6rem, 6.5vw, 5.2rem);
-  font-weight:800; line-height:1.02; letter-spacing:-.055em;
-  animation:heroIn .7s .07s var(--ease) both;
-  max-width:820px;
-}
-
-.hero-powered {
-  display:inline-flex; align-items:center; gap:5px;
-  background:rgba(79,114,255,.06); border:1px solid rgba(79,114,255,.15);
-  padding:3px 10px; border-radius:999px;
-  font-size:.6rem; font-weight:500; color:var(--w40);
-  letter-spacing:.08em; text-transform:uppercase;
-  margin-top:.9rem;
-  animation:heroIn .6s .16s var(--ease) both;
-}
+.hero-title { font-size:5rem; font-weight:800; line-height:1.04; letter-spacing:0; animation:heroIn .7s .05s var(--ease) both; max-width:880px; }
+.hero-powered { display:inline-flex; align-items:center; gap:5px; background:rgba(79,114,255,.06); border:1px solid rgba(79,114,255,.15); padding:4px 11px; border-radius:999px; font-size:.6rem; font-weight:500; color:var(--w40); letter-spacing:.08em; text-transform:uppercase; margin-top:1.1rem; animation:heroIn .6s .14s var(--ease) both; }
 .hero-powered span { color:var(--blue2); font-weight:600; }
-
-.hero-sub {
-  max-width:510px; font-size:.96rem; color:var(--w70);
-  margin:1.3rem auto 2.2rem; font-weight:400; line-height:1.76;
-  letter-spacing:-.01em;
-  animation:heroIn .7s .15s var(--ease) both;
-}
-.hero-actions {
-  display:flex; gap:.75rem; justify-content:center; flex-wrap:wrap;
-  animation:heroIn .7s .22s var(--ease) both;
-}
+.hero-sub { max-width:600px; font-size:1rem; color:var(--w70); margin:1.45rem auto 2.35rem; font-weight:400; line-height:1.78; letter-spacing:0; animation:heroIn .7s .16s var(--ease) both; }
+.hero-actions { display:flex; gap:.8rem; justify-content:center; flex-wrap:wrap; animation:heroIn .7s .24s var(--ease) both; }
 
 /* ─── Integrate AI Section (replaces dashboard) ─── */
 .integrate-section {
@@ -567,8 +529,8 @@ nav.scrolled { border-color:var(--border2); background:rgba(6,6,8,.90); }
 }
 .integrate-content .section-label { display:block; }
 .integrate-title {
-  font-size:clamp(1.7rem, 3vw, 2.4rem);
-  font-weight:700; letter-spacing:-.04em; line-height:1.1;
+  font-size:2.4rem;
+  font-weight:700; letter-spacing:0; line-height:1.1;
   margin-bottom:1.2rem;
 }
 .integrate-desc {
@@ -616,7 +578,7 @@ nav.scrolled { border-color:var(--border2); background:rgba(6,6,8,.90); }
   display:flex; align-items:center; justify-content:center;
   font-size:1rem; flex-shrink:0;
 }
-.ai-card-title { font-size:.85rem; font-weight:600; letter-spacing:-.015em; }
+.ai-card-title { font-size:.85rem; font-weight:600; letter-spacing:0; }
 .ai-card-sub { font-size:.72rem; color:var(--w40); margin-top:1px; }
 .ai-card-badge {
   margin-left:auto; font-size:.58rem; padding:2px 7px;
@@ -638,8 +600,8 @@ nav.scrolled { border-color:var(--border2); background:rgba(6,6,8,.90); }
 }
 .stat-item { padding:.4rem; }
 .stat-num {
-  font-size:clamp(1.8rem, 3vw, 2.5rem);
-  font-weight:800; letter-spacing:-.055em; line-height:1;
+  font-size:2.5rem;
+  font-weight:800; letter-spacing:0; line-height:1;
   background:linear-gradient(135deg,#6ba3ff,#b07aff);
   -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
 }
@@ -665,7 +627,7 @@ nav.scrolled { border-color:var(--border2); background:rgba(6,6,8,.90); }
 .sol-card:hover { border-color:var(--border3); transform:translateY(-2px); box-shadow:0 12px 40px rgba(0,0,0,.4); }
 .sol-card:hover::before { opacity:1; }
 .sol-card-accent { width:2px; height:28px; border-radius:2px; background:linear-gradient(to bottom,#3f5eff,#7c3aed); margin-bottom:1rem; }
-.sol-title { font-size:.9rem; font-weight:600; letter-spacing:-.02em; margin-bottom:.4rem; }
+.sol-title { font-size:.9rem; font-weight:600; letter-spacing:0; margin-bottom:.4rem; }
 .sol-desc { font-size:.78rem; color:var(--w70); line-height:1.65; font-weight:400; }
 .sol-tags { display:flex; flex-wrap:wrap; gap:4px; margin-top:.85rem; }
 .sol-tag {
@@ -693,7 +655,7 @@ nav.scrolled { border-color:var(--border2); background:rgba(6,6,8,.90); }
 }
 .tl-step:hover .tl-num { border-color:var(--border3); background:rgba(79,114,255,.1); }
 .tl-body { padding-top:.5rem; }
-.tl-title { font-size:.9rem; font-weight:600; letter-spacing:-.02em; margin-bottom:.3rem; }
+.tl-title { font-size:.9rem; font-weight:600; letter-spacing:0; margin-bottom:.3rem; }
 .tl-desc { font-size:.8rem; color:var(--w70); line-height:1.65; font-weight:400; }
 
 /* ═══════════════════════════════════════════
@@ -717,83 +679,8 @@ nav.scrolled { border-color:var(--border2); background:rgba(6,6,8,.90); }
 .ind-card:hover { border-color:var(--border2); transform:translateY(-2px); }
 .ind-card:hover::after { transform:scaleX(1); }
 .ind-icon { font-size:1.3rem; margin-bottom:.5rem; }
-.ind-name { font-size:.78rem; font-weight:600; letter-spacing:-.015em; }
+.ind-name { font-size:.78rem; font-weight:600; letter-spacing:0; }
 .ind-example { font-size:.67rem; color:var(--w40); margin-top:.25rem; line-height:1.4; }
-
-/* ═══════════════════════════════════════════
-   SECTION 6 — DEMO (LIVE PREVIEW)
-═══════════════════════════════════════════ */
-.demo-shell {
-  background:var(--bg2); border:1px solid var(--border2);
-  border-radius:var(--radius3); overflow:hidden; margin-top:2.8rem;
-  box-shadow:0 20px 70px rgba(0,0,0,.5);
-}
-.demo-tabs-bar {
-  display:flex; padding:0 1.4rem; border-bottom:1px solid var(--border);
-  background:rgba(255,255,255,.012); overflow-x:auto; gap:0;
-}
-.demo-tab {
-  padding:.8rem 1rem; font-size:.74rem; cursor:pointer;
-  color:var(--w40); border-bottom:2px solid transparent;
-  transition:all .2s; font-weight:400;
-  background:none; border-left:none; border-right:none; border-top:none;
-  white-space:nowrap; font-family:var(--font); letter-spacing:-.01em;
-}
-.demo-tab.active { color:var(--blue2); border-bottom-color:var(--blue2); }
-.demo-tab:hover { color:var(--w70); }
-.demo-body { display:grid; grid-template-columns:1fr 360px; }
-.demo-info { padding:1.8rem; border-right:1px solid var(--border); }
-.demo-info-title { font-size:1.1rem; font-weight:700; letter-spacing:-.03em; margin-bottom:.45rem; }
-.demo-info-desc { font-size:.82rem; color:var(--w70); line-height:1.7; font-weight:400; margin-bottom:1.3rem; }
-.demo-features { display:flex; flex-direction:column; gap:.5rem; margin-bottom:1.6rem; }
-.demo-feature {
-  display:flex; align-items:center; gap:.65rem;
-  font-size:.79rem; color:var(--w70);
-}
-.demo-check {
-  width:15px; height:15px; border-radius:50%;
-  background:rgba(74,222,128,.1); border:1px solid rgba(74,222,128,.28);
-  display:flex; align-items:center; justify-content:center; flex-shrink:0;
-}
-.demo-check::after { content:'✓'; font-size:.52rem; color:#4ade80; }
-.demo-chat-panel { display:flex; flex-direction:column; background:var(--bg3); }
-.demo-chat-header {
-  padding:11px 15px; border-bottom:1px solid var(--border);
-  display:flex; justify-content:space-between; align-items:center;
-}
-.demo-chat-title { font-size:.75rem; font-weight:600; }
-.demo-chat-live { display:flex; align-items:center; gap:5px; font-size:.6rem; color:#4ade80; }
-.demo-chat-live-dot { width:5px; height:5px; border-radius:50%; background:#4ade80; animation:blink 1.4s ease-in-out infinite; }
-.demo-messages { flex:1; padding:13px 14px; display:flex; flex-direction:column; gap:8px; min-height:240px; max-height:270px; overflow-y:auto; }
-.demo-msg { display:flex; gap:7px; align-items:flex-start; }
-.demo-msg.user { flex-direction:row-reverse; }
-.demo-av { width:22px; height:22px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:.58rem; font-weight:700; flex-shrink:0; }
-.demo-av.ai { background:linear-gradient(135deg,#3f5eff,#7c3aed); }
-.demo-av.u { background:rgba(255,255,255,.08); }
-.demo-bubble { padding:7px 10px; border-radius:8px; font-size:.71rem; max-width:80%; line-height:1.52; }
-.demo-msg.ai .demo-bubble { background:rgba(79,114,255,.1); border:1px solid rgba(79,114,255,.18); color:var(--w70); }
-.demo-msg.user .demo-bubble { background:rgba(124,58,237,.12); border:1px solid rgba(124,58,237,.22); color:var(--white); }
-.typing-indicator { display:flex; gap:3px; padding:8px 10px; background:rgba(79,114,255,.08); border-radius:8px; width:44px; }
-.typing-indicator span { width:4px; height:4px; border-radius:50%; background:var(--blue2); animation:bounce .8s ease infinite; }
-.typing-indicator span:nth-child(2) { animation-delay:.14s; }
-.typing-indicator span:nth-child(3) { animation-delay:.28s; }
-@keyframes bounce { 0%,100%{transform:translateY(0);} 40%{transform:translateY(-4px);} }
-.demo-input-area { padding:9px 13px; border-top:1px solid var(--border); display:flex; gap:7px; }
-.demo-text-input {
-  flex:1; background:rgba(255,255,255,.04); border:1px solid var(--border);
-  border-radius:6px; padding:.5rem .85rem; color:var(--white); font-size:.75rem;
-  outline:none; font-family:var(--font);
-  transition:border-color .18s;
-}
-.demo-text-input::placeholder { color:var(--w40); }
-.demo-text-input:focus { border-color:var(--border3); }
-.demo-send-btn {
-  background:linear-gradient(135deg,#3f5eff,#7c3aed); border:none;
-  color:#fff; padding:.5rem 1rem; border-radius:6px;
-  font-size:.73rem; font-weight:500; cursor:pointer;
-  transition:opacity .18s; font-family:var(--font);
-}
-.demo-send-btn:hover { opacity:.82; }
 
 /* ═══════════════════════════════════════════
    SECTION 7 — ROI CALCULATOR (enhanced)
@@ -812,7 +699,7 @@ nav.scrolled { border-color:var(--border2); background:rgba(6,6,8,.90); }
   display:flex; align-items:center; justify-content:space-between;
   margin-bottom:2rem; flex-wrap:wrap; gap:1rem;
 }
-.roi-header-title { font-size:1rem; font-weight:700; letter-spacing:-.02em; }
+.roi-header-title { font-size:1rem; font-weight:700; letter-spacing:0; }
 .roi-header-sub { font-size:.75rem; color:var(--w40); margin-top:.2rem; }
 
 /* Currency dropdown */
@@ -867,7 +754,7 @@ nav.scrolled { border-color:var(--border2); background:rgba(6,6,8,.90); }
 }
 
 .roi-results { display:flex; flex-direction:column; gap:.7rem; }
-.roi-results-title { font-size:.8rem; font-weight:600; color:var(--w70); letter-spacing:-.01em; margin-bottom:.3rem; }
+.roi-results-title { font-size:.8rem; font-weight:600; color:var(--w70); letter-spacing:0; margin-bottom:.3rem; }
 
 .roi-card {
   background:var(--bg3); border:1px solid var(--border);
@@ -878,7 +765,7 @@ nav.scrolled { border-color:var(--border2); background:rgba(6,6,8,.90); }
 .roi-card:hover { border-color:var(--border2); }
 .roi-card-glow { position:absolute; top:0; left:0; right:0; height:2px; background:linear-gradient(to right,var(--blue),var(--violet)); }
 .roi-card-num {
-  font-size:1.8rem; font-weight:800; letter-spacing:-.05em;
+  font-size:1.8rem; font-weight:800; letter-spacing:0;
   background:linear-gradient(135deg,#6ba3ff,#b07aff);
   -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
   line-height:1;
@@ -894,7 +781,7 @@ nav.scrolled { border-color:var(--border2); background:rgba(6,6,8,.90); }
 .roi-total-card-glow { position:absolute; top:0; left:0; right:0; height:2px; background:linear-gradient(to right,#3f5eff,#7c3aed); }
 .roi-total-label { font-size:.7rem; color:var(--blue2); font-weight:500; letter-spacing:.04em; text-transform:uppercase; margin-bottom:.3rem; }
 .roi-total-num {
-  font-size:2.2rem; font-weight:800; letter-spacing:-.06em;
+  font-size:2.2rem; font-weight:800; letter-spacing:0;
   background:linear-gradient(135deg,#7ba8ff,#c084fc);
   -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
   line-height:1;
@@ -914,7 +801,7 @@ nav.scrolled { border-color:var(--border2); background:rgba(6,6,8,.90); }
   cursor:default; transition:all .22s var(--ease);
 }
 .int-card:hover { border-color:var(--border2); transform:translateY(-2px); background:rgba(79,114,255,.03); }
-.int-name { font-size:.86rem; font-weight:600; letter-spacing:-.02em; margin-bottom:.25rem; }
+.int-name { font-size:.86rem; font-weight:600; letter-spacing:0; margin-bottom:.25rem; }
 .int-type { font-size:.67rem; color:var(--w40); }
 
 /* ═══════════════════════════════════════════
@@ -951,7 +838,7 @@ nav.scrolled { border-color:var(--border2); background:rgba(6,6,8,.90); }
   display:flex; align-items:center; justify-content:center;
   font-size:.65rem; font-weight:700; flex-shrink:0;
 }
-.test-name { font-size:.8rem; font-weight:600; letter-spacing:-.015em; }
+.test-name { font-size:.8rem; font-weight:600; letter-spacing:0; }
 .test-role { font-size:.68rem; color:var(--w40); }
 
 /* ═══════════════════════════════════════════
@@ -966,7 +853,7 @@ nav.scrolled { border-color:var(--border2); background:rgba(6,6,8,.90); }
 .faq-q {
   width:100%; background:none; border:none; color:var(--white);
   font-family:var(--font); font-size:.84rem; font-weight:400;
-  letter-spacing:-.01em; padding:1rem 1.3rem; text-align:left;
+  letter-spacing:0; padding:1rem 1.3rem; text-align:left;
   cursor:pointer; display:flex; justify-content:space-between; align-items:center;
   transition:background .18s;
 }
@@ -990,8 +877,8 @@ nav.scrolled { border-color:var(--border2); background:rgba(6,6,8,.90); }
              var(--bg2);
 }
 .final-cta-title {
-  font-size:clamp(2rem, 4.5vw, 3.4rem);
-  font-weight:800; letter-spacing:-.05em; margin-bottom:.9rem;
+  font-size:3.4rem;
+  font-weight:800; letter-spacing:0; margin-bottom:.9rem;
 }
 .final-cta-sub {
   color:var(--w70); font-size:.95rem; margin:0 auto 2.2rem;
@@ -1012,7 +899,7 @@ footer {
   gap:2.5rem; margin-bottom:2.2rem;
 }
 .footer-brand {
-  font-size:1.2rem; font-weight:800; letter-spacing:-.07em;
+  font-size:1.2rem; font-weight:800; letter-spacing:0;
   background:linear-gradient(135deg,#7ba8ff,#b07aff);
   -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
   margin-bottom:.4rem;
@@ -1067,8 +954,8 @@ footer {
 .page-back::before { content:'←'; }
 .page-back:hover { color:var(--white); }
 .page-title {
-  font-size:clamp(1.7rem, 3.8vw, 2.6rem);
-  font-weight:800; letter-spacing:-.045em; margin-bottom:.6rem;
+  font-size:2.6rem;
+  font-weight:800; letter-spacing:0; margin-bottom:.6rem;
 }
 .page-sub {
   color:var(--w70); font-size:.9rem; line-height:1.78;
@@ -1106,7 +993,7 @@ footer {
 .pricing-card.featured { border-color:var(--border3); background:rgba(79,114,255,.04); }
 .pricing-name { font-size:.95rem; font-weight:700; margin-bottom:.3rem; }
 .pricing-price {
-  font-size:1.9rem; font-weight:800; letter-spacing:-.04em;
+  font-size:1.9rem; font-weight:800; letter-spacing:0;
   background:linear-gradient(135deg,#6ba3ff,#b07aff);
   -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; line-height:1;
 }
@@ -1131,37 +1018,76 @@ footer {
    RESPONSIVE
 ═══════════════════════════════════════════ */
 @media (max-width: 960px) {
+  .section-title { font-size:2.3rem; }
+  .hero-title { font-size:4.2rem; }
+  .integrate-title { font-size:2.15rem; }
+  .stat-num { font-size:2.15rem; }
+  .final-cta-title { font-size:2.8rem; }
+  .page-title { font-size:2.25rem; }
   .integrate-inner { grid-template-columns:1fr; gap:3rem; }
   .roi-grid { grid-template-columns:1fr; gap:2rem; }
   .footer-main { grid-template-columns:1fr 1fr; }
   .stats-grid { grid-template-columns:repeat(3,1fr); }
-  .demo-body { grid-template-columns:1fr; }
-  .demo-chat-panel { border-left:none; border-top:1px solid var(--border); }
 }
-@media (max-width: 700px) {
+@media (max-width: 860px) {
   .nav-links { display:none; }
   .nav-hamburger { display:flex; }
-  .hero-title { font-size:2.4rem; }
+  .hero { min-height:auto; padding:118px 1.2rem 5rem; }
+  .hero-title { font-size:3.05rem; line-height:1.08; }
+  .hero-sub { font-size:.92rem; margin:1.2rem auto 2rem; }
+  .section-title { font-size:2rem; }
+  .integrate-title { font-size:1.9rem; }
   .stats-grid { grid-template-columns:repeat(2,1fr); }
   .footer-main { grid-template-columns:1fr; }
   .form-grid { grid-template-columns:1fr; }
+  .final-cta-title { font-size:2.2rem; }
+  .page-title { font-size:2rem; }
   section { padding:4rem 0; }
   .integrate-section { padding:3.5rem 0; }
 }
 @media (max-width: 480px) {
+  .hero { padding:108px 1rem 4.5rem; }
+  .hero-title { font-size:2.35rem; }
+  .hero-powered { font-size:.55rem; flex-wrap:wrap; justify-content:center; }
+  .hero-actions, .final-cta-actions { flex-direction:column; align-items:stretch; width:100%; max-width:320px; }
+  .hero-actions .btn-primary, .hero-actions .btn-secondary, .final-cta-actions .btn-primary, .final-cta-actions .btn-secondary { justify-content:center; width:100%; }
   .stats-grid { grid-template-columns:1fr 1fr; }
   .industries-grid { grid-template-columns:repeat(2,1fr); }
+  .section-title { font-size:1.75rem; }
+  .page-container { padding-inline:1rem; }
 }
 
 /* RTL support for Arabic */
-[dir="rtl"] {
-  text-align:right;
-}
+[dir="rtl"] { text-align:right; }
+[dir="rtl"] body { font-family:"Segoe UI", Tahoma, Arial, sans-serif; }
+[dir="rtl"] .text-center, [dir="rtl"] .hero, [dir="rtl"] .final-cta, [dir="rtl"] .form-success { text-align:center; }
+[dir="rtl"] .section-sub, [dir="rtl"] .hero-sub, [dir="rtl"] .final-cta-sub { direction:rtl; }
+[dir="rtl"] .nav-inner { flex-direction:row-reverse; }
+[dir="rtl"] .nav-logo { text-align:right; }
+[dir="rtl"] .nav-links { flex-direction:row-reverse; }
+[dir="rtl"] .nav-right { flex-direction:row-reverse; }
+[dir="rtl"] .lang-current { flex-direction:row-reverse; }
+[dir="rtl"] .lang-menu, [dir="rtl"] .currency-menu { right:auto; left:0; text-align:right; }
+[dir="rtl"] .lang-option, [dir="rtl"] .currency-option { flex-direction:row-reverse; text-align:right; }
+[dir="rtl"] .mobile-menu { text-align:right; }
+[dir="rtl"] .hero-actions, [dir="rtl"] .final-cta-actions { flex-direction:row-reverse; }
+[dir="rtl"] .integrate-inner { direction:rtl; }
+[dir="rtl"] .integrate-feature, [dir="rtl"] .ai-card, [dir="rtl"] .roi-header, [dir="rtl"] .roi-field-header, [dir="rtl"] .test-author, [dir="rtl"] .footer-bottom { flex-direction:row-reverse; }
+[dir="rtl"] .ai-card:hover { transform:translateX(-4px); }
+[dir="rtl"] .sol-card-accent { margin-right:0; margin-left:auto; }
 [dir="rtl"] .timeline::before { left:auto; right:21px; }
 [dir="rtl"] .tl-step { flex-direction:row-reverse; }
-[dir="rtl"] .nav-inner { flex-direction:row-reverse; }
-[dir="rtl"] .nav-links { flex-direction:row-reverse; }
-[dir="rtl"] .hero-actions { flex-direction:row-reverse; }
+[dir="rtl"] .faq-list { margin-left:auto; margin-right:auto; }
+[dir="rtl"] .faq-q { text-align:right; flex-direction:row-reverse; }
+[dir="rtl"] .faq-answer-inner { text-align:right; }
+[dir="rtl"] .page-back::before { content:'→'; }
+[dir="rtl"] .form-input, [dir="rtl"] .form-select, [dir="rtl"] .form-textarea { text-align:right; direction:rtl; }
+[dir="rtl"] .pricing-feature { flex-direction:row-reverse; text-align:right; }
+[dir="rtl"] .footer-main { direction:rtl; }
+[dir="rtl"] .footer-desc { max-width:none; }
+[dir="rtl"] .footer-socials { flex-direction:row-reverse; }
+[dir="rtl"] .section-label, [dir="rtl"] .hero-powered, [dir="rtl"] .nav-sub, [dir="rtl"] .footer-brand-sub, [dir="rtl"] .footer-col-label, [dir="rtl"] .roi-total-label { letter-spacing:0; text-transform:none; }
+@media (max-width:860px) { [dir="rtl"] .nav-inner { flex-direction:row-reverse; } [dir="rtl"] .hero-actions, [dir="rtl"] .final-cta-actions { flex-direction:column; } }
 
 /* ═══════════════════════════════════════════
    SCROLLBAR
@@ -1175,10 +1101,10 @@ footer {
 <body>
 
 <!-- ═══ INTRO ANIMATION SCREEN ═══ -->
-<div id="intro-screen">
+<div id="intro-screen" class="hidden" style="display: none;">
   <div class="intro-grid"></div>
   <div class="intro-scanline"></div>
-  <div class="intro-particles" id="introParticles"></div>
+  <div class="intro-particles" id="introParticles"><div class="intro-node" style="left: 45.7007%; top: 43.1384%; animation-delay: 0.439265s; opacity: 0.467323;"></div><div class="intro-node" style="left: 70.0484%; top: 14.2972%; animation-delay: 0.115282s; opacity: 0.715757;"></div><div class="intro-node" style="left: 48.9872%; top: 8.3203%; animation-delay: 0.0691198s; opacity: 0.583473;"></div><div class="intro-node" style="left: 1.24356%; top: 28.1322%; animation-delay: 0.467058s; opacity: 0.508256;"></div><div class="intro-circuit-line" style="width: 222.64px; left: 218.678px; top: 606.3px; animation-delay: 0.217233s;"></div><div class="intro-node" style="left: 98.9809%; top: 5.74604%; animation-delay: 0.0468901s; opacity: 0.769762;"></div><div class="intro-circuit-line" style="width: 176.286px; left: 597.116px; top: 499.164px; animation-delay: 0.180792s;"></div><div class="intro-node" style="left: 46.8491%; top: 50.5001%; animation-delay: 0.145434s; opacity: 0.408368;"></div><div class="intro-node" style="left: 46.7385%; top: 81.805%; animation-delay: 0.193719s; opacity: 0.354313;"></div><div class="intro-circuit-line" style="width: 131.354px; left: 153.343px; top: 586.095px; animation-delay: 0.441191s;"></div><div class="intro-node" style="left: 65.6564%; top: 95.1744%; animation-delay: 0.418665s; opacity: 0.311593;"></div><div class="intro-circuit-line" style="width: 230.663px; left: 1027.83px; top: 499.668px; animation-delay: 0.606884s;"></div><div class="intro-node" style="left: 15.7495%; top: 70.1885%; animation-delay: 0.0919845s; opacity: 0.525923;"></div><div class="intro-circuit-line" style="width: 146.839px; left: 754.126px; top: 19.2757px; animation-delay: 0.235903s;"></div><div class="intro-node" style="left: 59.7889%; top: 54.0087%; animation-delay: 0.341828s; opacity: 0.375164;"></div><div class="intro-node" style="left: 0.898558%; top: 55.1436%; animation-delay: 0.494596s; opacity: 0.495092;"></div><div class="intro-circuit-line" style="width: 141.731px; left: 675.049px; top: 137.702px; animation-delay: 0.56541s;"></div><div class="intro-node" style="left: 53.0545%; top: 95.6652%; animation-delay: 0.268692s; opacity: 0.355876;"></div><div class="intro-circuit-line" style="width: 171.943px; left: 666.713px; top: 286.015px; animation-delay: 0.0506128s;"></div><div class="intro-node" style="left: 80.3314%; top: 29.8248%; animation-delay: 0.176402s; opacity: 0.410272;"></div><div class="intro-circuit-line" style="width: 184.31px; left: 396.786px; top: 592.171px; animation-delay: 0.0446638s;"></div><div class="intro-node" style="left: 27.8138%; top: 64.8357%; animation-delay: 0.158895s; opacity: 0.37168;"></div><div class="intro-node" style="left: 63.6549%; top: 75.0142%; animation-delay: 0.236807s; opacity: 0.728049;"></div><div class="intro-node" style="left: 67.4546%; top: 5.69309%; animation-delay: 0.332004s; opacity: 0.67026;"></div><div class="intro-node" style="left: 56.5275%; top: 58.2793%; animation-delay: 0.498962s; opacity: 0.751134;"></div><div class="intro-node" style="left: 25.7322%; top: 85.4822%; animation-delay: 0.495985s; opacity: 0.526945;"></div><div class="intro-node" style="left: 54.4943%; top: 61.3693%; animation-delay: 0.2218s; opacity: 0.629771;"></div><div class="intro-node" style="left: 46.5572%; top: 5.96244%; animation-delay: 0.356114s; opacity: 0.748106;"></div></div>
 
   <div class="intro-center">
     <div class="intro-ring"></div>
@@ -1192,15 +1118,15 @@ footer {
 
   <div style="position:relative;z-index:10;display:flex;flex-direction:column;align-items:center;margin-top:20px;">
     <div class="intro-bar"><div class="intro-bar-fill"></div></div>
-    <div class="intro-status" id="introStatus">Initializing systems...</div>
+    <div class="intro-status" id="introStatus">Ready.</div>
   </div>
 </div>
 
 <!-- ═══ ANIMATED BACKGROUND ═══ -->
 <div class="canvas-bg">
-  <div class="blob blob-1"></div>
-  <div class="blob blob-2"></div>
-  <div class="blob blob-3"></div>
+  <div class="blob blob-1" style="transform: translate(0px, 0px);"></div>
+  <div class="blob blob-2" style="transform: translate(0px, 0px);"></div>
+  <div class="blob blob-3" style="transform: translate(0px, 0px);"></div>
 </div>
 
 <!-- ═══════════════════════════════════════
@@ -1229,7 +1155,7 @@ footer {
         <div class="lang-current" onclick="toggleLangDropdown()" id="langCurrentBtn">
           <span id="langCurrentText">EN</span>
           <svg viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+            <path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"></path>
           </svg>
         </div>
         <div class="lang-menu">
@@ -1263,19 +1189,12 @@ footer {
 <section class="hero" id="home">
   <div class="hero-grid-overlay"></div>
 
-  <div class="hero-badge">
-    <span class="badge-dot"></span>
-    <span data-key="hero_badge">AI Automation Solutions for Business</span>
-  </div>
-
   <h1 class="hero-title">
     <span data-key="hero_title_1">A Layer of Artificial Intelligence</span><br>
-    <span class="grad" data-key="hero_title_2">On your Workflow</span>
+    <span class="grad" data-key="hero_title_2">On Your Business Workflow</span>
   </h1>
 
-  <div class="hero-powered">
-    <span data-key="hero_powered_by">Powered by</span>&nbsp;<span>Gemini Pro</span>&nbsp;<span data-key="hero_models">Models</span>
-  </div>
+  <div class="hero-powered" data-key="hero_powered">Powered by Gemini Pro Models</div>
 
   <p class="hero-sub" data-key="hero_sub">Intelligent AI agents engineered to integrate with your existing systems, automate complex workflows, and execute business operations with speed, consistency, and human-like interaction.</p>
 
@@ -1551,50 +1470,6 @@ footer {
 <hr class="glow-line">
 
 <!-- ═══════════════════════════════════════
-     SECTION 6 — LIVE PREVIEW DEMO
-═══════════════════════════════════════ -->
-<section id="demo-section">
-  <div class="container">
-    <div class="reveal text-center">
-      <div class="section-label" data-key="demo_label">Live Preview</div>
-      <h2 class="section-title" data-key="demo_title">See Our AI Agents <span class="grad">in Action</span></h2>
-      <p class="section-sub" data-key="demo_sub">Interact with working demos of the AI solutions we build for businesses. These are real conversations, not scripts.</p>
-    </div>
-    <div class="demo-shell reveal">
-      <div class="demo-tabs-bar">
-        <button class="demo-tab active" onclick="switchDemo('chatbot',this)" data-key="tab_chatbot">Website Chatbot</button>
-        <button class="demo-tab" onclick="switchDemo('whatsapp',this)" data-key="tab_whatsapp">WhatsApp Agent</button>
-        <button class="demo-tab" onclick="switchDemo('leadgen',this)" data-key="tab_leadgen">Lead Qualifier</button>
-        <button class="demo-tab" onclick="switchDemo('support',this)" data-key="tab_support">Support Agent</button>
-        <button class="demo-tab" onclick="switchDemo('reservation',this)" data-key="tab_reservation">Reservation Agent</button>
-        <button class="demo-tab" onclick="switchDemo('sales',this)" data-key="tab_sales">Sales Agent</button>
-      </div>
-      <div class="demo-body">
-        <div class="demo-info">
-          <div class="demo-info-title" id="demoTitle">Website AI Chatbot</div>
-          <div class="demo-info-desc" id="demoDesc">A smart conversational agent embedded on your website.</div>
-          <div class="demo-features" id="demoFeatures"></div>
-          <button class="btn-primary" onclick="openPage('consultation')" style="font-size:.8rem;padding:.6rem 1.3rem;" data-key="demo_get_btn">Get This Solution</button>
-        </div>
-        <div class="demo-chat-panel">
-          <div class="demo-chat-header">
-            <div class="demo-chat-title" id="demoChatTitle">Demo</div>
-            <div class="demo-chat-live"><div class="demo-chat-live-dot"></div> <span data-key="live_label">Live</span></div>
-          </div>
-          <div class="demo-messages" id="demoMessages"></div>
-          <div class="demo-input-area">
-            <input class="demo-text-input" id="demoInput" data-key="demo_placeholder" placeholder="Ask anything…" onkeydown="if(event.key==='Enter')sendDemoMsg()">
-            <button class="demo-send-btn" onclick="sendDemoMsg()" data-key="send_btn">Send</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<hr class="glow-line">
-
-<!-- ═══════════════════════════════════════
      SECTION 7 — ROI CALCULATOR
 ═══════════════════════════════════════ -->
 <section id="roi">
@@ -1617,7 +1492,7 @@ footer {
             <span id="currencySymbol">$</span>
             <span id="currencyCode">USD</span>
             <svg viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+              <path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"></path>
             </svg>
           </div>
           <div class="currency-menu">
@@ -1675,21 +1550,21 @@ footer {
 
           <div class="roi-card">
             <div class="roi-card-glow"></div>
-            <div class="roi-card-num" id="roi-hours">0 hrs</div>
+            <div class="roi-card-num" id="roi-hours">70 hrs</div>
             <div class="roi-card-label" data-key="roi_r1_label">Staff hours saved per month</div>
             <div class="roi-card-explain" data-key="roi_r1_explain">AI handles ~70% of repetitive inquiries automatically, freeing your team for higher-value work</div>
           </div>
 
           <div class="roi-card">
             <div class="roi-card-glow"></div>
-            <div class="roi-card-num" id="roi-cost">$0</div>
+            <div class="roi-card-num" id="roi-cost">$1,050</div>
             <div class="roi-card-label" data-key="roi_r2_label">Labour costs recovered monthly</div>
             <div class="roi-card-explain" data-key="roi_r2_explain">Based on your hourly staff cost × hours saved — real money back in your budget</div>
           </div>
 
           <div class="roi-card">
             <div class="roi-card-glow"></div>
-            <div class="roi-card-num" id="roi-leads">+0</div>
+            <div class="roi-card-num" id="roi-leads">+114</div>
             <div class="roi-card-label" data-key="roi_r3_label">Additional leads converted (estimated)</div>
             <div class="roi-card-explain" data-key="roi_r3_explain">AI responds instantly 24/7 — businesses typically convert 35–40% more leads vs. delayed human responses</div>
           </div>
@@ -1697,8 +1572,8 @@ footer {
           <div class="roi-total-card">
             <div class="roi-total-card-glow"></div>
             <div class="roi-total-label" data-key="roi_total_label">💰 Total Monthly Value</div>
-            <div class="roi-total-num" id="roi-total">$0</div>
-            <div class="roi-total-sub" id="roi-total-sub" data-key="roi_total_sub">Combined savings + additional revenue potential</div>
+            <div class="roi-total-num" id="roi-total">$14,730</div>
+            <div class="roi-total-sub" id="roi-total-sub" data-key="roi_total_sub">$1,050 saved + $13,680 revenue potential</div>
           </div>
 
           <button class="btn-primary" onclick="openPage('consultation')" style="width:100%;justify-content:center;font-size:.82rem;margin-top:.3rem;" data-key="roi_cta">Unlock These Results →</button>
@@ -1721,18 +1596,18 @@ footer {
       <p class="section-sub" data-key="int_sub">AIIS connects to the platforms and tools your business already uses — no replacement required.</p>
     </div>
     <div class="integrations-grid">
-      <div class="int-card reveal reveal-delay-1"><div class="int-name">WhatsApp</div><div class="int-type">Messaging Platform</div></div>
-      <div class="int-card reveal reveal-delay-2"><div class="int-name">Website</div><div class="int-type">Web Chatbot Widget</div></div>
-      <div class="int-card reveal reveal-delay-3"><div class="int-name">Salesforce</div><div class="int-type">CRM Integration</div></div>
-      <div class="int-card reveal reveal-delay-1"><div class="int-name">HubSpot</div><div class="int-type">CRM &amp; Marketing</div></div>
-      <div class="int-card reveal reveal-delay-2"><div class="int-name">Calendly</div><div class="int-type">Booking Platform</div></div>
-      <div class="int-card reveal reveal-delay-3"><div class="int-name">Instagram</div><div class="int-type">Social Media DMs</div></div>
-      <div class="int-card reveal reveal-delay-1"><div class="int-name">Mailchimp</div><div class="int-type">Email Automation</div></div>
-      <div class="int-card reveal reveal-delay-2"><div class="int-name">Stripe</div><div class="int-type">Payment Processing</div></div>
-      <div class="int-card reveal reveal-delay-3"><div class="int-name">Google Calendar</div><div class="int-type">Scheduling</div></div>
-      <div class="int-card reveal reveal-delay-1"><div class="int-name">Slack</div><div class="int-type">Team Notifications</div></div>
-      <div class="int-card reveal reveal-delay-2"><div class="int-name">Zoho CRM</div><div class="int-type">CRM Integration</div></div>
-      <div class="int-card reveal reveal-delay-3"><div class="int-name">Custom API</div><div class="int-type">Any System via API</div></div>
+      <div class="int-card reveal reveal-delay-1"><div class="int-name">WhatsApp</div><div class="int-type" data-key="int_type_messaging">Messaging Platform</div></div>
+      <div class="int-card reveal reveal-delay-2"><div class="int-name">Website</div><div class="int-type" data-key="int_type_web">Web Chatbot Widget</div></div>
+      <div class="int-card reveal reveal-delay-3"><div class="int-name">Salesforce</div><div class="int-type" data-key="int_type_crm">CRM Integration</div></div>
+      <div class="int-card reveal reveal-delay-1"><div class="int-name">HubSpot</div><div class="int-type" data-key="int_type_crm_marketing">CRM &amp; Marketing</div></div>
+      <div class="int-card reveal reveal-delay-2"><div class="int-name">Calendly</div><div class="int-type" data-key="int_type_booking">Booking Platform</div></div>
+      <div class="int-card reveal reveal-delay-3"><div class="int-name">Instagram</div><div class="int-type" data-key="int_type_social">Social Media DMs</div></div>
+      <div class="int-card reveal reveal-delay-1"><div class="int-name">Mailchimp</div><div class="int-type" data-key="int_type_email">Email Automation</div></div>
+      <div class="int-card reveal reveal-delay-2"><div class="int-name">Stripe</div><div class="int-type" data-key="int_type_payment">Payment Processing</div></div>
+      <div class="int-card reveal reveal-delay-3"><div class="int-name">Google Calendar</div><div class="int-type" data-key="int_type_scheduling">Scheduling</div></div>
+      <div class="int-card reveal reveal-delay-1"><div class="int-name">Slack</div><div class="int-type" data-key="int_type_team">Team Notifications</div></div>
+      <div class="int-card reveal reveal-delay-2"><div class="int-name">Zoho CRM</div><div class="int-type" data-key="int_type_crm">CRM Integration</div></div>
+      <div class="int-card reveal reveal-delay-3"><div class="int-name">Custom API</div><div class="int-type" data-key="int_type_custom">Any System via API</div></div>
     </div>
   </div>
 </section>
@@ -1754,7 +1629,7 @@ footer {
         <div class="test-quote" data-key="test1_quote">"AIIS deployed our WhatsApp reservation agent in 4 days. Bookings increased by 35% in the first month and we stopped missing after-hours inquiries entirely."</div>
         <div class="test-author">
           <div class="test-av">AK</div>
-          <div><div class="test-name">Ali Karademir</div><div class="test-role">Owner, Bella Vista Restaurant Group</div></div>
+          <div><div class="test-name">Ali Karademir</div><div class="test-role" data-key="test1_role">Owner, Bella Vista Restaurant Group</div></div>
         </div>
       </div>
       <div class="test-card reveal reveal-delay-2">
@@ -1762,7 +1637,7 @@ footer {
         <div class="test-quote" data-key="test2_quote">"We replaced two full-time support staff with the AIIS system. Response time dropped from 4 hours to under 3 seconds. Our customer satisfaction scores have never been higher."</div>
         <div class="test-author">
           <div class="test-av">SR</div>
-          <div><div class="test-name">Sarah Reynolds</div><div class="test-role">Operations Director, NovaMed Clinics</div></div>
+          <div><div class="test-name">Sarah Reynolds</div><div class="test-role" data-key="test2_role">Operations Director, NovaMed Clinics</div></div>
         </div>
       </div>
       <div class="test-card reveal reveal-delay-3">
@@ -1770,7 +1645,7 @@ footer {
         <div class="test-quote" data-key="test3_quote">"The lead qualification agent filters our property inquiries automatically. Our sales team only speaks with qualified buyers now — conversion rate up 48% with the same headcount."</div>
         <div class="test-author">
           <div class="test-av">MO</div>
-          <div><div class="test-name">Mehmet Özcan</div><div class="test-role">CEO, Premier Real Estate Group</div></div>
+          <div><div class="test-name">Mehmet Özcan</div><div class="test-role" data-key="test3_role">CEO, Premier Real Estate Group</div></div>
         </div>
       </div>
     </div>
@@ -1788,7 +1663,7 @@ footer {
       <div class="section-label" data-key="faq_label">FAQ</div>
       <h2 class="section-title" data-key="faq_title">Common <span class="grad">Questions</span></h2>
     </div>
-    <div class="faq-list reveal" id="faqList"></div>
+    <div class="faq-list reveal" id="faqList"><div class="faq-item"><button class="faq-q" onclick="toggleFaq(0)">How quickly can you deploy an AI agent?<div class="faq-arrow">+</div></button><div class="faq-answer" id="fqa-0"><div class="faq-answer-inner">Most AI agents are live within 3–5 business days. We handle the full development, training, testing, and deployment. You provide business information; we handle everything technical.</div></div></div><div class="faq-item"><button class="faq-q" onclick="toggleFaq(1)">What languages do your agents support?<div class="faq-arrow">+</div></button><div class="faq-answer" id="fqa-1"><div class="faq-answer-inner">Our agents support Turkish, English, Arabic, Russian, and many more. The agent detects and switches languages automatically based on what the customer writes, with no manual configuration needed.</div></div></div><div class="faq-item"><button class="faq-q" onclick="toggleFaq(2)">How do you integrate with WhatsApp?<div class="faq-arrow">+</div></button><div class="faq-answer" id="fqa-2"><div class="faq-answer-inner">We integrate via the official WhatsApp Business API. Your existing business number is connected and the agent handles all incoming messages automatically, with full conversation history and escalation routing.</div></div></div><div class="faq-item"><button class="faq-q" onclick="toggleFaq(3)">How accurate are the AI responses?<div class="faq-arrow">+</div></button><div class="faq-answer" id="fqa-3"><div class="faq-answer-inner">Our agents are trained on your specific business data — menus, FAQs, policies, pricing — so responses are highly accurate. Accuracy typically exceeds 95%.</div></div></div><div class="faq-item"><button class="faq-q" onclick="toggleFaq(4)">What happens when the AI cannot answer something?<div class="faq-arrow">+</div></button><div class="faq-answer" id="fqa-4"><div class="faq-answer-inner">The agent gracefully escalates to a human team member via WhatsApp, email, or phone. No customer is ever left without a response. Escalation rules are fully customizable.</div></div></div><div class="faq-item"><button class="faq-q" onclick="toggleFaq(5)">How is pricing structured?<div class="faq-arrow">+</div></button><div class="faq-answer" id="fqa-5"><div class="faq-answer-inner">Pricing depends on the type of agent, number of channels, monthly conversation volume, and integrations required. All plans include full setup, training, deployment, and ongoing support. Book a free consultation for a custom quote.</div></div></div><div class="faq-item"><button class="faq-q" onclick="toggleFaq(6)">Do I need technical knowledge to manage the system?<div class="faq-arrow">+</div></button><div class="faq-answer" id="fqa-6"><div class="faq-answer-inner">No technical knowledge is required. Once deployed, you manage everything through a simple dashboard. Our team handles all technical maintenance, updates, and optimizations.</div></div></div><div class="faq-item"><button class="faq-q" onclick="toggleFaq(7)">Can you integrate with our existing CRM or booking system?<div class="faq-arrow">+</div></button><div class="faq-answer" id="fqa-7"><div class="faq-answer-inner">Yes. We integrate with most major CRM platforms (Salesforce, HubSpot, Zoho), booking systems, payment processors, and custom APIs.</div></div></div></div>
   </div>
 </section>
 
@@ -1852,12 +1727,12 @@ footer {
         <div class="footer-links">
           <a href="mailto:contact@aiis.ai">contact@aiis.ai</a>
           <a href="https://wa.me/966551070892" target="_blank" rel="noopener">WhatsApp</a>
-          <a href="#" onclick="openPage('contact')" data-key="nav_contact">Contact Form</a>
+          <a href="#" onclick="openPage('contact')" data-key="footer_contact_form">Contact Form</a>
         </div>
       </div>
     </div>
     <div class="footer-bottom">
-      <div class="footer-copy">© 2025 AIIS — Artificial Intelligence Integration Solutions. All rights reserved.</div>
+      <div class="footer-copy" data-key="footer_copy">© 2025 AIIS — Artificial Intelligence Integration Solutions. All rights reserved.</div>
       <div class="footer-socials">
         <a href="#" class="social-btn">Li</a>
         <a href="#" class="social-btn">X</a>
@@ -1882,39 +1757,39 @@ footer {
       <div class="form-grid">
         <div class="form-group">
           <label class="form-label" data-key="form_fullname">Full Name *</label>
-          <input class="form-input" id="c-name" type="text" placeholder="Your full name">
+          <input class="form-input" id="c-name" type="text" data-key="placeholder_fullname" placeholder="Your full name">
         </div>
         <div class="form-group">
           <label class="form-label" data-key="form_bizname">Business Name *</label>
-          <input class="form-input" id="c-biz" type="text" placeholder="Your company name">
+          <input class="form-input" id="c-biz" type="text" data-key="placeholder_bizname" placeholder="Your company name">
         </div>
         <div class="form-group">
           <label class="form-label" data-key="form_email">Email Address *</label>
-          <input class="form-input" id="c-email" type="email" placeholder="you@company.com">
+          <input class="form-input" id="c-email" type="email" data-key="placeholder_email" placeholder="you@company.com">
         </div>
         <div class="form-group">
           <label class="form-label" data-key="form_phone">Phone / WhatsApp</label>
-          <input class="form-input" id="c-phone" type="tel" placeholder="+1 555 000 0000">
+          <input class="form-input" id="c-phone" type="tel" data-key="placeholder_phone" placeholder="+1 555 000 0000">
         </div>
       </div>
       <div class="form-group">
         <label class="form-label" data-key="form_industry">Industry</label>
         <select class="form-select" id="c-industry">
-          <option value="">Select your industry</option>
-          <option>Restaurant / F&amp;B</option>
-          <option>Hotel / Hospitality</option>
-          <option>Clinic / Healthcare</option>
-          <option>Real Estate</option>
-          <option>E-Commerce</option>
-          <option>Gym / Fitness</option>
-          <option>Automotive</option>
-          <option>Education</option>
-          <option>Other</option>
+          <option value="" data-key="select_industry_placeholder">Select your industry</option>
+          <option data-key="opt_restaurant">Restaurant / F&amp;B</option>
+          <option data-key="opt_hotel">Hotel / Hospitality</option>
+          <option data-key="opt_clinic">Clinic / Healthcare</option>
+          <option data-key="opt_realestate">Real Estate</option>
+          <option data-key="opt_ecommerce">E-Commerce</option>
+          <option data-key="opt_gym">Gym / Fitness</option>
+          <option data-key="opt_automotive">Automotive</option>
+          <option data-key="opt_education">Education</option>
+          <option data-key="opt_other">Other</option>
         </select>
       </div>
       <div class="form-group">
         <label class="form-label" data-key="form_challenge">What challenge can AI help you solve? *</label>
-        <textarea class="form-textarea" id="c-message" placeholder="Describe your current process, pain points, or goals…"></textarea>
+        <textarea class="form-textarea" id="c-message" data-key="placeholder_challenge" placeholder="Describe your current process, pain points, or goals..."></textarea>
       </div>
       <button class="btn-primary" id="consultSubmitBtn" onclick="submitConsultation()" style="font-size:.88rem;padding:.8rem 1.8rem;" data-key="consult_submit_btn">Submit — Get My Free Strategy Session</button>
     </div>
@@ -1936,34 +1811,34 @@ footer {
       <div class="form-grid">
         <div class="form-group">
           <label class="form-label" data-key="form_fullname">Full Name *</label>
-          <input class="form-input" id="d-name" type="text" placeholder="Your name">
+          <input class="form-input" id="d-name" type="text" data-key="placeholder_name" placeholder="Your name">
         </div>
         <div class="form-group">
           <label class="form-label" data-key="form_bizname">Company *</label>
-          <input class="form-input" id="d-company" type="text" placeholder="Company name">
+          <input class="form-input" id="d-company" type="text" data-key="placeholder_bizname" placeholder="Company name">
         </div>
         <div class="form-group">
           <label class="form-label" data-key="form_email">Email *</label>
-          <input class="form-input" id="d-email" type="email" placeholder="you@company.com">
+          <input class="form-input" id="d-email" type="email" data-key="placeholder_email" placeholder="you@company.com">
         </div>
         <div class="form-group">
           <label class="form-label" data-key="form_pref_time">Preferred Time</label>
           <select class="form-select" id="d-time">
-            <option>Morning (9am – 12pm)</option>
-            <option>Afternoon (12pm – 5pm)</option>
-            <option>Evening (5pm – 8pm)</option>
+            <option data-key="select_time_morning">Morning (9am - 12pm)</option>
+            <option data-key="select_time_afternoon">Afternoon (12pm - 5pm)</option>
+            <option data-key="select_time_evening">Evening (5pm - 8pm)</option>
           </select>
         </div>
       </div>
       <div class="form-group">
         <label class="form-label" data-key="form_solution_interest">Which solution interests you most?</label>
         <select class="form-select" id="d-solution">
-          <option>Website AI Chatbot</option>
-          <option>WhatsApp Automation</option>
-          <option>Lead Generation System</option>
-          <option>Customer Support Automation</option>
-          <option>Reservation / Booking System</option>
-          <option>Full Workflow Automation</option>
+          <option data-key="select_solution_website">Website AI Chatbot</option>
+          <option data-key="select_solution_whatsapp">WhatsApp Automation</option>
+          <option data-key="select_solution_lead">Lead Generation System</option>
+          <option data-key="select_solution_support">Customer Support Automation</option>
+          <option data-key="select_solution_reservation">Reservation / Booking System</option>
+          <option data-key="select_solution_workflow">Full Workflow Automation</option>
         </select>
       </div>
       <button class="btn-primary" id="demoSubmitBtn" onclick="submitDemo()" style="font-size:.88rem;padding:.8rem 1.8rem;" data-key="demo_submit_btn">Request My Demo</button>
@@ -1985,7 +1860,7 @@ footer {
     <div class="pricing-cards">
       <div class="pricing-card">
         <div class="pricing-name" data-key="plan1_name">Starter</div>
-        <div style="margin:.5rem 0 .2rem;"><span class="pricing-price">Custom</span></div>
+        <div style="margin:.5rem 0 .2rem;"><span class="pricing-price" data-key="pricing_price_custom">Custom</span></div>
         <div class="pricing-period" data-key="plan1_period">Based on volume &amp; use case</div>
         <div class="pricing-features">
           <div class="pricing-feature" data-key="plan1_f1">1 AI Agent (1 channel)</div>
@@ -1999,7 +1874,7 @@ footer {
       <div class="pricing-card featured">
         <div style="font-size:.58rem;color:var(--blue2);letter-spacing:.14em;text-transform:uppercase;font-weight:600;margin-bottom:.4rem;" data-key="plan_popular">Most Popular</div>
         <div class="pricing-name" data-key="plan2_name">Growth</div>
-        <div style="margin:.5rem 0 .2rem;"><span class="pricing-price">Custom</span></div>
+        <div style="margin:.5rem 0 .2rem;"><span class="pricing-price" data-key="pricing_price_custom">Custom</span></div>
         <div class="pricing-period" data-key="plan2_period">Scales with your business</div>
         <div class="pricing-features">
           <div class="pricing-feature" data-key="plan2_f1">Up to 3 AI Agents (multi-channel)</div>
@@ -2013,7 +1888,7 @@ footer {
       </div>
       <div class="pricing-card">
         <div class="pricing-name" data-key="plan3_name">Enterprise</div>
-        <div style="margin:.5rem 0 .2rem;"><span class="pricing-price">Custom</span></div>
+        <div style="margin:.5rem 0 .2rem;"><span class="pricing-price" data-key="pricing_price_custom">Custom</span></div>
         <div class="pricing-period" data-key="plan3_period">Fully bespoke solution</div>
         <div class="pricing-features">
           <div class="pricing-feature" data-key="plan3_f1">Unlimited AI agents</div>
@@ -2071,31 +1946,31 @@ footer {
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1.5rem;">
       <div class="page-card" style="display:flex;align-items:center;gap:10px;">
         <div style="font-size:1.2rem;">✉️</div>
-        <div><div class="page-card-title" style="font-size:.82rem;">Email</div><a href="mailto:contact@aiis.ai" style="font-size:.76rem;color:var(--blue2);">contact@aiis.ai</a></div>
+        <div><div class="page-card-title" style="font-size:.82rem;" data-key="label_email">Email</div><a href="mailto:contact@aiis.ai" style="font-size:.76rem;color:var(--blue2);">contact@aiis.ai</a></div>
       </div>
       <div class="page-card" style="display:flex;align-items:center;gap:10px;">
         <div style="font-size:1.2rem;">💬</div>
-        <div><div class="page-card-title" style="font-size:.82rem;">WhatsApp</div><a href="https://wa.me/966551070892" target="_blank" rel="noopener" style="font-size:.76rem;color:var(--blue2);">+966 551 070 892</a></div>
+        <div><div class="page-card-title" style="font-size:.82rem;" data-key="label_whatsapp">WhatsApp</div><a href="https://wa.me/966551070892" target="_blank" rel="noopener" style="font-size:.76rem;color:var(--blue2);">+966 551 070 892</a></div>
       </div>
     </div>
     <div id="contact-form-wrap">
       <div class="form-grid">
         <div class="form-group">
           <label class="form-label" data-key="form_fullname">Full Name *</label>
-          <input class="form-input" id="ct-name" type="text" placeholder="Your name">
+          <input class="form-input" id="ct-name" type="text" data-key="placeholder_name" placeholder="Your name">
         </div>
         <div class="form-group">
           <label class="form-label" data-key="form_email">Email *</label>
-          <input class="form-input" id="ct-email" type="email" placeholder="you@company.com">
+          <input class="form-input" id="ct-email" type="email" data-key="placeholder_email" placeholder="you@company.com">
         </div>
       </div>
       <div class="form-group">
         <label class="form-label" data-key="form_subject">Subject</label>
-        <input class="form-input" id="ct-subject" type="text" placeholder="What's this about?">
+        <input class="form-input" id="ct-subject" type="text" data-key="placeholder_contact_subject" placeholder="What's this about?">
       </div>
       <div class="form-group">
         <label class="form-label" data-key="form_message">Message *</label>
-        <textarea class="form-textarea" id="ct-message" placeholder="Your message…" style="min-height:120px;"></textarea>
+        <textarea class="form-textarea" id="ct-message" data-key="placeholder_contact_message" placeholder="Your message..." style="min-height:120px;"></textarea>
       </div>
       <button class="btn-primary" id="contactSubmitBtn" onclick="submitContact()" style="font-size:.88rem;padding:.8rem 1.8rem;" data-key="contact_submit_btn">Send Message</button>
     </div>
@@ -2111,7 +1986,7 @@ footer {
 ═══════════════════════════════════════════════════ -->
 <script>
 /* ── EmailJS Init ── */
-emailjs.init('cSTpWmozU4es8_mIW');
+if (window.emailjs && typeof emailjs.init === 'function') { emailjs.init('cSTpWmozU4es8_mIW'); }
 const EMAILJS_SERVICE = 'service_jr9p9bi';
 const EMAILJS_TEMPLATE_CONTACT = 'template_5n9o3bo';
 const EMAILJS_TEMPLATE_AUTOREPLY = 'template_c5ggfg3';
@@ -2223,7 +2098,8 @@ const translations = {
     nav_cta: 'Book Consultation',
     hero_badge: 'AI Automation Solutions for Business',
     hero_title_1: 'A Layer of Artificial Intelligence',
-    hero_title_2: 'On your Business Workflow',
+    hero_title_2: 'On Your Business Workflow',
+    hero_powered: 'Powered by Gemini Pro Models',
     hero_powered_by: 'Powered by',
     hero_models: 'Models',
     hero_sub: 'Intelligent AI agents engineered to integrate with your existing systems, automate complex workflows, and execute business operations with speed, consistency, and human-like interaction.',
@@ -2285,10 +2161,6 @@ const translations = {
     ind8: 'Education', ind8_ex: 'Admissions, course info, enrollment',
     ind_cta_sub: "Don't see your industry? Every business is different — let's talk about yours.",
     ind_cta_btn: 'Discuss Your Business',
-    demo_label: 'Live Preview', demo_title: 'See Our AI Agents <span class="grad">in Action</span>',
-    demo_sub: 'Interact with working demos of the AI solutions we build for businesses. These are real conversations, not scripts.',
-    tab_chatbot: 'Website Chatbot', tab_whatsapp: 'WhatsApp Agent', tab_leadgen: 'Lead Qualifier', tab_support: 'Support Agent', tab_reservation: 'Reservation Agent', tab_sales: 'Sales Agent',
-    demo_get_btn: 'Get This Solution', live_label: 'Live', demo_placeholder: 'Ask anything…', send_btn: 'Send',
     roi_label: 'ROI Calculator', roi_title: 'Estimate Your <span class="grad">Monthly Savings</span>',
     roi_sub: 'Drag the sliders to match your business size. See how much money AI automation could save you each month.',
     roi_inputs_title: 'Your Business Numbers', roi_inputs_sub: 'Adjust to reflect your current situation',
@@ -2355,6 +2227,7 @@ const translations = {
     hero_badge: 'İşletmeler için Yapay Zeka Otomasyon Çözümleri',
     hero_title_1: 'İş Akışınıza Yapay Zeka',
     hero_title_2: 'Katmanı Ekleyin',
+    hero_powered: 'Gemini Pro modelleriyle desteklenir',
     hero_powered_by: 'Destekli:', hero_models: 'Modelleri',
     hero_sub: 'Akıllı yapay zeka sistemleriyle müşteri etkileşimlerini, lead kalifikasyonunu, rezervasyonları, desteği ve tekrarlayan süreçleri otomatikleştirin. Günler içinde yayına alın.',
     cta_free: 'Ücretsiz Konsültasyon Al', cta_demo: 'Demo Planla',
@@ -2403,10 +2276,6 @@ const translations = {
     ind8: 'Eğitim', ind8_ex: 'Kabul, kurs bilgisi, kayıt',
     ind_cta_sub: 'Sektörünüzü görmüyor musunuz? Her işletme farklıdır — sizinkini konuşalım.',
     ind_cta_btn: 'İşletmenizi Tartışın',
-    demo_label: 'Canlı Önizleme', demo_title: 'Yapay Zeka Ajanlarımızı <span class="grad">Eylemde Görün</span>',
-    demo_sub: 'İşletmeler için oluşturduğumuz yapay zeka çözümlerinin çalışan demoları ile etkileşime girin.',
-    tab_chatbot: 'Web Sitesi Sohbet Botu', tab_whatsapp: 'WhatsApp Ajanı', tab_leadgen: 'Lead Nitelendirici', tab_support: 'Destek Ajanı', tab_reservation: 'Rezervasyon Ajanı', tab_sales: 'Satış Ajanı',
-    demo_get_btn: 'Bu Çözümü Edinin', live_label: 'Canlı', demo_placeholder: 'Herhangi bir şey sorun…', send_btn: 'Gönder',
     roi_label: 'YG Hesaplayıcı', roi_title: 'Aylık <span class="grad">Tasarrufunuzu</span> Tahmin Edin',
     roi_sub: 'İşletme büyüklüğünüzü eşleştirmek için kaydırıcıları sürükleyin.',
     roi_inputs_title: 'İşletme Rakamlarınız', roi_inputs_sub: 'Mevcut durumunuzu yansıtacak şekilde ayarlayın',
@@ -2458,147 +2327,299 @@ const translations = {
     contact_submit_btn: 'Mesaj Gönder', contact_success_title: '✅ Mesaj Gönderildi!', contact_success_sub: '24 saat içinde size dönüş yapacağız.'
   },
   ar: {
-    nav_sub: 'حلول تكامل الذكاء الاصطناعي',
-    nav_solutions: 'الحلول', nav_how: 'كيف يعمل', nav_industries: 'الصناعات',
-    nav_pricing: 'التسعير', nav_about: 'عنا', nav_contact: 'اتصل بنا',
-    nav_cta: 'احجز استشارة',
-    hero_badge: 'حلول أتمتة الذكاء الاصطناعي للأعمال',
-    hero_title_1: 'طبقة من الذكاء الاصطناعي',
-    hero_title_2: 'على سير أعمالك',
-    hero_powered_by: 'مدعوم بـ', hero_models: 'نماذج',
-    hero_sub: 'عملاء ذكاء اصطناعي، تم تطويرهم للتكامل مع أنظمتك الحالية، وأتمتة سير العمل المعقدة، وتنفيذ العمليات التجارية بسرعة، واتساق، وتفاعل شبه البشري.',
-    cta_free: 'احجز استشارة مجانية', cta_demo: 'جدولة عرض توضيحي',
-    integrate_label: 'ماذا نفعل',
-    integrate_title: 'دمج الذكاء الاصطناعي في<br><span class="grad">أعمالك</span>',
-    integrate_desc: 'حلول ذكاء اصطناعي مصممة لمساعدة الشركات على النمو بشكل أسرع وخفض التكاليف التشغيلية وتقديم تجارب عملاء استثنائية. من دعم العملاء وتوليد العملاء المحتملين إلى الحجوزات وأتمتة سير العمل، تعمل أنظمتنا على تبسيط العمليات وضمان توفر أعمالك على مدار الساعة.',
-    integrate_f1: 'تقليل تكاليف الدعم بنسبة تصل إلى 70% من خلال أتمتة الذكاء الاصطناعي',
-    integrate_f2: 'نشر عملاء الذكاء الاصطناعي المدرَّبين في 3-5 أيام عمل',
-    integrate_f3: 'الرد على كل عميل في أقل من 3 ثوانٍ، 24/7',
-    integrate_f4: 'دعم متعدد اللغات: العربية والإنجليزية والتركية والمزيد',
-    aicard1_title: 'وكيل واتساب AI', aicard1_sub: 'يتعامل مع الحجوزات والاستفسارات والمتابعة',
-    aicard2_title: 'وكيل تأهيل العملاء المحتملين', aicard2_sub: 'يصنف ويوجه العملاء عالي النية',
-    aicard3_title: 'نظام الحجز AI', aicard3_sub: 'حجز فوري وتأكيدات في الوقت الحقيقي',
-    aicard4_title: 'وكيل دعم العملاء', aicard4_sub: 'يحل 80% من التذاكر تلقائيًا',
-    aicard5_title: 'أتمتة سير العمل', aicard5_sub: 'يربط أدواتك ويلغي المهام اليدوية',
-    badge_live: 'مباشر', badge_active: 'نشط',
-    stat1: 'تقليل في<br>تكاليف الدعم', stat2: 'دعم عملاء<br>على مدار الساعة', stat3: 'متوسط وقت استجابة<br>الذكاء الاصطناعي', stat4: 'المزيد من<br>العملاء المحولين', stat5: 'لغات<br>مدعومة',
-    sol_label: 'حلولنا', sol_title: 'مزود حلول <span class="grad">أتمتة الذكاء الاصطناعي</span><br>المتكاملة',
-    sol_sub: 'من دعم العملاء إلى أتمتة المبيعات — نبني أنظمة ذكية تدير عمليات أعمالك على مدار الساعة.',
-    sol1_title: 'روبوتات دردشة AI', sol1_desc: 'وكلاء محادثة ذكيون لموقعك أو تطبيقك أو أي قناة.',
-    sol2_title: 'أتمتة واتساب', sol2_desc: 'تكامل كامل مع واجهة برمجة تطبيقات WhatsApp Business.',
-    sol3_title: 'أنظمة توليد العملاء المحتملين', sol3_desc: 'التقاط العملاء المحتملين وتأهيلهم وتوجيههم تلقائيًا.',
-    sol4_title: 'تكاملات CRM', sol4_desc: 'مزامنة سلسة مع Salesforce وHubSpot وZoho والمزيد.',
-    sol5_title: 'أنظمة حجز المواعيد', sol5_desc: 'جدولة مدعومة بالذكاء الاصطناعي تتعامل مع التوفر والتأكيدات.',
-    sol6_title: 'أتمتة دعم العملاء', sol6_desc: 'حل ما يصل إلى 80% من تذاكر الدعم تلقائيًا.',
-    sol7_title: 'أنظمة الحجز', sol7_desc: 'أتمتة حجز شاملة للفنادق والمطاعم.',
-    sol8_title: 'أتمتة سير العمل', sol8_desc: 'القضاء على العمليات الداخلية المتكررة.',
-    sol9_title: 'وكلاء AI متعددو اللغات', sol9_desc: 'التواصل بطلاقة بالعربية والتركية والإنجليزية والروسية والمزيد.',
-    how_label: 'العملية', how_title: 'من الفكرة إلى الذكاء الاصطناعي المباشر<br><span class="grad">في أيام لا أشهر</span>',
-    how_sub: 'عملية تسليم مبسطة لتشغيل حل الذكاء الاصطناعي بسرعة وموثوقية.',
-    step1_title: 'مكالمة الاستكشاف', step1_desc: 'نبدأ باستشارة مركزة لفهم أهداف أعمالك وسير العمل الحالي.',
-    step2_title: 'تحليل الأعمال', step2_desc: 'يرسم فريقنا رحلات عملائك ومصادر البيانات والأنظمة الحالية.',
-    step3_title: 'تصميم حل الذكاء الاصطناعي', step3_desc: 'نصمم الحل الكامل قبل كتابة سطر واحد من الكود.',
-    step4_title: 'التطوير والتدريب', step4_desc: 'نبني وندرب وكلاء الذكاء الاصطناعي على بيانات عملك المحددة.',
-    step5_title: 'النشر', step5_desc: 'مختبر ومُحسَّن ومُطلق عبر قنواتك.',
-    step6_title: 'التحسين والدعم المستمر', step6_desc: 'مراقبة مستمرة وتقارير أداء وتحسين.',
-    ind_label: 'حالات استخدام الأعمال', ind_title: 'مبني لكل <span class="grad">صناعة</span>',
-    ind_sub: 'إذا كان عملك يخدم عملاء أو يمتلك عمليات أو مهام متكررة، يمكننا أتمتتها.',
-    ind1: 'المطاعم', ind1_ex: 'حجوزات الطاولات واستفسارات القائمة والطلبات',
-    ind2: 'الفنادق', ind2_ex: 'حجوزات الغرف وخدمات الضيوف وتسجيل الوصول',
-    ind3: 'العيادات', ind3_ex: 'المواعيد والتذكيرات واستقبال المرضى',
-    ind4: 'العقارات', ind4_ex: 'تأهيل العملاء واستفسارات العقارات',
-    ind5: 'التجارة الإلكترونية', ind5_ex: 'تتبع الطلبات والدعم والبحث عن المنتجات',
-    ind6: 'الصالات الرياضية', ind6_ex: 'العضويات وحجوزات الفصول والخطط',
-    ind7: 'السيارات', ind7_ex: 'تجارب القيادة وحجوزات الخدمة والعملاء',
-    ind8: 'التعليم', ind8_ex: 'القبول ومعلومات الدورة والتسجيل',
-    ind_cta_sub: 'ألا ترى صناعتك؟ كل عمل مختلف — دعنا نتحدث عن عملك.',
-    ind_cta_btn: 'ناقش عملك',
-    demo_label: 'معاينة مباشرة', demo_title: 'شاهد وكلاء AI <span class="grad">في العمل</span>',
-    demo_sub: 'تفاعل مع عروض توضيحية تعمل من حلول الذكاء الاصطناعي.',
-    tab_chatbot: 'روبوت دردشة الموقع', tab_whatsapp: 'وكيل واتساب', tab_leadgen: 'مؤهل العملاء', tab_support: 'وكيل الدعم', tab_reservation: 'وكيل الحجز', tab_sales: 'وكيل المبيعات',
-    demo_get_btn: 'احصل على هذا الحل', live_label: 'مباشر', demo_placeholder: 'اسأل أي شيء…', send_btn: 'إرسال',
-    roi_label: 'حاسبة العائد على الاستثمار', roi_title: 'تقدير <span class="grad">وفورات شهرية</span>',
-    roi_sub: 'اسحب المنزلقات لتتناسب مع حجم عملك. انظر كم يمكن أن توفر الأتمتة.',
-    roi_inputs_title: 'أرقام عملك', roi_inputs_sub: 'اضبط لتعكس وضعك الحالي',
-    roi_s1_label: 'استفسارات العملاء الشهرية', roi_s1_hint: 'كم عدد رسائل العملاء التي يتعامل معها فريقك شهريًا؟',
-    roi_s2_label: 'موظفو الدعم (دوام كامل)', roi_s2_hint: 'عدد الموظفين الذين تتمثل مهمتهم الرئيسية في الرد على العملاء',
-    roi_s3_label: 'العملاء المحتملون الشهريون', roi_s3_hint: 'العملاء المحتملون الذين يتواصلون معك أو يُبدون اهتمامًا شهريًا',
-    roi_s4_label: 'متوسط تكلفة الساعة للموظف', roi_s4_hint: 'تضمين الراتب والمزايا والتكاليف العامة لكل ساعة عمل',
-    roi_results_title: '📊 تأثيرك الشهري المقدَّر',
-    roi_r1_label: 'ساعات العمل الموفرة شهريًا', roi_r1_explain: 'يتعامل الذكاء الاصطناعي تلقائيًا مع ~70% من الاستفسارات المتكررة',
-    roi_r2_label: 'تكاليف العمالة المستردة شهريًا', roi_r2_explain: 'بناءً على تكلفة الساعة × الساعات الموفرة',
-    roi_r3_label: 'عملاء محتملون إضافيون محولون (تقديري)', roi_r3_explain: 'استجابة فورية 24/7 — الشركات تحول عادةً 35-40% عملاء أكثر',
-    roi_total_label: '💰 إجمالي القيمة الشهرية', roi_total_sub: 'الوفورات المجمعة + إمكانية الإيرادات الإضافية',
-    roi_cta: 'افتح هذه النتائج ←',
-    int_label: 'التكاملات', int_title: 'يعمل مع <span class="grad">بنيتك التحتية الحالية</span>', int_sub: 'يتصل AIIS بالمنصات والأدوات التي يستخدمها عملك بالفعل.',
-    test_label: 'نتائج العملاء', test_title: 'موثوق به من قِبل الشركات <span class="grad">عبر الصناعات</span>',
-    test1_quote: '"نشر AIIS وكيل حجز واتساب لدينا في 4 أيام. ارتفعت الحجوزات بنسبة 35% في الشهر الأول."',
-    test2_quote: '"استبدلنا موظفَي دعم بدوام كامل بنظام AIIS. انخفض وقت الاستجابة من 4 ساعات إلى أقل من 3 ثوانٍ."',
-    test3_quote: '"يفلتر وكيل تأهيل العملاء استفسارات العقارات تلقائيًا. فريق المبيعات لدينا يتحدث الآن فقط مع المشترين المؤهلين."',
-    faq_label: 'الأسئلة الشائعة', faq_title: 'الأسئلة <span class="grad">الشائعة</span>',
-    final_label: 'ابدأ اليوم', final_title: 'هل أنت مستعد لتوسيع نطاق<br>أعمالك مع <span class="grad">الذكاء الاصطناعي؟</span>',
-    final_sub: 'انضم إلى الشركات التي أتمتت عملياتها وخفضت التكاليف ونمت بشكل أسرع مع AIIS.',
-    footer_sub: 'حلول تكامل الذكاء الاصطناعي', footer_desc: 'أتمتة الذكاء الاصطناعي على مستوى المؤسسات. قبرص الشمالية.',
-    footer_sol_col: 'الحلول', footer_company_col: 'الشركة', footer_start_col: 'ابدأ', footer_contact_col: 'اتصل بنا', footer_about_link: 'عن AIIS',
-    back_btn: 'العودة إلى AIIS',
-    consult_page_label: 'استشارة مجانية', consult_page_title: 'احجز<br><span class="grad">جلسة استراتيجية AI مجانية</span>',
-    consult_page_sub: 'أخبرنا عن عملك وسنصمم خارطة طريق أتمتة AI مخصصة — مجانًا.',
-    form_fullname: 'الاسم الكامل *', form_bizname: 'اسم الشركة *', form_email: 'البريد الإلكتروني *', form_phone: 'الهاتف / واتساب', form_industry: 'الصناعة', form_challenge: 'ما التحدي الذي يمكن للذكاء الاصطناعي حله؟ *',
-    form_subject: 'الموضوع', form_message: 'الرسالة *',
-    consult_submit_btn: 'إرسال — احصل على جلستي الاستراتيجية المجانية',
-    consult_success_title: '🎉 تم استلام طلبك!', consult_success_sub: 'شكرًا! سيتواصل فريقنا خلال 24 ساعة.',
-    demo_page_label: 'جدولة عرض توضيحي', demo_page_title: 'شاهد AIIS <span class="grad">في العمل</span>',
-    demo_page_sub: 'سنرشدك خلال عرض توضيحي مباشر لوكلاء AI مصممين لصناعتك.',
-    form_pref_time: 'الوقت المفضل', form_solution_interest: 'أي حل يثير اهتمامك أكثر؟',
-    demo_submit_btn: 'اطلب عرضي التوضيحي', demo_success_title: '🎉 تم طلب العرض التوضيحي!', demo_success_sub: 'سنرسل لك رابطًا للتقويم لاختيار موعدك.',
-    pricing_title: 'تسعير بسيط<br><span class="grad">وشفاف</span>',
-    pricing_sub: 'كل عمل مختلف. خططنا مبنية حول حجمك وقنواتك.',
-    plan1_name: 'البداية', plan1_period: 'بناءً على الحجم والحالة', plan1_f1: 'وكيل AI واحد (قناة واحدة)', plan1_f2: 'حتى 1,000 محادثة/شهر', plan1_f3: 'موقع إلكتروني أو واتساب', plan1_f4: 'مجموعة بيانات تدريبية قياسية', plan1_f5: 'دعم بريد إلكتروني',
-    plan2_name: 'النمو', plan2_period: 'يتوسع مع عملك', plan2_f1: 'حتى 3 وكلاء AI (متعدد القنوات)', plan2_f2: 'حتى 10,000 محادثة/شهر', plan2_f3: 'واتساب + موقع + CRM', plan2_f4: 'تدريب كامل على بيانات الأعمال', plan2_f5: 'دعم أولوي + تقارير شهرية', plan2_f6: 'وصول للوحة بيانات العائد',
-    plan3_name: 'المؤسسات', plan3_period: 'حل مخصص بالكامل', plan3_f1: 'وكلاء AI غير محدودين', plan3_f2: 'محادثات غير محدودة', plan3_f3: 'جميع القنوات + تكاملات مخصصة', plan3_f4: 'مدير حساب مخصص', plan3_f5: 'SLA ودعم 24/7', plan3_f6: 'تدريب نموذج AI مخصص',
-    plan_popular: 'الأكثر شيوعًا', plan_quote_btn: 'احصل على عرض سعر', plan_sales_btn: 'تحدث إلى المبيعات',
-    pricing_note: 'تشمل جميع الخطط الإعداد والتدريب والنشر والتحسين المستمر.',
-    about_label: 'عنا', about_title: 'نبني ذكاءً اصطناعيًا<br><span class="grad">يعمل لصالح الأعمال</span>',
-    about_sub: 'AIIS هي شركة استشارية لأتمتة الذكاء الاصطناعي مبنية للعالم الحقيقي. مقرها قبرص الشمالية.',
-    about_mission_title: 'مهمتنا', about_mission_desc: 'جعل أتمتة الذكاء الاصطناعي على مستوى المؤسسات في متناول الشركات من جميع الأحجام.',
-    about_approach_title: 'نهجنا', about_approach_desc: 'لا نبيع برامج روبوتات دردشة عامة. نصمم ونبني أنظمة AI مخصصة حول عملياتك.',
-    about_why_title: 'لماذا AIIS', about_why_desc: 'نشر في 3-5 أيام. دعم متعدد اللغات محلي. تكاملات CRM عميقة. تحسين مستمر.',
-    team_title: 'فريقنا', founder_role: 'المؤسس ومهندس الذكاء الاصطناعي', team2_name: 'فريق حلول AI', team2_role: 'التطوير والتدريب',
-    contact_title: 'تواصل <span class="grad">معنا</span>', contact_sub: 'هل لديك سؤال أو تريد مناقشة مشروعك؟ نحن هنا للمساعدة.',
-    contact_submit_btn: 'إرسال الرسالة', contact_success_title: '✅ تم إرسال الرسالة!', contact_success_sub: 'سنرد عليك خلال 24 ساعة. شكرًا لتواصلك!'
+    "nav_sub": "حلول تكامل الذكاء الاصطناعي",
+    "nav_solutions": "الحلول",
+    "nav_how": "آلية العمل",
+    "nav_industries": "القطاعات",
+    "nav_pricing": "الباقات",
+    "nav_about": "عن AIIS",
+    "nav_contact": "تواصل معنا",
+    "nav_cta": "احجز استشارة",
+    "hero_badge": "حلول أتمتة الذكاء الاصطناعي للأعمال",
+    "hero_title_1": "طبقة من الذكاء الاصطناعي",
+    "hero_title_2": "على سير أعمالك",
+    "hero_powered": "مدعوم بنماذج Gemini Pro",
+    "hero_powered_by": "مدعوم بـ",
+    "hero_models": "نماذج",
+    "hero_sub": "نبني مساعدين وأنظمة ذكاء اصطناعي تتكامل مع أدواتك الحالية، وتؤتمت تواصل العملاء، وتأهيل الفرص، والحجوزات، والدعم، وأتمتة سير الأعمال المتكرر خلال أيام، لا أشهر.",
+    "cta_free": "احجز استشارة مجانية",
+    "cta_demo": "احجز عرضًا توضيحيًا",
+    "integrate_label": "ما الذي نقدمه",
+    "integrate_title": "ندمج الذكاء الاصطناعي داخل<br><span class=\"grad\">عمليات منشأتك</span>",
+    "integrate_desc": "حلول ذكاء اصطناعي عملية مصممة لمساعدة الشركات والمنشآت على النمو، وخفض التكاليف التشغيلية، وتقديم تجربة عميل أسرع وأكثر اتساقًا. من خدمة العملاء وتوليد الفرص إلى الحجوزات وأتمتة سير الأعمال، نربط النظام ببياناتك وقنواتك الحالية ليعمل بكفاءة وعلى مدار الساعة.",
+    "integrate_f1": "خفض تكاليف الدعم بنسبة قد تصل إلى 70% عبر أتمتة ذكية",
+    "integrate_f2": "تشغيل مساعدين مدرّبين على بيانات منشأتك خلال 3 إلى 5 أيام عمل",
+    "integrate_f3": "الرد على العملاء خلال أقل من 3 ثوانٍ، على مدار الساعة",
+    "integrate_f4": "دعم متعدد اللغات: العربية، الإنجليزية، التركية وغيرها",
+    "aicard1_title": "مساعد واتساب ذكي",
+    "aicard1_sub": "يدير الحجوزات والاستفسارات والمتابعات",
+    "aicard2_title": "مساعد تأهيل الفرص",
+    "aicard2_sub": "يفرز العملاء المحتملين ويرفع الجادّين لفريق المبيعات",
+    "aicard3_title": "نظام حجوزات ذكي",
+    "aicard3_sub": "توافر لحظي وتأكيدات تلقائية",
+    "aicard4_title": "مساعد خدمة العملاء",
+    "aicard4_sub": "يعالج حتى 80% من الطلبات المتكررة تلقائيًا",
+    "aicard5_title": "أتمتة سير الأعمال",
+    "aicard5_sub": "يربط أدواتك ويلغي الأعمال اليدوية المتكررة",
+    "badge_live": "يعمل الآن",
+    "badge_active": "مفعّل",
+    "stat1": "خفض في<br>تكاليف الدعم",
+    "stat2": "خدمة عملاء<br>على مدار الساعة",
+    "stat3": "متوسط زمن<br>استجابة الذكاء الاصطناعي",
+    "stat4": "زيادة في تحويل<br>العملاء المحتملين",
+    "stat5": "لغات<br>مدعومة",
+    "sol_label": "حلولنا",
+    "sol_title": "مزود متكامل لحلول <span class=\"grad\">أتمتة الذكاء الاصطناعي</span>",
+    "sol_sub": "من خدمة العملاء إلى أتمتة المبيعات، نصمم أنظمة ذكية تدير عملياتك التشغيلية على مدار الساعة.",
+    "sol1_title": "مساعدات محادثة ذكية",
+    "sol1_desc": "مساعدات محادثة للموقع أو التطبيق أو أي قناة تواصل، مدرّبة على بيانات منشأتك لتقديم إجابات دقيقة ومرتبطة بسياق العمل.",
+    "sol2_title": "أتمتة واتساب للأعمال",
+    "sol2_desc": "تكامل كامل مع واجهة WhatsApp Business API لأتمتة الاستفسارات والتأكيدات والمتابعات والدعم على نطاق واسع دون تدخل يدوي مستمر.",
+    "sol3_title": "أنظمة توليد وتأهيل الفرص",
+    "sol3_desc": "التقاط العملاء المحتملين، تأهيلهم، وتوجيه الفرص الجادة تلقائيًا إلى فريق المبيعات مع متابعة فورية على مدار الساعة.",
+    "sol4_title": "تكاملات أنظمة CRM",
+    "sol4_desc": "ربط مساعدين الذكاء الاصطناعي مع Salesforce وHubSpot وZoho وغيرها، مع تسجيل المحادثات وتتبع كل فرصة تلقائيًا.",
+    "sol5_title": "أنظمة حجز المواعيد",
+    "sol5_desc": "جدولة ذكية تدير التوافر، التأكيدات، التذكيرات، وإعادة الجدولة دون الحاجة إلى متابعة يدوية.",
+    "sol6_title": "أتمتة خدمة العملاء",
+    "sol6_desc": "معالجة حتى 80% من طلبات الدعم المتكررة تلقائيًا، مع تصعيد ذكي للحالات التي تحتاج إلى تدخل بشري.",
+    "sol7_title": "أنظمة الحجوزات",
+    "sol7_desc": "أتمتة شاملة للحجوزات في الفنادق والمطاعم ومقدمي الخدمات، تشمل التوافر اللحظي والتأكيدات الفورية.",
+    "sol8_title": "أتمتة سير الأعمال",
+    "sol8_desc": "إلغاء الإجراءات الداخلية المتكررة عبر تنسيق المهام بين الأدوات والفرق والأنظمة دون متابعة يدوية.",
+    "sol9_title": "مساعدون أذكياء متعددو اللغات",
+    "sol9_desc": "تواصل طبيعي مع العملاء بلغتهم، مع اكتشاف تلقائي للغة والتحول بين العربية والإنجليزية والتركية والروسية وغيرها.",
+    "how_label": "منهجية التنفيذ",
+    "how_title": "من الفكرة إلى التشغيل<br><span class=\"grad\">خلال أيام لا أشهر</span>",
+    "how_sub": "آلية تنفيذ مختصرة وواضحة لتشغيل حل الذكاء الاصطناعي بسرعة وبجودة قابلة للقياس.",
+    "step1_title": "جلسة استكشاف",
+    "step1_desc": "نبدأ بجلسة مركزة لفهم أهدافك، سير العمل الحالي، نقاط التعطل، وأين يمكن للذكاء الاصطناعي تحقيق أعلى عائد.",
+    "step2_title": "تحليل تشغيلي",
+    "step2_desc": "نرسم رحلة العميل، مصادر البيانات، والأنظمة المستخدمة لتحديد بنية الأتمتة الأنسب لواقع منشأتك.",
+    "step3_title": "تصميم الحل",
+    "step3_desc": "نصمم تدفقات المحادثة، منطق القرار، مسارات التصعيد، التكاملات، ولوحات التقارير قبل بدء التطوير.",
+    "step4_title": "التطوير والتدريب",
+    "step4_desc": "نبني المساعدين وندرّبهم على بياناتك: المنتجات، السياسات، الأسئلة الشائعة، الأسعار، ونبرة العلامة التجارية.",
+    "step5_title": "الإطلاق",
+    "step5_desc": "نختبر الحل ونحسّنه ثم نطلقه على قنواتك مثل الموقع وواتساب وCRM وأي أنظمة أخرى.",
+    "step6_title": "التحسين والدعم المستمر",
+    "step6_desc": "متابعة أداء مستمرة، تقارير واضحة، وتحسينات دورية تجعل النظام أكثر دقة مع الوقت.",
+    "ind_label": "حالات استخدام الأعمال",
+    "ind_title": "حلول مناسبة لكل <span class=\"grad\">قطاع</span>",
+    "ind_sub": "هذه أمثلة وليست حدودًا. إذا كانت منشأتك تخدم عملاء أو تملك إجراءات متكررة، يمكننا أتمتتها.",
+    "ind1": "المطاعم والمقاهي",
+    "ind1_ex": "حجوزات الطاولات، استفسارات القائمة، والطلبات",
+    "ind2": "الفنادق والضيافة",
+    "ind2_ex": "حجوزات الغرف، خدمات النزلاء، وتسجيل الوصول",
+    "ind3": "العيادات والمراكز الطبية",
+    "ind3_ex": "المواعيد، التذكيرات، واستقبال المرضى",
+    "ind4": "العقار",
+    "ind4_ex": "تأهيل العملاء واستفسارات الوحدات والعروض",
+    "ind5": "التجارة الإلكترونية",
+    "ind5_ex": "تتبع الطلبات، الدعم، والبحث عن المنتجات",
+    "ind6": "الأندية واللياقة",
+    "ind6_ex": "العضويات، الحجوزات، والباقات",
+    "ind7": "السيارات",
+    "ind7_ex": "تجارب القيادة، حجوزات الصيانة، وفرز العملاء",
+    "ind8": "التعليم والتدريب",
+    "ind8_ex": "القبول، معلومات البرامج، والتسجيل",
+    "ind_cta_sub": "لا ترى قطاعك؟ لكل منشأة تفاصيلها. لنتحدث عن سير عملك الحالي.",
+    "ind_cta_btn": "ناقش احتياج منشأتك",
+    "roi_label": "حاسبة العائد",
+    "roi_title": "قدّر <span class=\"grad\">الوفر الشهري</span>",
+    "roi_sub": "عدّل المؤشرات حسب حجم منشأتك وشاهد القيمة الشهرية المتوقعة من أتمتة الذكاء الاصطناعي.",
+    "roi_inputs_title": "أرقام منشأتك",
+    "roi_inputs_sub": "اضبطها بما يعكس وضعك الحالي",
+    "roi_s1_label": "استفسارات العملاء شهريًا",
+    "roi_s1_hint": "كم رسالة أو بريد أو طلب محادثة يتعامل معه فريقك شهريًا؟",
+    "roi_s2_label": "موظفو الدعم بدوام كامل",
+    "roi_s2_hint": "عدد الموظفين الذين يتركز عملهم على الرد على العملاء",
+    "roi_s3_label": "العملاء المحتملون شهريًا",
+    "roi_s3_hint": "عدد العملاء الذين يتواصلون أو يظهرون اهتمامًا بخدماتك كل شهر",
+    "roi_s4_label": "متوسط تكلفة ساعة الموظف",
+    "roi_s4_hint": "يشمل الراتب والمزايا والتكاليف التشغيلية لكل ساعة عمل",
+    "roi_results_title": "الأثر الشهري المتوقع",
+    "roi_r1_label": "ساعات عمل يتم توفيرها شهريًا",
+    "roi_r1_explain": "يتعامل الذكاء الاصطناعي تلقائيًا مع نحو 70% من الاستفسارات المتكررة، ليتفرغ فريقك للمهام الأعلى قيمة.",
+    "roi_r2_label": "تكاليف تشغيلية مستردة شهريًا",
+    "roi_r2_explain": "محسوبة بناءً على تكلفة ساعة الموظف مضروبة في ساعات العمل التي تم توفيرها.",
+    "roi_r3_label": "فرص إضافية يتم تحويلها تقديريًا",
+    "roi_r3_explain": "الرد الفوري على مدار الساعة يساعد عادةً على رفع تحويل العملاء المحتملين بنسبة 35 إلى 40%.",
+    "roi_total_label": "إجمالي القيمة الشهرية",
+    "roi_total_sub": "الوفر التشغيلي + فرص الإيراد الإضافية",
+    "roi_cta": "حوّل هذه الأرقام إلى خطة",
+    "int_label": "التكاملات",
+    "int_title": "يتكامل مع <span class=\"grad\">أنظمتك الحالية</span>",
+    "int_sub": "يرتبط AIIS بالمنصات والأدوات التي تستخدمها منشأتك بالفعل دون الحاجة إلى استبدالها.",
+    "test_label": "نتائج العملاء",
+    "test_title": "تعتمد عليه شركات في <span class=\"grad\">قطاعات متعددة</span>",
+    "test1_quote": "\"شغّل AIIS مساعد حجوزات واتساب خلال 4 أيام. ارتفعت الحجوزات 35% في الشهر الأول، ولم نعد نفوّت استفسارات خارج وقت الدوام.\"",
+    "test2_quote": "\"استبدلنا جزءًا كبيرًا من عبء الدعم المتكرر بنظام AIIS. انخفض زمن الاستجابة من 4 ساعات إلى أقل من 3 ثوانٍ وتحسنت تجربة العملاء بوضوح.\"",
+    "test3_quote": "\"مساعد تأهيل الفرص يفرز استفسارات العقار تلقائيًا. فريق المبيعات يتعامل الآن مع المشترين الجادين فقط، وبنفس عدد الموظفين.\"",
+    "faq_label": "الأسئلة الشائعة",
+    "faq_title": "أسئلة <span class=\"grad\">شائعة</span>",
+    "final_label": "ابدأ اليوم",
+    "final_title": "جاهز لتوسيع أعمالك<br>باستخدام <span class=\"grad\">الذكاء الاصطناعي؟</span>",
+    "final_sub": "ابدأ باستشارة مجانية نحدد فيها فرص الأتمتة الأعلى أثرًا على التكلفة، سرعة الاستجابة، ونمو المبيعات في منشأتك.",
+    "footer_sub": "حلول تكامل الذكاء الاصطناعي",
+    "footer_desc": "أتمتة ذكاء اصطناعي بمستوى مؤسسي للشركات والمنشآت في السعودية والخليج.",
+    "footer_sol_col": "الحلول",
+    "footer_company_col": "الشركة",
+    "footer_start_col": "ابدأ",
+    "footer_contact_col": "التواصل",
+    "footer_about_link": "عن AIIS",
+    "back_btn": "العودة إلى AIIS",
+    "consult_page_label": "استشارة مجانية",
+    "consult_page_title": "احجز<br><span class=\"grad\">جلسة استراتيجية للذكاء الاصطناعي</span>",
+    "consult_page_sub": "أخبرنا عن منشأتك وسنقترح خارطة طريق عملية للأتمتة تناسب قنواتك وعملياتك الحالية، دون أي التزام.",
+    "form_fullname": "الاسم الكامل *",
+    "form_bizname": "اسم المنشأة *",
+    "form_email": "البريد الإلكتروني *",
+    "form_phone": "رقم الجوال / واتساب",
+    "form_industry": "القطاع",
+    "form_challenge": "ما التحدي التشغيلي الذي تريد معالجته؟ *",
+    "form_subject": "الموضوع",
+    "form_message": "الرسالة *",
+    "consult_submit_btn": "إرسال الطلب",
+    "consult_success_title": "تم استلام طلبك",
+    "consult_success_sub": "شكرًا لك. سيتواصل معك فريق AIIS خلال 24 ساعة لتنسيق الجلسة.",
+    "demo_page_label": "حجز عرض توضيحي",
+    "demo_page_title": "شاهد AIIS <span class=\"grad\">على أرض الواقع</span>",
+    "demo_page_sub": "نأخذك في عرض عملي يوضح كيف يمكن لمساعدي الذكاء الاصطناعي خدمة قطاعك وقنواتك الحالية.",
+    "form_pref_time": "الوقت المناسب",
+    "form_solution_interest": "ما الحل الذي يهمك أكثر؟",
+    "demo_submit_btn": "اطلب العرض التوضيحي",
+    "demo_success_title": "تم استلام طلب العرض",
+    "demo_success_sub": "سنرسل لك رابطًا لاختيار الموعد الأنسب من التقويم.",
+    "pricing_title": "باقات واضحة<br><span class=\"grad\">ومرنة</span>",
+    "pricing_sub": "كل منشأة تختلف في القنوات والحجم وعدد المحادثات. لذلك تُبنى الباقة حسب نطاق العمل، مع تضمين الإعداد والتدريب والإطلاق والدعم.",
+    "plan1_name": "الانطلاق",
+    "plan1_period": "حسب حجم الاستخدام ونوع الحالة",
+    "plan1_f1": "مساعد ذكاء اصطناعي واحد لقناة واحدة",
+    "plan1_f2": "حتى 1,000 محادثة شهريًا",
+    "plan1_f3": "الموقع الإلكتروني أو واتساب",
+    "plan1_f4": "تدريب أساسي على بيانات المنشأة",
+    "plan1_f5": "دعم عبر البريد الإلكتروني",
+    "plan2_name": "النمو",
+    "plan2_period": "يتوسع مع احتياج منشأتك",
+    "plan2_f1": "حتى 3 مساعدين أذكياء عبر عدة قنوات",
+    "plan2_f2": "حتى 10,000 محادثة شهريًا",
+    "plan2_f3": "واتساب + الموقع + CRM",
+    "plan2_f4": "تدريب شامل على بيانات الأعمال",
+    "plan2_f5": "دعم أولوية + تقارير شهرية",
+    "plan2_f6": "لوحة لمتابعة العائد والأداء",
+    "plan3_name": "المؤسسات",
+    "plan3_period": "حل مصمم بالكامل حسب المتطلبات",
+    "plan3_f1": "عدد غير محدود من المساعدين الأذكياء",
+    "plan3_f2": "محادثات غير محدودة",
+    "plan3_f3": "كل القنوات + تكاملات مخصصة",
+    "plan3_f4": "مدير حساب مخصص",
+    "plan3_f5": "اتفاقية مستوى خدمة ودعم 24/7",
+    "plan3_f6": "تدريب نموذج مخصص عند الحاجة",
+    "plan_popular": "الأكثر طلبًا",
+    "plan_quote_btn": "اطلب عرض سعر",
+    "plan_sales_btn": "تحدث مع فريق المبيعات",
+    "pricing_note": "تشمل جميع الباقات الإعداد، التدريب، الإطلاق، والتحسين المستمر. يعتمد السعر النهائي على النطاق وحجم الاستخدام والتكاملات المطلوبة.",
+    "about_label": "عن AIIS",
+    "about_title": "نصمم ذكاءً اصطناعيًا<br><span class=\"grad\">يعمل داخل الأعمال</span>",
+    "about_sub": "AIIS شركة متخصصة في أتمتة الذكاء الاصطناعي للواقع التشغيلي، نبني حلولًا عملية قابلة للقياس وسريعة الإطلاق ومدعومة باستمرار.",
+    "about_mission_title": "رسالتنا",
+    "about_mission_desc": "جعل أتمتة الذكاء الاصطناعي بمستوى مؤسسي متاحة للشركات والمنشآت من مختلف الأحجام، من المواقع الفردية إلى المجموعات متعددة الفروع.",
+    "about_approach_title": "منهجنا",
+    "about_approach_desc": "لا نقدم برامج محادثة عامة. نصمم ونبني وندرّب أنظمة ذكاء اصطناعي مخصصة حول عملياتك وبياناتك وأهدافك التجارية.",
+    "about_why_title": "لماذا AIIS",
+    "about_why_desc": "إطلاق خلال 3 إلى 5 أيام. دعم عربي وإنجليزي وتركي. تكامل عميق مع أنظمة CRM والمنصات. تحسين مستمر وقياس مباشر للنتائج.",
+    "team_title": "الفريق",
+    "founder_role": "المؤسس ومهندس حلول الذكاء الاصطناعي",
+    "team2_name": "فريق حلول الذكاء الاصطناعي",
+    "team2_role": "التطوير والتدريب",
+    "contact_title": "تواصل <span class=\"grad\">معنا</span>",
+    "contact_sub": "لديك سؤال أو ترغب في مناقشة مشروع أتمتة؟ اترك بياناتك أو تواصل معنا مباشرة وسنعود إليك قريبًا.",
+    "contact_submit_btn": "إرسال الرسالة",
+    "contact_success_title": "تم إرسال الرسالة",
+    "contact_success_sub": "شكرًا لتواصلك. سنرد عليك خلال 24 ساعة.",
+    "placeholder_fullname": "اكتب اسمك الكامل",
+    "placeholder_bizname": "اسم المنشأة أو الشركة",
+    "placeholder_email": "name@company.com",
+    "placeholder_phone": "+966 5X XXX XXXX",
+    "placeholder_challenge": "صف سير العمل الحالي، نقاط التعطل، أو الهدف الذي تريد تحقيقه...",
+    "placeholder_name": "اكتب اسمك",
+    "placeholder_contact_subject": "ما موضوع الرسالة؟",
+    "placeholder_contact_message": "اكتب رسالتك هنا...",
+    "select_industry_placeholder": "اختر القطاع",
+    "opt_restaurant": "المطاعم والمقاهي",
+    "opt_hotel": "الفنادق والضيافة",
+    "opt_clinic": "العيادات والرعاية الصحية",
+    "opt_realestate": "العقار",
+    "opt_ecommerce": "التجارة الإلكترونية",
+    "opt_gym": "الأندية واللياقة",
+    "opt_automotive": "السيارات",
+    "opt_education": "التعليم والتدريب",
+    "opt_other": "قطاع آخر",
+    "select_time_morning": "صباحًا (9 - 12)",
+    "select_time_afternoon": "بعد الظهر (12 - 5)",
+    "select_time_evening": "مساءً (5 - 8)",
+    "select_solution_website": "مساعد محادثة للموقع",
+    "select_solution_whatsapp": "أتمتة واتساب",
+    "select_solution_lead": "نظام توليد وتأهيل الفرص",
+    "select_solution_support": "أتمتة خدمة العملاء",
+    "select_solution_reservation": "نظام حجوزات ومواعيد",
+    "select_solution_workflow": "أتمتة كاملة لسير الأعمال",
+    "int_type_messaging": "منصة مراسلة",
+    "int_type_web": "مساعد محادثة للموقع",
+    "int_type_crm": "تكامل CRM",
+    "int_type_crm_marketing": "CRM وتسويق",
+    "int_type_booking": "منصة حجوزات",
+    "int_type_social": "رسائل منصات التواصل",
+    "int_type_email": "أتمتة البريد الإلكتروني",
+    "int_type_payment": "معالجة المدفوعات",
+    "int_type_scheduling": "جدولة المواعيد",
+    "int_type_team": "تنبيهات الفرق",
+    "int_type_custom": "أي نظام عبر API",
+    "test1_role": "مالك، مجموعة مطاعم Bella Vista",
+    "test2_role": "مديرة العمليات، عيادات NovaMed",
+    "test3_role": "الرئيس التنفيذي، Premier Real Estate Group",
+    "label_email": "البريد الإلكتروني",
+    "label_whatsapp": "واتساب",
+    "footer_contact_form": "نموذج التواصل",
+    "footer_copy": "© 2025 AIIS — حلول تكامل الذكاء الاصطناعي. جميع الحقوق محفوظة.",
+    "pricing_price_custom": "مخصص",
+    "sending": "جاري الإرسال...",
+    "alert_required_all": "يرجى تعبئة جميع الحقول المطلوبة.",
+    "alert_required_demo": "يرجى إدخال الاسم والبريد الإلكتروني.",
+    "alert_send_error": "تعذر إرسال الطلب. يرجى المحاولة مرة أخرى أو التواصل معنا عبر واتساب.",
+    "roi_unit_fte": "موظف",
+    "roi_unit_hour": "ساعة",
+    "roi_unit_per_hour": "/ساعة",
+    "roi_total_dynamic": "{saved} وفر تشغيلي + {revenue} فرص إيراد إضافية"
   }
 };
 
+Object.assign(translations.en, {"placeholder_fullname":"Your full name","placeholder_bizname":"Your company name","placeholder_email":"you@company.com","placeholder_phone":"+1 555 000 0000","placeholder_challenge":"Describe your current process, pain points, or goals...","placeholder_name":"Your name","placeholder_contact_subject":"What's this about?","placeholder_contact_message":"Your message...","select_industry_placeholder":"Select your industry","opt_restaurant":"Restaurant / F&B","opt_hotel":"Hotel / Hospitality","opt_clinic":"Clinic / Healthcare","opt_realestate":"Real Estate","opt_ecommerce":"E-Commerce","opt_gym":"Gym / Fitness","opt_automotive":"Automotive","opt_education":"Education","opt_other":"Other","select_time_morning":"Morning (9am - 12pm)","select_time_afternoon":"Afternoon (12pm - 5pm)","select_time_evening":"Evening (5pm - 8pm)","select_solution_website":"Website AI Chatbot","select_solution_whatsapp":"WhatsApp Automation","select_solution_lead":"Lead Generation System","select_solution_support":"Customer Support Automation","select_solution_reservation":"Reservation / Booking System","select_solution_workflow":"Full Workflow Automation","int_type_messaging":"Messaging Platform","int_type_web":"Web Chatbot Widget","int_type_crm":"CRM Integration","int_type_crm_marketing":"CRM & Marketing","int_type_booking":"Booking Platform","int_type_social":"Social Media DMs","int_type_email":"Email Automation","int_type_payment":"Payment Processing","int_type_scheduling":"Scheduling","int_type_team":"Team Notifications","int_type_custom":"Any System via API","test1_role":"Owner, Bella Vista Restaurant Group","test2_role":"Operations Director, NovaMed Clinics","test3_role":"CEO, Premier Real Estate Group","label_email":"Email","label_whatsapp":"WhatsApp","footer_contact_form":"Contact Form","footer_copy":"© 2025 AIIS — Artificial Intelligence Integration Solutions. All rights reserved.","pricing_price_custom":"Custom","sending":"Sending...","alert_required_all":"Please fill in all required fields.","alert_required_demo":"Please fill in your name and email.","alert_send_error":"There was an issue sending your request. Please try again or reach out via WhatsApp.","roi_unit_fte":"FTE","roi_unit_hour":"hrs","roi_unit_per_hour":"/hr","roi_total_dynamic":"{saved} saved + {revenue} revenue potential"});
+Object.assign(translations.tr, {"placeholder_fullname":"Adınız ve soyadınız","placeholder_bizname":"Şirket adınız","placeholder_email":"you@company.com","placeholder_phone":"+90 5XX XXX XX XX","placeholder_challenge":"Mevcut sürecinizi, sorunlarınızı veya hedeflerinizi yazın...","placeholder_name":"Adınız","placeholder_contact_subject":"Konu nedir?","placeholder_contact_message":"Mesajınızı yazın...","select_industry_placeholder":"Sektörünüzü seçin","opt_restaurant":"Restoran / Yiyecek-İçecek","opt_hotel":"Otel / Konaklama","opt_clinic":"Klinik / Sağlık","opt_realestate":"Gayrimenkul","opt_ecommerce":"E-Ticaret","opt_gym":"Spor / Fitness","opt_automotive":"Otomotiv","opt_education":"Eğitim","opt_other":"Diğer","select_time_morning":"Morning (9am - 12pm)","select_time_afternoon":"Afternoon (12pm - 5pm)","select_time_evening":"Evening (5pm - 8pm)","select_solution_website":"Website AI Chatbot","select_solution_whatsapp":"WhatsApp Automation","select_solution_lead":"Lead Generation System","select_solution_support":"Customer Support Automation","select_solution_reservation":"Reservation / Booking System","select_solution_workflow":"Full Workflow Automation","int_type_messaging":"Messaging Platform","int_type_web":"Web Chatbot Widget","int_type_crm":"CRM Integration","int_type_crm_marketing":"CRM & Marketing","int_type_booking":"Booking Platform","int_type_social":"Social Media DMs","int_type_email":"Email Automation","int_type_payment":"Payment Processing","int_type_scheduling":"Scheduling","int_type_team":"Team Notifications","int_type_custom":"Any System via API","test1_role":"Owner, Bella Vista Restaurant Group","test2_role":"Operations Director, NovaMed Clinics","test3_role":"CEO, Premier Real Estate Group","label_email":"E-posta","label_whatsapp":"WhatsApp","footer_contact_form":"İletişim Formu","footer_copy":"© 2025 AIIS — Yapay Zeka Entegrasyon Çözümleri. Tüm hakları saklıdır.","pricing_price_custom":"Özel","sending":"Gönderiliyor...","alert_required_all":"Lütfen zorunlu alanları doldurun.","alert_required_demo":"Lütfen adınızı ve e-postanızı girin.","alert_send_error":"Gönderim sırasında bir sorun oluştu. Lütfen tekrar deneyin veya WhatsApp üzerinden ulaşın.","roi_unit_fte":"FTE","roi_unit_hour":"saat","roi_unit_per_hour":"/saat","roi_total_dynamic":"{saved} tasarruf + {revenue} ek gelir potansiyeli"});
+
 function setLang(lang) {
   currentLang = lang;
-  // Update active state in dropdown
   document.querySelectorAll('.lang-option').forEach(b => {
     const btnLang = b.getAttribute('onclick').match(/setLang\('(\w+)'\)/)?.[1];
     b.classList.toggle('active', btnLang === lang);
   });
   document.getElementById('langCurrentText').textContent = lang.toUpperCase();
   document.getElementById('langDropdown').classList.remove('open');
-
-  // RTL for Arabic
   document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
   document.documentElement.lang = lang;
-
-  // Apply translations
-  const t = translations[lang];
-  if (!t) return;
+  document.body.classList.toggle('is-rtl', lang === 'ar');
+  const t = translations[lang] || translations.en;
   document.querySelectorAll('[data-key]').forEach(el => {
     const key = el.getAttribute('data-key');
     if (t[key] !== undefined) {
-      if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
-        el.placeholder = t[key];
-      } else {
-        el.innerHTML = t[key];
-      }
+      if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') { el.placeholder = t[key]; }
+      else { el.innerHTML = t[key]; }
     }
   });
-
-  // Update ROI wage label currency symbol
-  updateROI();
+  if (typeof buildFAQ === 'function') buildFAQ(lang);
+  if (typeof updateROI === 'function') updateROI();
+  if (typeof ariaApplyLocale === 'function') ariaApplyLocale(lang, { resetConversation: true });
 }
 
 function toggleLangDropdown() {
@@ -2647,9 +2668,9 @@ function updateROI() {
   const wage = wageUSD * rate;
 
   document.getElementById('v-inquiries').textContent = inquiries.toLocaleString();
-  document.getElementById('v-staff').textContent = staff + ' FTE';
+  document.getElementById('v-staff').textContent = staff + ' ' + ((translations[currentLang] || translations.en).roi_unit_fte || 'FTE');
   document.getElementById('v-leads').textContent = leads.toLocaleString();
-  document.getElementById('v-wage').textContent = sym + (wage % 1 === 0 ? wage.toLocaleString() : wage.toFixed(1)) + '/hr';
+  document.getElementById('v-wage').textContent = sym + (wage % 1 === 0 ? wage.toLocaleString() : wage.toFixed(1)) + ((translations[currentLang] || translations.en).roi_unit_per_hour || '/hr');
 
   // Calculations
   const hoursPerInquiry = 0.1; // 6 mins per inquiry
@@ -2661,14 +2682,14 @@ function updateROI() {
   const revenueUpside = Math.round(extraLeads * avgDeal * rate);
   const totalValue = costSaved + revenueUpside;
 
-  document.getElementById('roi-hours').textContent = totalHours.toLocaleString() + ' hrs';
+  document.getElementById('roi-hours').textContent = totalHours.toLocaleString() + ' ' + ((translations[currentLang] || translations.en).roi_unit_hour || 'hrs');
   document.getElementById('roi-cost').textContent = sym + costSaved.toLocaleString();
   document.getElementById('roi-leads').textContent = '+' + extraLeads.toLocaleString();
   document.getElementById('roi-total').textContent = sym + totalValue.toLocaleString();
 
   // Update explanatory sub
   const sub = document.getElementById('roi-total-sub');
-  if (sub) sub.textContent = sym + costSaved.toLocaleString() + ' saved + ' + sym + revenueUpside.toLocaleString() + ' revenue potential';
+  if (sub) { const tpl = ((translations[currentLang] || translations.en).roi_total_dynamic || '{saved} saved + {revenue} revenue potential'); sub.textContent = tpl.replace('{saved}', sym + costSaved.toLocaleString()).replace('{revenue}', sym + revenueUpside.toLocaleString()); }
 }
 
 /* ── EmailJS Form Submissions ── */
@@ -2677,7 +2698,7 @@ function setButtonLoading(btnId, loading, originalText) {
   if (!btn) return;
   if (loading) {
     btn.disabled = true;
-    btn.textContent = '⏳ Sending...';
+    btn.textContent = (translations[currentLang] || translations.en).sending || 'Sending...';
     btn.style.opacity = '.7';
   } else {
     btn.disabled = false;
@@ -2693,7 +2714,7 @@ function submitConsultation() {
   const phone = document.getElementById('c-phone').value.trim();
   const industry = document.getElementById('c-industry').value;
   const message = document.getElementById('c-message').value.trim();
-  if (!name || !email || !message) { alert('Please fill in all required fields.'); return; }
+  if (!name || !email || !message) { alert((translations[currentLang] || translations.en).alert_required_all || 'Please fill in all required fields.'); return; }
   const t = translations[currentLang];
   const btnText = t?.consult_submit_btn || 'Submit';
   setButtonLoading('consultSubmitBtn', true, btnText);
@@ -2706,14 +2727,14 @@ function submitConsultation() {
     reply_to: email
   };
 
-  emailjs.send(EMAILJS_SERVICE, EMAILJS_TEMPLATE_CONTACT, params)
+  (window.emailjs && typeof emailjs.send === 'function' ? emailjs.send(EMAILJS_SERVICE, EMAILJS_TEMPLATE_CONTACT, params) : Promise.reject(new Error('EmailJS unavailable')))
     .then(() => {
       document.getElementById('consultation-form-wrap').style.display = 'none';
       document.getElementById('consultation-success').classList.add('show');
     })
     .catch((err) => {
       console.error('EmailJS error:', err);
-      alert('There was an issue sending your request. Please try again or reach out via WhatsApp.');
+      alert((translations[currentLang] || translations.en).alert_send_error || 'There was an issue sending your request. Please try again or reach out via WhatsApp.');
       setButtonLoading('consultSubmitBtn', false, btnText);
     });
 }
@@ -2724,7 +2745,7 @@ function submitDemo() {
   const email = document.getElementById('d-email').value.trim();
   const time  = document.getElementById('d-time').value;
   const solution = document.getElementById('d-solution').value;
-  if (!name || !email) { alert('Please fill in your name and email.'); return; }
+  if (!name || !email) { alert((translations[currentLang] || translations.en).alert_required_demo || 'Please fill in your name and email.'); return; }
   const t = translations[currentLang];
   const btnText = t?.demo_submit_btn || 'Request My Demo';
   setButtonLoading('demoSubmitBtn', true, btnText);
@@ -2737,14 +2758,14 @@ function submitDemo() {
     reply_to: email
   };
 
-  emailjs.send(EMAILJS_SERVICE, EMAILJS_TEMPLATE_CONTACT, params)
+  (window.emailjs && typeof emailjs.send === 'function' ? emailjs.send(EMAILJS_SERVICE, EMAILJS_TEMPLATE_CONTACT, params) : Promise.reject(new Error('EmailJS unavailable')))
     .then(() => {
       document.getElementById('demo-form-wrap').style.display = 'none';
       document.getElementById('demo-success').classList.add('show');
     })
     .catch((err) => {
       console.error('EmailJS error:', err);
-      alert('There was an issue. Please try again or reach out via WhatsApp.');
+      alert((translations[currentLang] || translations.en).alert_send_error || 'There was an issue sending your request. Please try again or reach out via WhatsApp.');
       setButtonLoading('demoSubmitBtn', false, btnText);
     });
 }
@@ -2767,14 +2788,14 @@ function submitContact() {
     reply_to: email
   };
 
-  emailjs.send(EMAILJS_SERVICE, EMAILJS_TEMPLATE_CONTACT, params)
+  (window.emailjs && typeof emailjs.send === 'function' ? emailjs.send(EMAILJS_SERVICE, EMAILJS_TEMPLATE_CONTACT, params) : Promise.reject(new Error('EmailJS unavailable')))
     .then(() => {
       document.getElementById('contact-form-wrap').style.display = 'none';
       document.getElementById('contact-success').classList.add('show');
     })
     .catch((err) => {
       console.error('EmailJS error:', err);
-      alert('There was an issue. Please try again or email contact@aiis.ai directly.');
+      alert((translations[currentLang] || translations.en).alert_send_error || 'There was an issue sending your request. Please try again or reach out via WhatsApp.');
       setButtonLoading('contactSubmitBtn', false, btnText);
     });
 }
@@ -2800,12 +2821,14 @@ const faqs = {
     { q: 'Fiyatlandırma nasıl yapılandırılmış?', a: 'Fiyatlandırma; ajan tipi, kanal sayısı ve aylık konuşma hacmine göre belirlenir. Tüm planlar kurulum, eğitim ve süregelen desteği kapsar.' },
   ],
   ar: [
-    { q: 'كم من الوقت يستغرق نشر وكيل الذكاء الاصطناعي؟', a: 'يكون معظم وكلاء الذكاء الاصطناعي مباشرين خلال 3-5 أيام عمل. نتولى التطوير والتدريب والاختبار والنشر الكامل.' },
-    { q: 'ما اللغات التي يدعمها وكلاؤكم؟', a: 'يدعم وكلاؤنا التركية والإنجليزية والعربية والروسية والمزيد. يكتشف الوكيل اللغة تلقائيًا.' },
-    { q: 'كيف تتكاملون مع واتساب؟', a: 'نتكامل عبر واجهة برمجة تطبيقات WhatsApp Business الرسمية. رقم عملك الحالي متصل ويتعامل الوكيل مع جميع الرسائل الواردة.' },
-    { q: 'ما مدى دقة ردود الذكاء الاصطناعي؟', a: 'يتم تدريب الوكلاء على بيانات عملك المحددة — تتجاوز الدقة عادةً 95%.' },
-    { q: 'ماذا يحدث إذا لم يستطع الذكاء الاصطناعي الإجابة؟', a: 'يُصعِّد الوكيل بسلاسة إلى أحد أعضاء الفريق البشري. لن يُترك أي عميل دون رد.' },
-    { q: 'كيف يتم تسعير الخدمة؟', a: 'يعتمد التسعير على نوع الوكيل وعدد القنوات وحجم المحادثة الشهري. تشمل جميع الخطط الإعداد والتدريب والدعم المستمر.' },
+    { q: 'ما المدة المتوقعة لتشغيل مساعد ذكاء اصطناعي؟', a: 'في أغلب الحالات يمكن تشغيل المساعد خلال 3 إلى 5 أيام عمل. نتولى التصميم، التطوير، التدريب على بيانات منشأتك، الاختبار، والإطلاق على القنوات المطلوبة.' },
+    { q: 'ما اللغات التي تدعمها المساعدات؟', a: 'ندعم العربية والإنجليزية والتركية والروسية وغيرها. يستطيع المساعد التعرف على لغة العميل تلقائيًا والرد بها دون إعداد يدوي من العميل.' },
+    { q: 'كيف يتم التكامل مع واتساب؟', a: 'نربط رقم منشأتك عبر واجهة WhatsApp Business API الرسمية، ثم يدير المساعد الرسائل الواردة، الحجوزات، المتابعات، والتصعيد للفريق عند الحاجة.' },
+    { q: 'ما مدى دقة الردود؟', a: 'يتم تدريب المساعد على بياناتك الفعلية مثل الخدمات، الأسعار، السياسات، الأسئلة الشائعة ونبرة العلامة التجارية. في الحالات المناسبة تتجاوز الدقة عادةً 95%.' },
+    { q: 'ماذا يحدث إذا لم يعرف المساعد الإجابة؟', a: 'يتم تصعيد الحالة بسلاسة إلى عضو مناسب من الفريق عبر واتساب أو البريد أو الهاتف حسب قواعد التصعيد المتفق عليها، حتى لا يبقى العميل دون رد.' },
+    { q: 'كيف يتم تحديد السعر؟', a: 'يعتمد السعر على نوع المساعد، عدد القنوات، حجم المحادثات الشهري، ومستوى التكاملات المطلوبة. تشمل الباقات الإعداد والتدريب والإطلاق والدعم المستمر.' },
+    { q: 'هل أحتاج إلى معرفة تقنية لإدارة النظام؟', a: 'لا. بعد الإطلاق تتم إدارة الاستخدام من لوحة بسيطة، بينما يتولى فريقنا الصيانة التقنية، التحديثات، والتحسينات المستمرة.' },
+    { q: 'هل يمكن ربط النظام مع CRM أو نظام حجوزات قائم؟', a: 'نعم. يمكننا التكامل مع أنظمة مثل Salesforce وHubSpot وZoho وأنظمة الحجوزات والمدفوعات وأي نظام يملك واجهة API مناسبة.' }
   ]
 };
 
@@ -2820,33 +2843,7 @@ function buildFAQ(lang) {
     faqList.appendChild(item);
   });
 }
-buildFAQ('en');
-
-// Override setLang to also rebuild FAQ
-const _origSetLang = setLang;
-// Re-define with FAQ rebuild
-function setLang(lang) {
-  currentLang = lang;
-  document.querySelectorAll('.lang-option').forEach(b => {
-    const btnLang = b.getAttribute('onclick').match(/setLang\('(\w+)'\)/)?.[1];
-    b.classList.toggle('active', btnLang === lang);
-  });
-  document.getElementById('langCurrentText').textContent = lang.toUpperCase();
-  document.getElementById('langDropdown').classList.remove('open');
-  document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
-  document.documentElement.lang = lang;
-  const t = translations[lang];
-  if (!t) return;
-  document.querySelectorAll('[data-key]').forEach(el => {
-    const key = el.getAttribute('data-key');
-    if (t[key] !== undefined) {
-      if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') { el.placeholder = t[key]; }
-      else { el.innerHTML = t[key]; }
-    }
-  });
-  buildFAQ(lang);
-  updateROI();
-}
+buildFAQ(currentLang);
 
 function toggleFaq(i) {
   const faqList = document.getElementById('faqList');
@@ -2860,141 +2857,6 @@ function toggleFaq(i) {
   });
   if (!isOpen && item && answer) { item.classList.add('open'); answer.style.maxHeight = answer.scrollHeight + 'px'; }
 }
-
-/* ── Demo Chat System ── */
-const demoData = {
-  chatbot: {
-    title: 'Website AI Chatbot',
-    desc: 'A smart conversational agent embedded on your website. Answers product questions, qualifies leads, routes to humans — all without staff intervention.',
-    features: ['Available 24/7 without staffing costs', 'Trained on your specific business data', 'Captures and qualifies leads automatically', 'Escalates to humans when needed'],
-    welcome: "Hi! I'm the AIIS website assistant. I can answer questions about our AI automation services, pricing, and how we can help your business. What would you like to know?",
-    responses: {
-      default: "Great question! Our AI systems are custom-built for each business and typically go live within 3–5 days. Would you like to book a free consultation?",
-      price: "Pricing depends on the type of agent, channels, and conversation volume. We offer custom quotes — every business is different. Would you like to schedule a free strategy call?",
-      demo: "I'd love to show you a personalized demo! You can schedule one at the top of this page. It's a 30-minute live walkthrough tailored to your industry.",
-    }
-  },
-  whatsapp: {
-    title: 'WhatsApp AI Agent',
-    desc: 'Full WhatsApp Business API integration. Automate customer conversations at scale across your existing WhatsApp business number.',
-    features: ['Official WhatsApp Business API', 'Handles unlimited conversations simultaneously', 'Broadcasts, updates, and follow-ups', 'Booking and order management'],
-    welcome: "Hello! I'm an AI assistant connected to WhatsApp. I can handle reservations, answer questions, and process requests 24/7. How can I help you today?",
-    responses: {
-      default: "Got it! Our WhatsApp agents connect to your existing business number via the official API. They handle conversations, bookings, and follow-ups automatically.",
-      book: "I can book that for you right now! Please share your name, preferred date, and contact number and I'll confirm your reservation instantly.",
-      price: "For pricing and availability, I'd recommend booking a quick consultation — they'll give you a quote tailored to your volume and use case.",
-    }
-  },
-  leadgen: {
-    title: 'Lead Qualification Agent',
-    desc: 'AI-powered lead capture and qualification. Engages prospects 24/7, scores intent, and delivers only high-quality leads to your sales team.',
-    features: ['24/7 prospect engagement', 'Automatic lead scoring and routing', 'CRM integration — HubSpot, Salesforce, Zoho', 'Sales team notified instantly for hot leads'],
-    welcome: "Hi! I'm here to help you find the right solution for your business. What's your main challenge right now?",
-    responses: {
-      default: "That's exactly the kind of challenge we help businesses solve. How many customer inquiries do you handle per month, roughly?",
-      sales: "It sounds like you'd benefit from our Lead Qualification System. I'll connect you with our team for a tailored walkthrough. Can I get your name and best contact method?",
-    }
-  },
-  support: {
-    title: 'Customer Support Agent',
-    desc: 'Resolve up to 80% of support tickets automatically with AI. Smart escalation ensures complex issues reach the right human instantly.',
-    features: ['Handles FAQs, returns, complaints automatically', 'Smart escalation to human agents', 'Ticket creation and tracking', 'Multi-language support out of the box'],
-    welcome: "Hello! I'm the AIIS support agent. I can help with service questions, setup, pricing, integrations, and more. What can I assist you with?",
-    responses: {
-      default: "Thanks for reaching out! Our support agents handle over 90% of common questions automatically. For complex issues, they escalate to human agents in under 30 seconds.",
-      setup: "Setup typically takes 3–5 business days. We handle everything — development, training, testing, and deployment.",
-      language: "Our agents support Turkish, English, Arabic, Russian, and several more languages. They auto-detect the customer's language — no configuration needed.",
-    }
-  },
-  reservation: {
-    title: 'Reservation AI Agent',
-    desc: 'End-to-end reservation automation. Manages availability, confirmations, reminders, and cancellations without human involvement.',
-    features: ['Real-time availability management', 'Instant booking confirmations', 'Automated reminders and follow-ups', 'Easy cancellation and rescheduling'],
-    welcome: "Welcome! I can help you with availability, bookings, and reservations. Would you like to check availability for a specific date?",
-    responses: {
-      default: "I'd be happy to help with that reservation! Could you share your preferred date, time, and party size?",
-      available: "Great news — we have availability on your requested date! What name should the reservation be under?",
-      confirm: "Your reservation is confirmed! You'll receive a confirmation via WhatsApp and email. We look forward to seeing you!",
-    }
-  },
-  sales: {
-    title: 'Sales Automation Agent',
-    desc: 'An intelligent sales agent that qualifies prospects, handles objections, presents your offer, and closes or escalates to your team.',
-    features: ['Engages cold and warm leads 24/7', 'Presents offers and handles objections', 'Schedules follow-up calls automatically', 'Syncs with your sales pipeline in real-time'],
-    welcome: "Hello! I'm here to help you explore how AI automation can help your business grow. Are you looking to automate support, lead generation, reservations, or something else?",
-    responses: {
-      default: "Based on what you've described, I'd recommend starting with our lead qualification agent — most businesses see ROI within the first 30 days.",
-      cost: "Cost is always a key consideration. Most clients recover their investment within the first month through staffing savings alone.",
-      interest: "The next step is a quick 20-minute strategy call with a live demo built for your industry. Want me to send you a calendar link?",
-    }
-  }
-};
-
-let currentDemo = 'chatbot';
-function switchDemo(type, btn) {
-  currentDemo = type;
-  document.querySelectorAll('.demo-tab').forEach(t => t.classList.remove('active'));
-  btn.classList.add('active');
-  const data = demoData[type];
-  document.getElementById('demoTitle').textContent = data.title;
-  document.getElementById('demoDesc').textContent = data.desc;
-  const featuresEl = document.getElementById('demoFeatures');
-  featuresEl.innerHTML = data.features.map(f => `<div class="demo-feature"><div class="demo-check"></div>${f}</div>`).join('');
-  document.getElementById('demoChatTitle').textContent = data.title;
-  const msgs = document.getElementById('demoMessages');
-  msgs.innerHTML = '';
-  addDemoMsg(data.welcome, 'ai');
-}
-function addDemoMsg(text, role) {
-  const msgs = document.getElementById('demoMessages');
-  const row = document.createElement('div');
-  row.className = 'demo-msg ' + role;
-  const av = document.createElement('div');
-  av.className = 'demo-av ' + role;
-  av.textContent = role === 'ai' ? 'AI' : 'U';
-  const bub = document.createElement('div');
-  bub.className = 'demo-bubble';
-  bub.textContent = text;
-  if (role === 'ai') { row.appendChild(av); row.appendChild(bub); }
-  else { row.appendChild(bub); row.appendChild(av); }
-  msgs.appendChild(row);
-  msgs.scrollTop = msgs.scrollHeight;
-}
-function showTypingIndicator() {
-  const msgs = document.getElementById('demoMessages');
-  const row = document.createElement('div');
-  row.className = 'demo-msg ai'; row.id = 'demoTyping';
-  const av = document.createElement('div'); av.className = 'demo-av ai'; av.textContent = 'AI';
-  const ind = document.createElement('div'); ind.className = 'typing-indicator';
-  ind.innerHTML = '<span></span><span></span><span></span>';
-  row.appendChild(av); row.appendChild(ind);
-  msgs.appendChild(row); msgs.scrollTop = msgs.scrollHeight;
-}
-function removeTypingIndicator() { const t = document.getElementById('demoTyping'); if (t) t.remove(); }
-function sendDemoMsg() {
-  const input = document.getElementById('demoInput');
-  const text = input.value.trim();
-  if (!text) return;
-  addDemoMsg(text, 'user');
-  input.value = '';
-  showTypingIndicator();
-  const data = demoData[currentDemo];
-  const lo = text.toLowerCase();
-  let response = data.responses.default;
-  if (data.responses.price && (lo.includes('price') || lo.includes('cost') || lo.includes('how much') || lo.includes('fiyat') || lo.includes('سعر') || lo.includes('تكلفة'))) response = data.responses.price;
-  else if (data.responses.setup && (lo.includes('setup') || lo.includes('how long') || lo.includes('kurulum'))) response = data.responses.setup;
-  else if (data.responses.language && (lo.includes('language') || lo.includes('arabic') || lo.includes('turkish') || lo.includes('dil'))) response = data.responses.language;
-  else if (data.responses.book && (lo.includes('book') || lo.includes('reserv') || lo.includes('table') || lo.includes('rezerv') || lo.includes('حجز'))) response = data.responses.book;
-  else if (data.responses.available && (lo.includes('available') || lo.includes('date') || lo.includes('müsait') || lo.includes('متاح'))) response = data.responses.available;
-  else if (data.responses.confirm && (lo.includes('yes') || lo.includes('confirm') || lo.includes('evet') || lo.includes('نعم'))) response = data.responses.confirm;
-  else if (data.responses.cost && (lo.includes('afford') || lo.includes('budget') || lo.includes('expensive') || lo.includes('bütçe') || lo.includes('ميزانية'))) response = data.responses.cost;
-  else if (data.responses.interest && (lo.includes('interest') || lo.includes('tell me more') || lo.includes('ilgi') || lo.includes('مزيد'))) response = data.responses.interest;
-  else if (data.responses.sales && (lo.includes('sales') || lo.includes('lead') || lo.includes('satış') || lo.includes('مبيعات'))) response = data.responses.sales;
-  setTimeout(() => { removeTypingIndicator(); addDemoMsg(response, 'ai'); }, 1100 + Math.random() * 400);
-}
-
-// Init demo
-switchDemo('chatbot', document.querySelector('.demo-tab'));
 
 /* ── Scroll Reveal ── */
 const revealObserver = new IntersectionObserver((entries) => {
@@ -3365,12 +3227,29 @@ updateROI();
   #aria-widget { bottom: 18px; right: 16px; }
   #aria-window { width: calc(100vw - 32px); }
 }
+[dir="rtl"] #aria-widget { right:auto; left:28px; align-items:flex-start; }
+[dir="rtl"] #aria-window { transform-origin:bottom left; direction:rtl; }
+[dir="rtl"] #aria-greeting { border-radius:12px 12px 12px 4px; text-align:right; }
+[dir="rtl"] #aria-header, [dir="rtl"] #aria-input-area { flex-direction:row-reverse; }
+[dir="rtl"] .aria-header-info { text-align:right; }
+[dir="rtl"] .aria-header-status { flex-direction:row-reverse; justify-content:flex-end; }
+[dir="rtl"] .aria-av-dot { right:auto; left:1px; }
+[dir="rtl"] #aria-notif { right:auto; left:2px; }
+[dir="rtl"] .aria-msg.ai { flex-direction:row-reverse; }
+[dir="rtl"] .aria-msg.user { flex-direction:row; }
+[dir="rtl"] .aria-msg.ai .aria-bubble { border-bottom-left-radius:12px; border-bottom-right-radius:4px; text-align:right; }
+[dir="rtl"] .aria-msg.user .aria-bubble { border-bottom-right-radius:12px; border-bottom-left-radius:4px; text-align:right; }
+[dir="rtl"] .aria-typing { border-radius:12px 12px 4px 12px; }
+[dir="rtl"] #aria-quick-replies { direction:rtl; justify-content:flex-start; }
+[dir="rtl"] #aria-input { direction:rtl; text-align:right; }
+[dir="rtl"] #aria-send svg { transform:scaleX(-1); }
+@media (max-width: 480px) { [dir="rtl"] #aria-widget { right:auto; left:16px; } }
 </style>
 
 <!-- ── ARIA Widget HTML ── -->
 <div id="aria-widget">
   <!-- Greeting bubble -->
-  <div id="aria-greeting" onclick="ariaOpen()">
+  <div id="aria-greeting" onclick="ariaOpen()" style="display: block;">
     <strong>👋 Hi! I'm ARIA</strong><br>
     Your AI assistant from AIIS. Ask me anything about our solutions!
   </div>
@@ -3387,7 +3266,7 @@ updateROI();
         <div class="aria-header-name">ARIA</div>
         <div class="aria-header-status">
           <div class="aria-header-status-dot"></div>
-          AI Lead Agent · AIIS
+          <span id="aria-status-text">AI Lead Agent · AIIS</span>
         </div>
       </div>
       <button id="aria-clear-btn" onclick="ariaClear()" title="Clear chat">↺ Clear</button>
@@ -3397,19 +3276,14 @@ updateROI();
     <div id="aria-messages"></div>
 
     <!-- Quick replies -->
-    <div id="aria-quick-replies">
-      <button class="aria-qr" onclick="ariaQuickSend('What services do you offer?')">Our services</button>
-      <button class="aria-qr" onclick="ariaQuickSend('How much does it cost?')">Pricing</button>
-      <button class="aria-qr" onclick="ariaQuickSend('How fast can you deploy?')">Deployment time</button>
-      <button class="aria-qr" onclick="ariaQuickSend('What industries do you serve?')">Industries</button>
-    </div>
+    <div id="aria-quick-replies"></div>
 
     <!-- Input -->
     <div id="aria-input-area">
-      <input id="aria-input" placeholder="Ask me anything…" onkeydown="if(event.key==='Enter' && !event.shiftKey){event.preventDefault();ariaSend();}">
+      <input id="aria-input" placeholder="Ask me anything…" onkeydown="if(event.key==='Enter' &amp;&amp; !event.shiftKey){event.preventDefault();ariaSend();}">
       <button id="aria-send" onclick="ariaSend()">
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path d="M22 2L11 13M22 2L15 22l-4-9-9-4 20-7z"/>
+          <path d="M22 2L11 13M22 2L15 22l-4-9-9-4 20-7z"></path>
         </svg>
       </button>
     </div>
@@ -3423,14 +3297,14 @@ updateROI();
     <div id="aria-notif"></div>
     <!-- Open icon: chat bubble -->
     <svg class="aria-icon-open" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10z" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-      <circle cx="9" cy="10" r="1" fill="white"/>
-      <circle cx="12" cy="10" r="1" fill="white"/>
-      <circle cx="15" cy="10" r="1" fill="white"/>
+      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10z" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
+      <circle cx="9" cy="10" r="1" fill="white"></circle>
+      <circle cx="12" cy="10" r="1" fill="white"></circle>
+      <circle cx="15" cy="10" r="1" fill="white"></circle>
     </svg>
     <!-- Close icon: X -->
     <svg class="aria-icon-close" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M18 6L6 18M6 6l12 12" stroke="white" stroke-width="2" stroke-linecap="round"/>
+      <path d="M18 6L6 18M6 6l12 12" stroke="white" stroke-width="2" stroke-linecap="round"></path>
     </svg>
   </button>
 </div>
@@ -3439,7 +3313,210 @@ updateROI();
 /* ════════════════════════════════════════
    ARIA — AIIS LEAD AGENT
 ════════════════════════════════════════ */
-const ARIA_WEBHOOK_URL = ' https://squeezing-patriarch-dispatch.ngrok-free.dev/webhook/aria-chat';
+const ARIA_WEBHOOK_URL = 'https://squeezing-patriarch-dispatch.ngrok-free.dev/webhook/aria-chat';
+const ARIA_LOCALES = {
+  "en": {
+    "greeting": "<strong>Hi, I'm ARIA</strong><br>Your AI assistant from AIIS. Ask me about solutions, pricing, deployment, or integrations.",
+    "status": "AI Lead Agent · AIIS",
+    "clear": "↺ Clear",
+    "clearTitle": "Clear chat",
+    "placeholder": "Ask me anything...",
+    "footer": "Powered by <span>AIIS</span> · Gemini AI · <span>aiis.ai</span>",
+    "launcherLabel": "Open AIIS chat assistant",
+    "userAvatar": "U",
+    "typing": "ARIA is typing",
+    "welcome": "Hi! I'm **ARIA**, the AI assistant for AIIS. I can help you understand our AI automation solutions, pricing, deployment timeline, and integrations.\n\nWhat would you like to know?",
+    "quickReplies": {
+      "initial": [
+        {
+          "label": "Our services",
+          "prompt": "What services do you offer?"
+        },
+        {
+          "label": "Pricing",
+          "prompt": "How much does it cost?"
+        },
+        {
+          "label": "Deployment time",
+          "prompt": "How fast can you deploy?"
+        },
+        {
+          "label": "Industries",
+          "prompt": "What industries do you serve?"
+        }
+      ],
+      "followup": [
+        {
+          "label": "WhatsApp AI",
+          "prompt": "Tell me about WhatsApp automation"
+        },
+        {
+          "label": "Book a call",
+          "prompt": "How do I book a consultation?"
+        },
+        {
+          "label": "Results",
+          "prompt": "What results can I expect?"
+        }
+      ]
+    },
+    "connectionError": "I'm having trouble connecting right now. You can still book a free consultation from the page, or reach AIIS at **contact@aiis.ai** and **+966 551 070 892**.",
+    "fallbackDefault": "Great question. For the most accurate answer, book a **free strategy session** and our team will map the right automation path for your business.",
+    "fallbacks": {
+      "price": "Pricing is tailored to the agent type, channels, integrations, and monthly volume. The best next step is a **free consultation** so we can scope it accurately.",
+      "whatsapp": "Our **WhatsApp AI Agent** connects through the official WhatsApp Business API and handles bookings, questions, orders, and follow-ups 24/7.",
+      "deploy": "Most AI agents go **live within 3-5 business days**. We handle development, training, testing, deployment, and handover.",
+      "industry": "We support restaurants, hotels, clinics, real estate, e-commerce, gyms, automotive, education, and more. If your business has customers or repeated workflows, we can automate them.",
+      "language": "Our agents support **Arabic, English, Turkish, Russian**, and more, with automatic language detection.",
+      "book": "You can book a free consultation or schedule a demo from the buttons on this page. No commitment required.",
+      "contact": "You can reach AIIS at **contact@aiis.ai** or WhatsApp **+966 551 070 892**.",
+      "technology": "AIIS solutions are powered by **Google Gemini Pro models** with multilingual conversation, reasoning, and business workflow support.",
+      "integration": "We integrate with Salesforce, HubSpot, Zoho CRM, Google Calendar, Stripe, Mailchimp, Slack, and most API-ready systems.",
+      "roi": "Businesses typically see **70%+ support cost reduction**, faster response times, and 35-40% more lead conversion. The ROI calculator can estimate your numbers."
+    }
+  },
+  "tr": {
+    "greeting": "<strong>Merhaba, ben ARIA</strong><br>AIIS asistanınız. Çözümler, fiyatlandırma, kurulum veya entegrasyonlar hakkında sorabilirsiniz.",
+    "status": "AI Lead Ajanı · AIIS",
+    "clear": "↺ Temizle",
+    "clearTitle": "Sohbeti temizle",
+    "placeholder": "Bir şey sorun...",
+    "footer": "<span>AIIS</span> tarafından desteklenir · Gemini AI · <span>aiis.ai</span>",
+    "launcherLabel": "AIIS sohbet asistanını aç",
+    "userAvatar": "S",
+    "typing": "ARIA yazıyor",
+    "welcome": "Merhaba! Ben **ARIA**, AIIS asistanı. AI otomasyon çözümleri, fiyatlandırma, kurulum süresi ve entegrasyonlar hakkında yardımcı olabilirim.\n\nNe öğrenmek istersiniz?",
+    "quickReplies": {
+      "initial": [
+        {
+          "label": "Hizmetler",
+          "prompt": "Hangi hizmetleri sunuyorsunuz?"
+        },
+        {
+          "label": "Fiyatlandırma",
+          "prompt": "Maliyeti nedir?"
+        },
+        {
+          "label": "Kurulum süresi",
+          "prompt": "Ne kadar hızlı kurabilirsiniz?"
+        },
+        {
+          "label": "Sektörler",
+          "prompt": "Hangi sektörlere hizmet veriyorsunuz?"
+        }
+      ],
+      "followup": [
+        {
+          "label": "WhatsApp AI",
+          "prompt": "WhatsApp otomasyonunu anlatın"
+        },
+        {
+          "label": "Görüşme ayarla",
+          "prompt": "Nasıl danışmanlık randevusu alırım?"
+        },
+        {
+          "label": "Sonuçlar",
+          "prompt": "Hangi sonuçları bekleyebilirim?"
+        }
+      ]
+    },
+    "connectionError": "Şu anda bağlantıda sorun yaşıyorum. Yine de sayfadan ücretsiz danışmanlık alabilir veya **contact@aiis.ai** üzerinden bize ulaşabilirsiniz.",
+    "fallbackDefault": "İyi soru. En doğru yanıt için ücretsiz strateji görüşmesi ayarlamanızı öneririm.",
+    "fallbacks": {}
+  },
+  "ar": {
+    "greeting": "<strong>مرحبًا، أنا ARIA</strong><br>مساعدك الذكي من AIIS. اسألني عن الحلول، الباقات، مدة التنفيذ، أو التكاملات.",
+    "status": "مساعد تأهيل الفرص · AIIS",
+    "clear": "↺ مسح",
+    "clearTitle": "مسح المحادثة",
+    "placeholder": "اكتب سؤالك هنا...",
+    "footer": "مدعوم من <span>AIIS</span> · Gemini AI · <span>aiis.ai</span>",
+    "launcherLabel": "فتح مساعد المحادثة من AIIS",
+    "userAvatar": "أنت",
+    "typing": "ARIA تكتب",
+    "welcome": "مرحبًا، أنا **ARIA** مساعد AIIS الذكي. أستطيع مساعدتك في فهم حلول أتمتة الذكاء الاصطناعي، الباقات، مدة التنفيذ، والتكاملات المناسبة لمنشأتك.\n\nما الذي ترغب في معرفته؟",
+    "quickReplies": {
+      "initial": [
+        {
+          "label": "الحلول",
+          "prompt": "ما الحلول التي تقدمونها؟"
+        },
+        {
+          "label": "الباقات",
+          "prompt": "كيف يتم تحديد السعر؟"
+        },
+        {
+          "label": "مدة التنفيذ",
+          "prompt": "كم يستغرق تشغيل النظام؟"
+        },
+        {
+          "label": "القطاعات",
+          "prompt": "ما القطاعات التي تخدمونها؟"
+        }
+      ],
+      "followup": [
+        {
+          "label": "واتساب الذكي",
+          "prompt": "حدثني عن أتمتة واتساب"
+        },
+        {
+          "label": "حجز استشارة",
+          "prompt": "كيف أحجز استشارة مجانية؟"
+        },
+        {
+          "label": "النتائج",
+          "prompt": "ما النتائج التي يمكن توقعها؟"
+        }
+      ]
+    },
+    "connectionError": "يبدو أن الاتصال بالمساعد غير متاح مؤقتًا. يمكنك حجز استشارة مجانية من الصفحة، أو التواصل مع فريق AIIS عبر **contact@aiis.ai** أو واتساب **+966 551 070 892**.",
+    "fallbackDefault": "سؤال مهم. للحصول على إجابة دقيقة حسب وضع منشأتك، ننصح بحجز **جلسة استراتيجية مجانية** ليقيّم الفريق سير العمل والتكاملات المناسبة.",
+    "fallbacks": {
+      "price": "يتم تحديد السعر حسب نوع المساعد، القنوات المطلوبة، حجم المحادثات الشهري، ومستوى التكاملات. أفضل خطوة هي **استشارة مجانية** لتحديد النطاق بدقة.",
+      "whatsapp": "مساعد واتساب الذكي يعمل عبر واجهة WhatsApp Business API الرسمية، ويدير الاستفسارات والحجوزات والطلبات والمتابعات على مدار الساعة.",
+      "deploy": "غالبية المساعدين يمكن تشغيلهم خلال **3 إلى 5 أيام عمل**. نتولى التطوير، التدريب على بياناتك، الاختبار، والإطلاق.",
+      "industry": "نخدم المطاعم، الفنادق، العيادات، العقار، التجارة الإلكترونية، الأندية، السيارات، التعليم وغيرها. أي منشأة لديها عملاء أو إجراءات متكررة يمكن أتمتتها.",
+      "language": "تدعم المساعدات العربية والإنجليزية والتركية والروسية وغيرها، مع اكتشاف تلقائي للغة العميل والرد بها.",
+      "book": "يمكنك حجز استشارة مجانية أو عرض توضيحي من الأزرار الموجودة في الصفحة. لا يوجد أي التزام مسبق.",
+      "contact": "يمكنك التواصل مع فريق AIIS عبر **contact@aiis.ai** أو واتساب **+966 551 070 892**.",
+      "technology": "تعتمد حلول AIIS على نماذج **Google Gemini Pro** لدعم المحادثات متعددة اللغات والاستدلال وتنفيذ مهام الأعمال.",
+      "integration": "نتكامل مع Salesforce وHubSpot وZoho CRM وGoogle Calendar وStripe وMailchimp وSlack ومعظم الأنظمة التي توفر API.",
+      "roi": "عادةً تساعد الأتمتة على خفض تكاليف الدعم بأكثر من **70%**، وتسريع الاستجابة، وزيادة تحويل العملاء المحتملين بنحو 35 إلى 40%. استخدم حاسبة العائد لتقدير وضعك."
+    }
+  }
+};
+function ariaLocale() { return ARIA_LOCALES[currentLang] || ARIA_LOCALES.en; }
+function ariaApplyLocale(lang = currentLang, options = {}) {
+  const l = ARIA_LOCALES[lang] || ARIA_LOCALES.en;
+  const greeting = document.getElementById('aria-greeting');
+  const status = document.getElementById('aria-status-text');
+  const clear = document.getElementById('aria-clear-btn');
+  const input = document.getElementById('aria-input');
+  const footer = document.getElementById('aria-footer');
+  const launcher = document.getElementById('aria-launcher');
+  if (greeting) greeting.innerHTML = l.greeting;
+  if (status) status.textContent = l.status;
+  if (clear) { clear.textContent = l.clear; clear.setAttribute('title', l.clearTitle); }
+  if (input) input.placeholder = l.placeholder;
+  if (footer) footer.innerHTML = l.footer;
+  if (launcher) launcher.setAttribute('aria-label', l.launcherLabel);
+  ariaSetQuickReplies('initial');
+  if (options.resetConversation) {
+    ariaHistory = [];
+    ariaGreetingSent = false;
+    const msgs = document.getElementById('aria-messages');
+    if (msgs) msgs.innerHTML = '';
+    if (ariaIsOpen) { ariaGreetingSent = true; ariaAddMsg(l.welcome, 'ai'); ariaShowQuickReplies(); }
+  }
+}
+function ariaSetQuickReplies(stage = 'initial') {
+  const wrap = document.getElementById('aria-quick-replies');
+  if (!wrap) return;
+  const l = ariaLocale();
+  const replies = (l.quickReplies && l.quickReplies[stage]) || ARIA_LOCALES.en.quickReplies[stage] || [];
+  wrap.innerHTML = '';
+  replies.forEach(item => { const btn = document.createElement('button'); btn.className = 'aria-qr'; btn.type = 'button'; btn.textContent = item.label; btn.onclick = () => ariaQuickSend(item.prompt); wrap.appendChild(btn); });
+}
 
 /* ─── State ─── */
 let ariaHistory = [];
@@ -3458,7 +3535,7 @@ function ariaOpen() {
   if (!ariaGreetingSent) {
     ariaGreetingSent = true;
     setTimeout(() => {
-      ariaAddMsg("Hi! I'm **ARIA**, the AI assistant for AIIS. I'm here to help you understand how our AI automation solutions can transform your business.\n\nWhat would you like to know?", 'ai');
+      ariaAddMsg(ariaLocale().welcome, 'ai');
       ariaShowQuickReplies();
     }, 250);
   }
@@ -3483,7 +3560,7 @@ function ariaAddMsg(text, role) {
 
   const av = document.createElement('div');
   av.className = 'aria-msg-av';
-  av.textContent = role === 'ai' ? 'AR' : 'U';
+  av.textContent = role === 'ai' ? 'AR' : (ariaLocale().userAvatar || 'U');
 
   const bub = document.createElement('div');
   bub.className = 'aria-bubble';
@@ -3512,7 +3589,7 @@ function ariaShowTyping() {
   const row = document.createElement('div');
   row.className = 'aria-msg ai'; row.id = 'aria-typing-row';
   const av = document.createElement('div'); av.className = 'aria-msg-av';
-  av.style.background = 'linear-gradient(135deg,#3f5eff,#7c3aed)'; av.textContent = 'AR';
+  av.style.background = 'linear-gradient(135deg,#3f5eff,#7c3aed)'; av.textContent = 'AR'; row.setAttribute('aria-label', ariaLocale().typing);
   const ind = document.createElement('div'); ind.className = 'aria-typing';
   ind.innerHTML = '<span></span><span></span><span></span>';
   row.appendChild(av); row.appendChild(ind);
@@ -3525,7 +3602,9 @@ function ariaRemoveTyping() {
 
 /* ─── Quick replies ─── */
 function ariaShowQuickReplies() {
-  document.getElementById('aria-quick-replies').style.display = 'flex';
+  const wrap = document.getElementById('aria-quick-replies');
+  if (!wrap.children.length) ariaSetQuickReplies('initial');
+  wrap.style.display = 'flex';
 }
 function ariaHideQuickReplies() {
   document.getElementById('aria-quick-replies').style.display = 'none';
@@ -3594,11 +3673,7 @@ function ariaProcessSend(text) {
 
     if (ariaHistory.length === 4) {
       setTimeout(() => {
-        document.getElementById('aria-quick-replies').innerHTML = `
-          <button class="aria-qr" onclick="ariaQuickSend('Tell me about WhatsApp automation')">WhatsApp AI</button>
-          <button class="aria-qr" onclick="ariaQuickSend('How do I book a consultation?')">Book a call</button>
-          <button class="aria-qr" onclick="ariaQuickSend('What results can I expect?')">Results</button>
-        `;
+        ariaSetQuickReplies('followup');
         ariaShowQuickReplies();
       }, 300);
     }
@@ -3607,7 +3682,7 @@ function ariaProcessSend(text) {
     clearTimeout(timeoutId);
     ariaRemoveTyping();
     console.error('ARIA fetch error:', err);
-    ariaAddMsg(ariaFallbackReply(text), 'ai');
+    ariaAddMsg(ariaFallbackReply(text, true), 'ai');
   })
   .finally(() => {
     ariaIsTyping = false;
@@ -3617,32 +3692,27 @@ function ariaProcessSend(text) {
 }
 
 /* ─── Fallback replies (offline / error) ─── */
-function ariaFallbackReply(text) {
+function ariaFallbackReply(text, connectionIssue = false) {
   const lo = text.toLowerCase();
-  if (lo.includes('price') || lo.includes('cost') || lo.includes('how much') || lo.includes('fiyat') || lo.includes('سعر'))
-    return "Pricing is tailored to each project based on agent type, channels, and monthly volume. The best next step is a **free consultation** — click 'Book a Free Consultation' at the top of the page!";
-  if (lo.includes('whatsapp'))
-    return "Our **WhatsApp AI Agent** connects to your existing business number via the official API. It handles bookings, answers queries, processes orders, and follows up — 24/7, without any staff involvement.";
-  if (lo.includes('deploy') || lo.includes('how long') || lo.includes('fast') || lo.includes('quick') || lo.includes('days'))
-    return "Most AI agents go **live within 3–5 business days**. We handle everything: development, training on your data, testing, and deployment. You just provide your business information.";
-  if (lo.includes('industry') || lo.includes('restaurant') || lo.includes('hotel') || lo.includes('clinic') || lo.includes('real estate'))
-    return "We serve **restaurants, hotels, clinics, real estate, e-commerce, gyms, automotive, and education** — among others. If your business has customers or repetitive workflows, we can automate them.";
-  if (lo.includes('language') || lo.includes('arabic') || lo.includes('turkish') || lo.includes('عربي') || lo.includes('türkçe'))
-    return "Our agents support **Turkish, English, Arabic, Russian**, and more. The language is auto-detected from what the customer types — no manual switching needed.";
-  if (lo.includes('book') || lo.includes('consult') || lo.includes('demo') || lo.includes('call'))
-    return "You can **book a free consultation** using the button at the top of this page, or **schedule a demo** to see your custom AI agent live. No commitment required!";
-  if (lo.includes('contact') || lo.includes('reach') || lo.includes('whatsapp number') || lo.includes('email'))
-    return "You can reach the AIIS team at **contact@aiis.ai** or on WhatsApp at **+966 551 070 892**. We typically respond within a few hours.";
-  if (lo.includes('gemini') || lo.includes('model') || lo.includes('technology') || lo.includes('powered'))
-    return "AIIS solutions are powered by **Google Gemini Pro models**, giving them state-of-the-art conversational ability, multilingual support, and deep reasoning for business tasks.";
-  if (lo.includes('integrat') || lo.includes('crm') || lo.includes('hubspot') || lo.includes('salesforce'))
-    return "We integrate with **Salesforce, HubSpot, Zoho CRM**, Google Calendar, Stripe, Mailchimp, Slack, and most systems with an API. No need to replace your existing stack.";
-  if (lo.includes('roi') || lo.includes('saving') || lo.includes('return') || lo.includes('benefit'))
-    return "Businesses typically see **70%+ reduction in support costs**, 35-40% more leads converted, and under 3-second response times. Use the ROI calculator on this page for your specific numbers!";
-  return "Great question! For the most accurate answer, I'd recommend speaking with our team directly. You can **book a free strategy session** at the top of this page — it's 100% free and tailored to your business.";
+  const l = ariaLocale();
+  const f = Object.assign({}, ARIA_LOCALES.en.fallbacks, l.fallbacks || {});
+  if (lo.includes('price') || lo.includes('cost') || lo.includes('how much') || lo.includes('fiyat') || lo.includes('سعر') || lo.includes('تكلفة') || lo.includes('باقة')) return f.price;
+  if (lo.includes('whatsapp') || lo.includes('واتساب')) return f.whatsapp;
+  if (lo.includes('deploy') || lo.includes('how long') || lo.includes('fast') || lo.includes('quick') || lo.includes('days') || lo.includes('kurulum') || lo.includes('مدة') || lo.includes('تشغيل')) return f.deploy;
+  if (lo.includes('industry') || lo.includes('restaurant') || lo.includes('hotel') || lo.includes('clinic') || lo.includes('real estate') || lo.includes('قطاع') || lo.includes('مطعم') || lo.includes('فندق') || lo.includes('عيادة') || lo.includes('عقار')) return f.industry;
+  if (lo.includes('language') || lo.includes('arabic') || lo.includes('turkish') || lo.includes('عربي') || lo.includes('لغة') || lo.includes('türkçe')) return f.language;
+  if (lo.includes('book') || lo.includes('consult') || lo.includes('demo') || lo.includes('call') || lo.includes('حجز') || lo.includes('استشارة') || lo.includes('عرض')) return f.book;
+  if (lo.includes('contact') || lo.includes('reach') || lo.includes('whatsapp number') || lo.includes('email') || lo.includes('تواصل') || lo.includes('بريد')) return f.contact;
+  if (lo.includes('gemini') || lo.includes('model') || lo.includes('technology') || lo.includes('powered') || lo.includes('تقنية') || lo.includes('نموذج')) return f.technology;
+  if (lo.includes('integrat') || lo.includes('crm') || lo.includes('hubspot') || lo.includes('salesforce') || lo.includes('تكامل')) return f.integration;
+  if (lo.includes('roi') || lo.includes('saving') || lo.includes('return') || lo.includes('benefit') || lo.includes('عائد') || lo.includes('وفر')) return f.roi;
+  if (connectionIssue) return l.connectionError || ARIA_LOCALES.en.connectionError;
+  return l.fallbackDefault || ARIA_LOCALES.en.fallbackDefault;
 }
 
 /* ─── Auto-open greeting after delay on desktop ─── */
+ariaApplyLocale(currentLang, { resetConversation: false });
+
 if (window.innerWidth > 768) {
   setTimeout(() => {
     const greet = document.getElementById('aria-greeting');
@@ -3650,5 +3720,4 @@ if (window.innerWidth > 768) {
   }, 4000);
 }
 </script>
-</body>
-</html>
+<script defer="" src="https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496" integrity="sha512-ZE9pZaUXND66v380QUtch/5sE9tPFh2zg45pR2PB0CVkCtOREv2AJKkSidISWkysEuQ0EH8faUU5du78bx87UQ==" data-cf-beacon="[Truncated]
