@@ -1,10 +1,11 @@
 ﻿<!DOCTYPE html>
-<html lang="en"><head>
+<html lang="en">
+<head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AIIS — AI Integration Solutions </title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 <style>
 /* ═══════════════════════════════════════════
@@ -510,7 +511,7 @@ nav.scrolled { border-color:var(--border2); background:rgba(6,6,8,.90); }
 }
 @keyframes blink { 0%,100%{opacity:1;} 50%{opacity:.15;} }
 @keyframes heroIn { from{opacity:0;transform:translateY(14px);} to{opacity:1;transform:translateY(0);} }
-.hero-title { font-size:5rem; font-weight:800; line-height:1.04; letter-spacing:0; animation:heroIn .7s .05s var(--ease) both; max-width:880px; }
+.hero-title { font-size:5rem; font-weight:800; line-height:1.04; letter-spacing:0; animation:heroIn .7s .05s var(--ease) both; max-width:1200px; }
 .hero-powered { display:inline-flex; align-items:center; gap:5px; background:rgba(79,114,255,.06); border:1px solid rgba(79,114,255,.15); padding:4px 11px; border-radius:999px; font-size:.6rem; font-weight:500; color:var(--w40); letter-spacing:.08em; text-transform:uppercase; margin-top:1.1rem; animation:heroIn .6s .14s var(--ease) both; }
 .hero-powered span { color:var(--blue2); font-weight:600; }
 .hero-sub { max-width:600px; font-size:1rem; color:var(--w70); margin:1.45rem auto 2.35rem; font-weight:400; line-height:1.78; letter-spacing:0; animation:heroIn .7s .16s var(--ease) both; }
@@ -586,6 +587,12 @@ nav.scrolled { border-color:var(--border2); background:rgba(6,6,8,.90); }
 }
 .ai-card-badge.live { background:rgba(74,222,128,.1); color:#4ade80; border:1px solid rgba(74,222,128,.25); }
 .ai-card-badge.active { background:rgba(79,114,255,.1); color:var(--blue2); border:1px solid rgba(79,114,255,.25); }
+/* Keep first line of hero intact on desktop screens */
+  @media (min-width: 992px) {
+    .hero-title [data-key="hero_title_1"] {
+      white-space: nowrap;
+    }
+  }
 
 /* ═══════════════════════════════════════════
    SECTION 2 — STATS
@@ -1029,7 +1036,7 @@ footer {
   .footer-main { grid-template-columns:1fr 1fr; }
   .stats-grid { grid-template-columns:repeat(3,1fr); }
 }
-@media (max-width: 860px) {
+@media (max-width: 700px) {
   .nav-links { display:none; }
   .nav-hamburger { display:flex; }
   .hero { min-height:auto; padding:118px 1.2rem 5rem; }
@@ -1057,37 +1064,62 @@ footer {
   .page-container { padding-inline:1rem; }
 }
 
-/* RTL support for Arabic */
-[dir="rtl"] { text-align:right; }
-[dir="rtl"] body { font-family:"Segoe UI", Tahoma, Arial, sans-serif; }
-[dir="rtl"] .text-center, [dir="rtl"] .hero, [dir="rtl"] .final-cta, [dir="rtl"] .form-success { text-align:center; }
-[dir="rtl"] .section-sub, [dir="rtl"] .hero-sub, [dir="rtl"] .final-cta-sub { direction:rtl; }
-[dir="rtl"] .nav-inner { flex-direction:row-reverse; }
-[dir="rtl"] .nav-logo { text-align:right; }
-[dir="rtl"] .nav-links { flex-direction:row-reverse; }
-[dir="rtl"] .nav-right { flex-direction:row-reverse; }
-[dir="rtl"] .lang-current { flex-direction:row-reverse; }
-[dir="rtl"] .lang-menu, [dir="rtl"] .currency-menu { right:auto; left:0; text-align:right; }
-[dir="rtl"] .lang-option, [dir="rtl"] .currency-option { flex-direction:row-reverse; text-align:right; }
-[dir="rtl"] .mobile-menu { text-align:right; }
-[dir="rtl"] .hero-actions, [dir="rtl"] .final-cta-actions { flex-direction:row-reverse; }
-[dir="rtl"] .integrate-inner { direction:rtl; }
-[dir="rtl"] .integrate-feature, [dir="rtl"] .ai-card, [dir="rtl"] .roi-header, [dir="rtl"] .roi-field-header, [dir="rtl"] .test-author, [dir="rtl"] .footer-bottom { flex-direction:row-reverse; }
-[dir="rtl"] .ai-card:hover { transform:translateX(-4px); }
-[dir="rtl"] .sol-card-accent { margin-right:0; margin-left:auto; }
-[dir="rtl"] .timeline::before { left:auto; right:21px; }
-[dir="rtl"] .tl-step { flex-direction:row-reverse; }
-[dir="rtl"] .faq-list { margin-left:auto; margin-right:auto; }
-[dir="rtl"] .faq-q { text-align:right; flex-direction:row-reverse; }
-[dir="rtl"] .faq-answer-inner { text-align:right; }
-[dir="rtl"] .page-back::before { content:'→'; }
-[dir="rtl"] .form-input, [dir="rtl"] .form-select, [dir="rtl"] .form-textarea { text-align:right; direction:rtl; }
-[dir="rtl"] .pricing-feature { flex-direction:row-reverse; text-align:right; }
-[dir="rtl"] .footer-main { direction:rtl; }
-[dir="rtl"] .footer-desc { max-width:none; }
-[dir="rtl"] .footer-socials { flex-direction:row-reverse; }
-[dir="rtl"] .section-label, [dir="rtl"] .hero-powered, [dir="rtl"] .nav-sub, [dir="rtl"] .footer-brand-sub, [dir="rtl"] .footer-col-label, [dir="rtl"] .roi-total-label { letter-spacing:0; text-transform:none; }
-@media (max-width:860px) { [dir="rtl"] .nav-inner { flex-direction:row-reverse; } [dir="rtl"] .hero-actions, [dir="rtl"] .final-cta-actions { flex-direction:column; } }
+/* ═══════════════════════════════════════════
+   ENHANCED VERTICAL ALIGNMENTS
+═══════════════════════════════════════════ */
+.btn-primary, .btn-secondary, .btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero-powered, .lang-current, .currency-current {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.integrate-check, .ai-card-icon, .aria-av, .test-av, .tl-num {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ═══════════════════════════════════════════
+   RTL SUPPORT FOR ARABIC
+═══════════════════════════════════════════ */
+[dir="rtl"] { text-align: right; }
+[dir="rtl"] body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+[dir="rtl"] .text-center, [dir="rtl"] .hero, [dir="rtl"] .final-cta, [dir="rtl"] .form-success { text-align: center; }
+[dir="rtl"] .section-sub, [dir="rtl"] .hero-sub, [dir="rtl"] .final-cta-sub { margin-left: auto; margin-right: auto; }
+
+/* Native Flex handles direction, we just fix positioning and borders */
+[dir="rtl"] .lang-menu, [dir="rtl"] .currency-menu { right: auto; left: 0; text-align: right; }
+[dir="rtl"] .lang-option, [dir="rtl"] .currency-option { text-align: right; }
+[dir="rtl"] .mobile-menu { text-align: right; }
+[dir="rtl"] .ai-card::before { left: auto; right: 0; border-radius: 0 2px 2px 0; }
+[dir="rtl"] .ai-card:hover { transform: translateX(-4px); }
+[dir="rtl"] .sol-card-accent { margin-right: 0; margin-left: auto; }
+[dir="rtl"] .timeline::before { left: auto; right: 21px; }
+[dir="rtl"] .faq-q { text-align: right; }
+[dir="rtl"] .faq-answer-inner { text-align: right; }
+[dir="rtl"] .page-back::before { content: '→'; }
+[dir="rtl"] .form-input, [dir="rtl"] .form-select, [dir="rtl"] .form-textarea { text-align: right; direction: rtl; }
+[dir="rtl"] .footer-desc { max-width: none; }
+[dir="rtl"] .roi-total-label { letter-spacing: 0; }
+
+/* Aria Chatbot RTL */
+[dir="rtl"] #aria-widget { right: auto; left: 28px; align-items: flex-start; }
+[dir="rtl"] #aria-window { transform-origin: bottom left; direction: rtl; }
+[dir="rtl"] #aria-greeting { border-radius: 12px 12px 12px 4px; text-align: right; }
+[dir="rtl"] .aria-header-info { text-align: right; }
+[dir="rtl"] .aria-header-status { flex-direction: row; justify-content: flex-start; }
+[dir="rtl"] .aria-av-dot { right: auto; left: 1px; }
+[dir="rtl"] #aria-notif { right: auto; left: 2px; }
+[dir="rtl"] .aria-msg.ai .aria-bubble { border-bottom-left-radius: 12px; border-bottom-right-radius: 4px; text-align: right; }
+[dir="rtl"] .aria-msg.user .aria-bubble { border-bottom-right-radius: 12px; border-bottom-left-radius: 4px; text-align: right; }
+[dir="rtl"] .aria-typing { border-radius: 12px 12px 4px 12px; }
+[dir="rtl"] #aria-input { direction: rtl; text-align: right; }
+[dir="rtl"] #aria-send svg { transform: scaleX(-1); }
+@media (max-width: 480px) { [dir="rtl"] #aria-widget { right: auto; left: 16px; } }
 
 /* ═══════════════════════════════════════════
    SCROLLBAR
@@ -1101,10 +1133,10 @@ footer {
 <body>
 
 <!-- ═══ INTRO ANIMATION SCREEN ═══ -->
-<div id="intro-screen" class="hidden" style="display: none;">
+<div id="intro-screen">
   <div class="intro-grid"></div>
   <div class="intro-scanline"></div>
-  <div class="intro-particles" id="introParticles"><div class="intro-node" style="left: 45.7007%; top: 43.1384%; animation-delay: 0.439265s; opacity: 0.467323;"></div><div class="intro-node" style="left: 70.0484%; top: 14.2972%; animation-delay: 0.115282s; opacity: 0.715757;"></div><div class="intro-node" style="left: 48.9872%; top: 8.3203%; animation-delay: 0.0691198s; opacity: 0.583473;"></div><div class="intro-node" style="left: 1.24356%; top: 28.1322%; animation-delay: 0.467058s; opacity: 0.508256;"></div><div class="intro-circuit-line" style="width: 222.64px; left: 218.678px; top: 606.3px; animation-delay: 0.217233s;"></div><div class="intro-node" style="left: 98.9809%; top: 5.74604%; animation-delay: 0.0468901s; opacity: 0.769762;"></div><div class="intro-circuit-line" style="width: 176.286px; left: 597.116px; top: 499.164px; animation-delay: 0.180792s;"></div><div class="intro-node" style="left: 46.8491%; top: 50.5001%; animation-delay: 0.145434s; opacity: 0.408368;"></div><div class="intro-node" style="left: 46.7385%; top: 81.805%; animation-delay: 0.193719s; opacity: 0.354313;"></div><div class="intro-circuit-line" style="width: 131.354px; left: 153.343px; top: 586.095px; animation-delay: 0.441191s;"></div><div class="intro-node" style="left: 65.6564%; top: 95.1744%; animation-delay: 0.418665s; opacity: 0.311593;"></div><div class="intro-circuit-line" style="width: 230.663px; left: 1027.83px; top: 499.668px; animation-delay: 0.606884s;"></div><div class="intro-node" style="left: 15.7495%; top: 70.1885%; animation-delay: 0.0919845s; opacity: 0.525923;"></div><div class="intro-circuit-line" style="width: 146.839px; left: 754.126px; top: 19.2757px; animation-delay: 0.235903s;"></div><div class="intro-node" style="left: 59.7889%; top: 54.0087%; animation-delay: 0.341828s; opacity: 0.375164;"></div><div class="intro-node" style="left: 0.898558%; top: 55.1436%; animation-delay: 0.494596s; opacity: 0.495092;"></div><div class="intro-circuit-line" style="width: 141.731px; left: 675.049px; top: 137.702px; animation-delay: 0.56541s;"></div><div class="intro-node" style="left: 53.0545%; top: 95.6652%; animation-delay: 0.268692s; opacity: 0.355876;"></div><div class="intro-circuit-line" style="width: 171.943px; left: 666.713px; top: 286.015px; animation-delay: 0.0506128s;"></div><div class="intro-node" style="left: 80.3314%; top: 29.8248%; animation-delay: 0.176402s; opacity: 0.410272;"></div><div class="intro-circuit-line" style="width: 184.31px; left: 396.786px; top: 592.171px; animation-delay: 0.0446638s;"></div><div class="intro-node" style="left: 27.8138%; top: 64.8357%; animation-delay: 0.158895s; opacity: 0.37168;"></div><div class="intro-node" style="left: 63.6549%; top: 75.0142%; animation-delay: 0.236807s; opacity: 0.728049;"></div><div class="intro-node" style="left: 67.4546%; top: 5.69309%; animation-delay: 0.332004s; opacity: 0.67026;"></div><div class="intro-node" style="left: 56.5275%; top: 58.2793%; animation-delay: 0.498962s; opacity: 0.751134;"></div><div class="intro-node" style="left: 25.7322%; top: 85.4822%; animation-delay: 0.495985s; opacity: 0.526945;"></div><div class="intro-node" style="left: 54.4943%; top: 61.3693%; animation-delay: 0.2218s; opacity: 0.629771;"></div><div class="intro-node" style="left: 46.5572%; top: 5.96244%; animation-delay: 0.356114s; opacity: 0.748106;"></div></div>
+  <div class="intro-particles" id="introParticles"></div>
 
   <div class="intro-center">
     <div class="intro-ring"></div>
@@ -1118,15 +1150,15 @@ footer {
 
   <div style="position:relative;z-index:10;display:flex;flex-direction:column;align-items:center;margin-top:20px;">
     <div class="intro-bar"><div class="intro-bar-fill"></div></div>
-    <div class="intro-status" id="introStatus">Ready.</div>
+    <div class="intro-status" id="introStatus">Initializing systems...</div>
   </div>
 </div>
 
 <!-- ═══ ANIMATED BACKGROUND ═══ -->
 <div class="canvas-bg">
-  <div class="blob blob-1" style="transform: translate(0px, 0px);"></div>
-  <div class="blob blob-2" style="transform: translate(0px, 0px);"></div>
-  <div class="blob blob-3" style="transform: translate(0px, 0px);"></div>
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
 </div>
 
 <!-- ═══════════════════════════════════════
@@ -1155,7 +1187,7 @@ footer {
         <div class="lang-current" onclick="toggleLangDropdown()" id="langCurrentBtn">
           <span id="langCurrentText">EN</span>
           <svg viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"></path>
+            <path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
           </svg>
         </div>
         <div class="lang-menu">
@@ -1191,10 +1223,12 @@ footer {
 
   <h1 class="hero-title">
     <span data-key="hero_title_1">A Layer of Artificial Intelligence</span><br>
-    <span class="grad" data-key="hero_title_2">On Your Business Workflow</span>
+    <span class="grad" data-key="hero_title_2">On your Workflow</span>
   </h1>
 
-  <div class="hero-powered" data-key="hero_powered">Powered by Gemini Pro Models</div>
+  <div class="hero-powered">
+    <span data-key="hero_powered_by">Powered by</span>&nbsp;<span>Gemini Pro</span>&nbsp;<span data-key="hero_models">Models</span>
+  </div>
 
   <p class="hero-sub" data-key="hero_sub">Intelligent AI agents engineered to integrate with your existing systems, automate complex workflows, and execute business operations with speed, consistency, and human-like interaction.</p>
 
@@ -1492,7 +1526,7 @@ footer {
             <span id="currencySymbol">$</span>
             <span id="currencyCode">USD</span>
             <svg viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"></path>
+              <path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
             </svg>
           </div>
           <div class="currency-menu">
@@ -1550,21 +1584,21 @@ footer {
 
           <div class="roi-card">
             <div class="roi-card-glow"></div>
-            <div class="roi-card-num" id="roi-hours">70 hrs</div>
+            <div class="roi-card-num" id="roi-hours">0 hrs</div>
             <div class="roi-card-label" data-key="roi_r1_label">Staff hours saved per month</div>
             <div class="roi-card-explain" data-key="roi_r1_explain">AI handles ~70% of repetitive inquiries automatically, freeing your team for higher-value work</div>
           </div>
 
           <div class="roi-card">
             <div class="roi-card-glow"></div>
-            <div class="roi-card-num" id="roi-cost">$1,050</div>
+            <div class="roi-card-num" id="roi-cost">$0</div>
             <div class="roi-card-label" data-key="roi_r2_label">Labour costs recovered monthly</div>
             <div class="roi-card-explain" data-key="roi_r2_explain">Based on your hourly staff cost × hours saved — real money back in your budget</div>
           </div>
 
           <div class="roi-card">
             <div class="roi-card-glow"></div>
-            <div class="roi-card-num" id="roi-leads">+114</div>
+            <div class="roi-card-num" id="roi-leads">+0</div>
             <div class="roi-card-label" data-key="roi_r3_label">Additional leads converted (estimated)</div>
             <div class="roi-card-explain" data-key="roi_r3_explain">AI responds instantly 24/7 — businesses typically convert 35–40% more leads vs. delayed human responses</div>
           </div>
@@ -1572,8 +1606,8 @@ footer {
           <div class="roi-total-card">
             <div class="roi-total-card-glow"></div>
             <div class="roi-total-label" data-key="roi_total_label">💰 Total Monthly Value</div>
-            <div class="roi-total-num" id="roi-total">$14,730</div>
-            <div class="roi-total-sub" id="roi-total-sub" data-key="roi_total_sub">$1,050 saved + $13,680 revenue potential</div>
+            <div class="roi-total-num" id="roi-total">$0</div>
+            <div class="roi-total-sub" id="roi-total-sub" data-key="roi_total_sub">Combined savings + additional revenue potential</div>
           </div>
 
           <button class="btn-primary" onclick="openPage('consultation')" style="width:100%;justify-content:center;font-size:.82rem;margin-top:.3rem;" data-key="roi_cta">Unlock These Results →</button>
@@ -1663,7 +1697,7 @@ footer {
       <div class="section-label" data-key="faq_label">FAQ</div>
       <h2 class="section-title" data-key="faq_title">Common <span class="grad">Questions</span></h2>
     </div>
-    <div class="faq-list reveal" id="faqList"><div class="faq-item"><button class="faq-q" onclick="toggleFaq(0)">How quickly can you deploy an AI agent?<div class="faq-arrow">+</div></button><div class="faq-answer" id="fqa-0"><div class="faq-answer-inner">Most AI agents are live within 3–5 business days. We handle the full development, training, testing, and deployment. You provide business information; we handle everything technical.</div></div></div><div class="faq-item"><button class="faq-q" onclick="toggleFaq(1)">What languages do your agents support?<div class="faq-arrow">+</div></button><div class="faq-answer" id="fqa-1"><div class="faq-answer-inner">Our agents support Turkish, English, Arabic, Russian, and many more. The agent detects and switches languages automatically based on what the customer writes, with no manual configuration needed.</div></div></div><div class="faq-item"><button class="faq-q" onclick="toggleFaq(2)">How do you integrate with WhatsApp?<div class="faq-arrow">+</div></button><div class="faq-answer" id="fqa-2"><div class="faq-answer-inner">We integrate via the official WhatsApp Business API. Your existing business number is connected and the agent handles all incoming messages automatically, with full conversation history and escalation routing.</div></div></div><div class="faq-item"><button class="faq-q" onclick="toggleFaq(3)">How accurate are the AI responses?<div class="faq-arrow">+</div></button><div class="faq-answer" id="fqa-3"><div class="faq-answer-inner">Our agents are trained on your specific business data — menus, FAQs, policies, pricing — so responses are highly accurate. Accuracy typically exceeds 95%.</div></div></div><div class="faq-item"><button class="faq-q" onclick="toggleFaq(4)">What happens when the AI cannot answer something?<div class="faq-arrow">+</div></button><div class="faq-answer" id="fqa-4"><div class="faq-answer-inner">The agent gracefully escalates to a human team member via WhatsApp, email, or phone. No customer is ever left without a response. Escalation rules are fully customizable.</div></div></div><div class="faq-item"><button class="faq-q" onclick="toggleFaq(5)">How is pricing structured?<div class="faq-arrow">+</div></button><div class="faq-answer" id="fqa-5"><div class="faq-answer-inner">Pricing depends on the type of agent, number of channels, monthly conversation volume, and integrations required. All plans include full setup, training, deployment, and ongoing support. Book a free consultation for a custom quote.</div></div></div><div class="faq-item"><button class="faq-q" onclick="toggleFaq(6)">Do I need technical knowledge to manage the system?<div class="faq-arrow">+</div></button><div class="faq-answer" id="fqa-6"><div class="faq-answer-inner">No technical knowledge is required. Once deployed, you manage everything through a simple dashboard. Our team handles all technical maintenance, updates, and optimizations.</div></div></div><div class="faq-item"><button class="faq-q" onclick="toggleFaq(7)">Can you integrate with our existing CRM or booking system?<div class="faq-arrow">+</div></button><div class="faq-answer" id="fqa-7"><div class="faq-answer-inner">Yes. We integrate with most major CRM platforms (Salesforce, HubSpot, Zoho), booking systems, payment processors, and custom APIs.</div></div></div></div>
+    <div class="faq-list reveal" id="faqList"></div>
   </div>
 </section>
 
@@ -1986,7 +2020,7 @@ footer {
 ═══════════════════════════════════════════════════ -->
 <script>
 /* ── EmailJS Init ── */
-if (window.emailjs && typeof emailjs.init === 'function') { emailjs.init('cSTpWmozU4es8_mIW'); }
+emailjs.init('cSTpWmozU4es8_mIW');
 const EMAILJS_SERVICE = 'service_jr9p9bi';
 const EMAILJS_TEMPLATE_CONTACT = 'template_5n9o3bo';
 const EMAILJS_TEMPLATE_AUTOREPLY = 'template_c5ggfg3';
@@ -2098,8 +2132,7 @@ const translations = {
     nav_cta: 'Book Consultation',
     hero_badge: 'AI Automation Solutions for Business',
     hero_title_1: 'A Layer of Artificial Intelligence',
-    hero_title_2: 'On Your Business Workflow',
-    hero_powered: 'Powered by Gemini Pro Models',
+    hero_title_2: 'On your Business Workflow',
     hero_powered_by: 'Powered by',
     hero_models: 'Models',
     hero_sub: 'Intelligent AI agents engineered to integrate with your existing systems, automate complex workflows, and execute business operations with speed, consistency, and human-like interaction.',
@@ -2227,9 +2260,8 @@ const translations = {
     hero_badge: 'İşletmeler için Yapay Zeka Otomasyon Çözümleri',
     hero_title_1: 'İş Akışınıza Yapay Zeka',
     hero_title_2: 'Katmanı Ekleyin',
-    hero_powered: 'Gemini Pro modelleriyle desteklenir',
     hero_powered_by: 'Destekli:', hero_models: 'Modelleri',
-    hero_sub: 'Akıllı yapay zeka sistemleriyle müşteri etkileşimlerini, lead kalifikasyonunu, rezervasyonları, desteği ve tekrarlayan süreçleri otomatikleştirin. Günler içinde yayına alın.',
+    hero_sub: 'Mevcut sistemlerinizle entegre olmak, karmaşık iş akışlarını otomatikleştirmek ve iş operasyonlarını hız, tutarlılık ve insan benzeri etkileşimle yürütmek üzere tasarlanmış akıllı yapay zeka ajanları.',
     cta_free: 'Ücretsiz Konsültasyon Al', cta_demo: 'Demo Planla',
     integrate_label: 'Ne Yapıyoruz',
     integrate_title: 'İşletmenize <span class="grad">Yapay Zekayı</span><br>Entegre Edin',
@@ -2338,10 +2370,8 @@ const translations = {
     "hero_badge": "حلول أتمتة الذكاء الاصطناعي للأعمال",
     "hero_title_1": "طبقة من الذكاء الاصطناعي",
     "hero_title_2": "على سير أعمالك",
-    "hero_powered": "مدعوم بنماذج Gemini Pro",
-    "hero_powered_by": "مدعوم بـ",
-    "hero_models": "نماذج",
-    "hero_sub": "نبني مساعدين وأنظمة ذكاء اصطناعي تتكامل مع أدواتك الحالية، وتؤتمت تواصل العملاء، وتأهيل الفرص، والحجوزات، والدعم، وأتمتة سير الأعمال المتكرر خلال أيام، لا أشهر.",
+    "hero_powered_by": "مدعوم بنماذج",
+    "hero_sub": "وكلاء ذكاء اصطناعي مُهندسة للتكامل مع أنظمتك الحالية، وتطبيق التشغيل الآلي على مسارات العمل المعقدة، وتنفيذ العمليات التشغيلية بسرعة، واتساق، وتفاعل يحاكي التعامل البشري.",
     "cta_free": "احجز استشارة مجانية",
     "cta_demo": "احجز عرضًا توضيحيًا",
     "integrate_label": "ما الذي نقدمه",
@@ -2727,7 +2757,7 @@ function submitConsultation() {
     reply_to: email
   };
 
-  (window.emailjs && typeof emailjs.send === 'function' ? emailjs.send(EMAILJS_SERVICE, EMAILJS_TEMPLATE_CONTACT, params) : Promise.reject(new Error('EmailJS unavailable')))
+  emailjs.send(EMAILJS_SERVICE, EMAILJS_TEMPLATE_CONTACT, params)
     .then(() => {
       document.getElementById('consultation-form-wrap').style.display = 'none';
       document.getElementById('consultation-success').classList.add('show');
@@ -2758,7 +2788,7 @@ function submitDemo() {
     reply_to: email
   };
 
-  (window.emailjs && typeof emailjs.send === 'function' ? emailjs.send(EMAILJS_SERVICE, EMAILJS_TEMPLATE_CONTACT, params) : Promise.reject(new Error('EmailJS unavailable')))
+  emailjs.send(EMAILJS_SERVICE, EMAILJS_TEMPLATE_CONTACT, params)
     .then(() => {
       document.getElementById('demo-form-wrap').style.display = 'none';
       document.getElementById('demo-success').classList.add('show');
@@ -2788,7 +2818,7 @@ function submitContact() {
     reply_to: email
   };
 
-  (window.emailjs && typeof emailjs.send === 'function' ? emailjs.send(EMAILJS_SERVICE, EMAILJS_TEMPLATE_CONTACT, params) : Promise.reject(new Error('EmailJS unavailable')))
+  emailjs.send(EMAILJS_SERVICE, EMAILJS_TEMPLATE_CONTACT, params)
     .then(() => {
       document.getElementById('contact-form-wrap').style.display = 'none';
       document.getElementById('contact-success').classList.add('show');
@@ -3249,10 +3279,7 @@ updateROI();
 <!-- ── ARIA Widget HTML ── -->
 <div id="aria-widget">
   <!-- Greeting bubble -->
-  <div id="aria-greeting" onclick="ariaOpen()" style="display: block;">
-    <strong>👋 Hi! I'm ARIA</strong><br>
-    Your AI assistant from AIIS. Ask me anything about our solutions!
-  </div>
+  <div id="aria-greeting" onclick="ariaOpen()"></div>
 
   <!-- Chat window -->
   <div id="aria-window">
@@ -3280,10 +3307,10 @@ updateROI();
 
     <!-- Input -->
     <div id="aria-input-area">
-      <input id="aria-input" placeholder="Ask me anything…" onkeydown="if(event.key==='Enter' &amp;&amp; !event.shiftKey){event.preventDefault();ariaSend();}">
+      <input id="aria-input" placeholder="Ask me anything…" onkeydown="if(event.key==='Enter' && !event.shiftKey){event.preventDefault();ariaSend();}">
       <button id="aria-send" onclick="ariaSend()">
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path d="M22 2L11 13M22 2L15 22l-4-9-9-4 20-7z"></path>
+          <path d="M22 2L11 13M22 2L15 22l-4-9-9-4 20-7z"/>
         </svg>
       </button>
     </div>
@@ -3297,14 +3324,14 @@ updateROI();
     <div id="aria-notif"></div>
     <!-- Open icon: chat bubble -->
     <svg class="aria-icon-open" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10z" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
-      <circle cx="9" cy="10" r="1" fill="white"></circle>
-      <circle cx="12" cy="10" r="1" fill="white"></circle>
-      <circle cx="15" cy="10" r="1" fill="white"></circle>
+      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10z" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="9" cy="10" r="1" fill="white"/>
+      <circle cx="12" cy="10" r="1" fill="white"/>
+      <circle cx="15" cy="10" r="1" fill="white"/>
     </svg>
     <!-- Close icon: X -->
     <svg class="aria-icon-close" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M18 6L6 18M6 6l12 12" stroke="white" stroke-width="2" stroke-linecap="round"></path>
+      <path d="M18 6L6 18M6 6l12 12" stroke="white" stroke-width="2" stroke-linecap="round"/>
     </svg>
   </button>
 </div>
@@ -3313,7 +3340,7 @@ updateROI();
 /* ════════════════════════════════════════
    ARIA — AIIS LEAD AGENT
 ════════════════════════════════════════ */
-const ARIA_WEBHOOK_URL = 'https://squeezing-patriarch-dispatch.ngrok-free.dev/webhook/aria-chat';
+const ARIA_WEBHOOK_URL = ' https://squeezing-patriarch-dispatch.ngrok-free.dev/webhook/aria-chat';
 const ARIA_LOCALES = {
   "en": {
     "greeting": "<strong>Hi, I'm ARIA</strong><br>Your AI assistant from AIIS. Ask me about solutions, pricing, deployment, or integrations.",
@@ -3720,4 +3747,6 @@ if (window.innerWidth > 768) {
   }, 4000);
 }
 </script>
-<script defer="" src="https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496" integrity="sha512-ZE9pZaUXND66v380QUtch/5sE9tPFh2zg45pR2PB0CVkCtOREv2AJKkSidISWkysEuQ0EH8faUU5du78bx87UQ==" data-cf-beacon="[Truncated]
+</body>
+</html>
+
