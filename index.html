@@ -2698,6 +2698,23 @@ function setButtonLoading(btnId, loading, originalText) {
     btn.style.opacity = '';
   }
 }
+   const WEBHOOK_URL = "https://n8n.aiis.info/webhook/lead";
+
+async function submitLead(data) {
+    const response = await fetch(WEBHOOK_URL, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+    });
+
+    if (!response.ok) {
+        throw new Error("Submission failed");
+    }
+
+    return await response.json();
+}
 
 function submitConsultation() {
   const name = document.getElementById('c-name').value.trim();
@@ -2719,16 +2736,24 @@ function submitConsultation() {
     reply_to: email
   };
 
-  emailjs.send(EMAILJS_SERVICE, EMAILJS_TEMPLATE_CONTACT, params)
-    .then(() => {
-      document.getElementById('consultation-form-wrap').style.display = 'none';
-      document.getElementById('consultation-success').classList.add('show');
-    })
-    .catch((err) => {
-      console.error('EmailJS error:', err);
-      alert((translations[currentLang] || translations.en).alert_send_error || 'There was an issue sending your request. Please try again or reach out via WhatsApp.');
-      setButtonLoading('consultSubmitBtn', false, btnText);
-    });
+submitLead({
+    formType: "consultation",
+    name,
+    business: biz,
+    email,
+    phone,
+    industry,
+    message
+})
+.then(() => {
+    document.getElementById('consultation-form-wrap').style.display = 'none';
+    document.getElementById('consultation-success').classList.add('show');
+})
+.catch((err) => {
+    console.error(err);
+    alert((translations[currentLang] || translations.en).alert_send_error || 'There was an issue sending your request.');
+    setButtonLoading('consultSubmitBtn', false, btnText);
+});
 }
 
 function submitDemo() {
@@ -2750,16 +2775,23 @@ function submitDemo() {
     reply_to: email
   };
 
-  emailjs.send(EMAILJS_SERVICE, EMAILJS_TEMPLATE_CONTACT, params)
-    .then(() => {
-      document.getElementById('demo-form-wrap').style.display = 'none';
-      document.getElementById('demo-success').classList.add('show');
-    })
-    .catch((err) => {
-      console.error('EmailJS error:', err);
-      alert((translations[currentLang] || translations.en).alert_send_error || 'There was an issue sending your request. Please try again or reach out via WhatsApp.');
-      setButtonLoading('demoSubmitBtn', false, btnText);
-    });
+ submitLead({
+    formType: "demo",
+    name,
+    company,
+    email,
+    preferredTime: time,
+    solution
+})
+.then(() => {
+    document.getElementById('demo-form-wrap').style.display = 'none';
+    document.getElementById('demo-success').classList.add('show');
+})
+.catch((err) => {
+    console.error(err);
+    alert((translations[currentLang] || translations.en).alert_send_error || 'There was an issue sending your request.');
+    setButtonLoading('demoSubmitBtn', false, btnText);
+});
 }
 
 function submitContact() {
@@ -2780,16 +2812,22 @@ function submitContact() {
     reply_to: email
   };
 
-  emailjs.send(EMAILJS_SERVICE, EMAILJS_TEMPLATE_CONTACT, params)
-    .then(() => {
-      document.getElementById('contact-form-wrap').style.display = 'none';
-      document.getElementById('contact-success').classList.add('show');
-    })
-    .catch((err) => {
-      console.error('EmailJS error:', err);
-      alert((translations[currentLang] || translations.en).alert_send_error || 'There was an issue sending your request. Please try again or reach out via WhatsApp.');
-      setButtonLoading('contactSubmitBtn', false, btnText);
-    });
+  submitLead({
+    formType: "contact",
+    name,
+    email,
+    subject,
+    message
+})
+.then(() => {
+    document.getElementById('contact-form-wrap').style.display = 'none';
+    document.getElementById('contact-success').classList.add('show');
+})
+.catch((err) => {
+    console.error(err);
+    alert((translations[currentLang] || translations.en).alert_send_error || 'There was an issue sending your request.');
+    setButtonLoading('contactSubmitBtn', false, btnText);
+});
 }
 
 /* ── FAQ ── */
